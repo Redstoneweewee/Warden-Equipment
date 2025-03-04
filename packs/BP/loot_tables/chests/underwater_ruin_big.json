@@ -1,0 +1,148 @@
+{
+    "pools": [
+        {
+            "rolls": {
+                "min": 2,
+                "max": 8
+            },
+            "entries": [
+                {
+                    "type": "item",
+                    "name": "minecraft:coal",
+                    "weight": 200,
+                    "functions": [
+                        {
+                            "function": "minecraft:set_count",
+                            "count": {
+                                "min": 1,
+                                "max": 4
+                            }
+                        }
+                    ]
+                },
+                {
+                    "type": "item",
+                    "name": "minecraft:gold_nugget",
+                    "weight": 200,
+                    "functions": [
+                        {
+                            "function": "minecraft:set_count",
+                            "count": {
+                                "min": 1,
+                                "max": 3
+                            }
+                        }
+                    ]
+                },
+                {
+                    "type": "item",
+                    "name": "minecraft:emerald",
+                    "weight": 20
+                },
+                {
+                    "type": "item",
+                    "name": "minecraft:wheat",
+                    "weight": 200,
+                    "functions": [
+                        {
+                            "function": "minecraft:set_count",
+                            "count": {
+                                "min": 2,
+                                "max": 3
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "rolls": 1,
+            "entries": [
+                {
+                    "type": "item",
+                    "name": "minecraft:golden_apple",
+                    "weight": 20
+                },
+                {
+                    "type": "item",
+                    "name": "minecraft:book",
+                    "weight": 100,
+                    "functions": [
+                        {
+                            "function": "enchant_randomly"
+                        }
+                    ]
+                },
+        {
+          "type": "item",
+          "name": "yes:ability_damage_book1",
+          "weight": 20,
+          "functions": [
+            {
+              "function": "enchant_random_gear",
+              "chance": 0.6
+            }
+          ]
+        },
+        {
+          "type": "item",
+          "name": "yes:ability_damage_book2",
+          "weight": 13,
+          "functions": [
+            {
+              "function": "enchant_random_gear",
+              "chance": 0.6
+            }
+          ]
+        },
+        {
+          "type": "item",
+          "name": "yes:ability_damage_book3",
+          "weight": 10,
+          "functions": [
+            {
+              "function": "enchant_random_gear",
+              "chance": 0.6
+            }
+          ]
+        },
+                {
+                    "type": "item",
+                    "name": "minecraft:leather_chestplate",
+                    "weight": 20
+                },
+                {
+                    "type": "item",
+                    "name": "minecraft:golden_helmet",
+                    "weight": 20
+                },
+                {
+                    "type": "item",
+                    "name": "yes:emerald_boots",
+                    "weight": 20
+                },
+                {
+                    "type": "item",
+                    "name": "minecraft:fishing_rod",
+                    "weight": 100,
+                    "functions": [
+                        {
+                            "function": "enchant_randomly"
+                        }
+                    ]
+                },
+                {
+                    "type": "item",
+                    "name": "minecraft:map",
+                    "weight": 200,
+                    "functions": [
+                         {
+                            "function": "exploration_map",
+                            "destination": "buriedtreasure"
+                         }
+                    ]
+                }
+            ]
+        }
+    ]
+}

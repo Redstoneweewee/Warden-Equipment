@@ -1,0 +1,29 @@
+{
+	"format_version": "1.10.0",
+	"render_controllers": {
+    "controller.render.warden_ping": {
+      "arrays": {
+        "textures": {
+          "array.ping": [
+				 "texture.ping6",
+             "texture.ping1",
+				 "texture.ping1",
+				 "texture.ping2",
+				 "texture.ping2",
+				 "texture.ping3",
+				 "texture.ping3",
+				 "texture.ping4",
+				 "texture.ping4",
+				 "texture.ping5",
+				 "texture.ping5",
+				 "texture.ping6",
+          	 "texture.ping6"
+          ]
+        }
+      },
+      "geometry": "Geometry.default",
+      "materials": [ { "*": "Material.default" } ],
+      "textures": [ "temp.life_time = query.life_time; return array.ping[temp.life_time * 2.4];" ]
+    }
+  }
+}

@@ -1,0 +1,39 @@
+{
+    "format_version": "1.19.70",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "yes:reaper_scythe2"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"pattern": [
+			"XYZ"
+		],
+		"key": {
+			"X": {
+				"item": "yes:reaper_upgrade_smithing_template"
+			},
+			"Y": {
+				"item": "yes:netherite_scythe"
+			},
+			"Z": {
+				"item": "yes:reaper_essence"
+			}
+		},
+		"unlock": [
+			{
+				"item": "yes:reaper_upgrade_smithing_template"
+			},
+			{
+				"item": "yes:netherite_scythe"
+			},
+			{
+				"item": "yes:reaper_essence"
+			}
+		],
+		"result": {
+			"item": "yes:reaper_scythe"
+		}
+	}
+}

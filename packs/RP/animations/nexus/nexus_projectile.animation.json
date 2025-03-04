@@ -1,0 +1,61 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.nexus_projectile_rotate": {
+			"loop": true,
+			"animation_length": 8,
+			"override_previous_animation": true,
+			"bones": {
+				"body": {
+					"rotation": {
+						"0.0": [0, 0, 0],
+						"2.0": {
+							"pre": [0, -360, 0],
+							"post": [0, -360, 0],
+							"lerp_mode": "catmullrom"
+						},
+						"4.0": {
+							"post": [0, -720, 0],
+							"lerp_mode": "catmullrom"
+						},
+						"6.0": {
+							"post": [0, -1080, 0],
+							"lerp_mode": "catmullrom"
+						},
+						"8.0": [0, -1440, 0]
+					}
+				},
+				"inner": {
+					"rotation": {
+						"0.0": [0, 0, 0],
+						"8.0": [360, 90, -180]
+					}
+				},
+				"outer2": {
+					"rotation": {
+						"0.0": [0, 0, 0],
+						"4.0": {
+							"pre": [-90, -360, -180],
+							"post": [-90, -360, -180],
+							"lerp_mode": "catmullrom"
+						},
+						"8.0": {
+							"post": [-180, -720, -720],
+							"lerp_mode": "catmullrom"
+						}
+					}
+				}
+			}
+		},
+		"animation.nexus_projectile_particles": {
+			"loop": true,
+			"animation_length": 0.01,
+			"particle_effects": {
+				"0.0": {
+					"effect": "nexus_projectile",
+					"locator": "particle_locator"
+				}
+			}
+		}
+	}
+}

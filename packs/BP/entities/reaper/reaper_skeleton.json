@@ -1,0 +1,695 @@
+{
+  "format_version": "1.19.70",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "yes:reaper_skeleton",
+      "is_spawnable": true,
+      "is_summonable": true,
+      "is_experimental": false
+    },
+    "component_groups": {
+      "yes:despawn": {
+        "minecraft:instant_despawn": {}
+      },
+      "yes:invincible": {
+        "minecraft:environment_sensor": {
+          "triggers": [
+            {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "is_family",
+                    "operator": "==",
+                    "value": "reaper_skeleton"
+                  }
+                ]
+              },
+              "event": "yes:projectile_invincibility"
+            },
+            {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "is_difficulty",
+                    "operator": "==",
+                    "value": "peaceful"
+                  }
+                ]
+              },
+              "event": "yes:despawn"
+            }
+          ]
+        },
+        "minecraft:knockback_resistance": {
+          "value": 1
+        },
+        "minecraft:damage_sensor": {
+          "triggers": {
+            "cause": "all",
+            "deals_damage": false
+          }
+        }
+      },
+      "yes:walking": {
+        "minecraft:damage_sensor": {
+          "triggers": {
+            "cause": "projectile",
+            "deals_damage": false,
+            "on_damage": {
+              "filters": {
+                "test": "is_family",
+                "subject": "other",
+                "value": "player"
+              },
+              "event": "yes:shot_by_projectile"
+            }
+          }
+        },
+        "minecraft:variant": {
+          "value": 1
+        },
+        "minecraft:collision_box": {
+          "width": 0.72,
+          "height": 2.01
+        },
+        "minecraft:movement": {
+          "value": 0.25
+        },
+        "minecraft:environment_sensor": {
+          "triggers": [
+            {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "has_tag",
+                    "operator": "==",
+                    "value": "death_buff"
+                  }
+                ]
+              },
+              "event": "yes:death_buff"
+            },
+            {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "is_family",
+                    "operator": "==",
+                    "value": "reaper_skeleton"
+                  }
+                ]
+              },
+              "event": "yes:tick"
+            },
+            {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "has_target",
+                    "operator": "==",
+                    "value": true
+                  }
+                ]
+              },
+              "event": "yes:crouch_test"
+            },
+            {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "actor_health",
+                    "operator": "<=",
+                    "value": 0
+                  }
+                ]
+              },
+              "event": "yes:on_death"
+            },
+            {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "is_difficulty",
+                    "operator": "==",
+                    "value": "peaceful"
+                  }
+                ]
+              },
+              "event": "yes:despawn"
+            }
+          ]
+        }
+      },
+      "yes:crouched": {
+        "minecraft:damage_sensor": {
+          "triggers": {
+            "cause": "projectile",
+            "deals_damage": false,
+            "on_damage": {
+              "filters": {
+                "test": "is_family",
+                "subject": "other",
+                "value": "player"
+              },
+              "event": "yes:shot_by_projectile"
+            }
+          }
+        },
+        "minecraft:environment_sensor": {
+          "triggers": [
+            {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "has_tag",
+                    "operator": "==",
+                    "value": "death_buff"
+                  }
+                ]
+              },
+              "event": "yes:death_buff"
+            },
+            {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "is_family",
+                    "operator": "==",
+                    "value": "reaper_skeleton"
+                  }
+                ]
+              },
+              "event": "yes:tick"
+            },
+            {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "actor_health",
+                    "operator": "<=",
+                    "value": 0
+                  }
+                ]
+              },
+              "event": "yes:on_death"
+            },
+            {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "is_difficulty",
+                    "operator": "==",
+                    "value": "peaceful"
+                  }
+                ]
+              },
+              "event": "yes:despawn"
+            }
+          ]
+        },
+        "minecraft:variant": {
+          "value": 2
+        },
+        "minecraft:collision_box": {
+          "width": 0.72,
+          "height": 1.5
+        },
+        "minecraft:movement": {
+          "value": 0.18
+        },
+        "minecraft:timer": {
+          "looping": true,
+          "time": 1,
+          "time_down_event": {
+            "event": "yes:walk_test"
+          }
+        }
+      },
+      "yes:spawned": {
+        "minecraft:variant": {
+          "value": 0
+        },
+        "minecraft:knockback_resistance": {
+          "value": 1
+        },
+        "minecraft:damage_sensor": {
+          "triggers": {
+            "cause": "all",
+            "deals_damage": false
+          }
+        },
+        "minecraft:environment_sensor": {
+          "triggers": [
+            {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "on_ground",
+                    "operator": "==",
+                    "value": true
+                  }
+                ]
+              },
+              "event": "yes:buffer"
+            },
+            {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "is_difficulty",
+                    "operator": "==",
+                    "value": "peaceful"
+                  }
+                ]
+              },
+              "event": "yes:despawn"
+            }
+          ]
+        }
+      },
+      "yes:buffer": {
+        "minecraft:variant": {
+          "value": 0
+        },
+        "minecraft:timer": {
+          "looping": false,
+          "time": 0.5,
+          "time_down_event": {
+            "event": "yes:initiate_entity"
+          }
+        },
+        "minecraft:environment_sensor": {
+          "triggers": [
+            {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "is_family",
+                    "operator": "==",
+                    "value": "reaper_skeleton"
+                  }
+                ]
+              },
+              "event": "yes:tp"
+            },
+            {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "is_difficulty",
+                    "operator": "==",
+                    "value": "peaceful"
+                  }
+                ]
+              },
+              "event": "yes:despawn"
+            }
+          ]
+        }
+      },
+      "yes:initiate_entity": {
+        "minecraft:variant": {
+          "value": 1
+        },
+        "minecraft:timer": {
+          "looping": false,
+          "time": 3,
+          "time_down_event": {
+            "event": "yes:entity_behaviors"
+          }
+        },
+        "minecraft:environment_sensor": {
+          "triggers": [
+            {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "is_family",
+                    "operator": "==",
+                    "value": "reaper_skeleton"
+                  }
+                ]
+              },
+              "event": "yes:tp"
+            },
+            {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "is_difficulty",
+                    "operator": "==",
+                    "value": "peaceful"
+                  }
+                ]
+              },
+              "event": "yes:despawn"
+            }
+          ]
+        },
+        "minecraft:knockback_resistance": {
+          "value": 1
+        },
+        "minecraft:damage_sensor": {
+          "triggers": {
+            "cause": "all",
+            "deals_damage": false
+          }
+        }
+      },
+      "yes:entity_behaviors": {
+        "minecraft:knockback_resistance": {
+          "value": 0.75
+        },
+        "minecraft:equip_item": {},
+        "minecraft:attack": {
+          "damage": 9 //does 13 dmg, dmg is bugged as of 1.20.12
+        },
+        "minecraft:movement.basic": {},
+        "minecraft:jump.static": {},
+        "minecraft:can_climb": {},
+        "minecraft:behavior.hurt_by_target": {
+          "priority": 2
+        },
+        "minecraft:follow_range": {
+          "value": 32,
+          "max": 32
+        },
+        "minecraft:behavior.nearest_attackable_target": {
+          "priority": 1,
+          "entity_types": [
+            {
+              "filters": {
+                "test": "is_family",
+                "subject": "other",
+                "value": "player"
+              },
+              "max_dist": 32
+            },
+            {
+              "filters": {
+                "test": "is_family",
+                "subject": "other",
+                "value": "wither"
+              },
+              "max_dist": 32
+            },
+            {
+              "filters": {
+                "test": "is_family",
+                "subject": "other",
+                "value": "wither_skeleton"
+              },
+              "max_dist": 16
+            },
+            {
+              "filters": {
+                "test": "is_family",
+                "subject": "other",
+                "value": "warden"
+              },
+              "max_dist": 32
+            }
+          ],
+          "must_see": true
+        },
+        "minecraft:behavior.move_towards_target": {
+          "within_radius": 0
+        },
+        "minecraft:behavior.melee_attack": {
+          "priority": 4,
+          "track_target": true,
+          "speed_multiplier": 1.5
+        },
+        "minecraft:behavior.random_stroll": {
+          "priority": 6,
+          "speed_multiplier": 1
+        },
+        "minecraft:behavior.look_at_player": {
+          "priority": 7,
+          "look_distance": 40
+        },
+        "minecraft:behavior.random_look_around": {
+          "priority": 8
+        }
+      }
+    },
+    "components": {
+      "minecraft:despawn": {
+        "despawn_from_distance": {
+          "min_distance": 32,
+          "max_distance": 128
+        },
+        "despawn_from_simulation_edge": true
+      },
+      "minecraft:health": {
+        "value": 35,
+        "max": 35
+      },
+      "minecraft:is_hidden_when_invisible": {},
+      "minecraft:experience_reward": {
+        "on_death": "query.last_hit_by_player ? 12 + (query.equipment_count * Math.Random(2,4)) : 0"
+      },
+      "minecraft:nameable": {},
+      "minecraft:breathable": {
+        "total_supply": 15,
+        "suffocate_time": 0,
+        "breathes_water": true
+      },
+      "minecraft:loot": {
+        "table": "loot_tables/entities/reaper_skeleton.json"
+      },
+      "minecraft:navigation.walk": {
+        "is_amphibious": true,
+        "avoid_sun": false,
+        "avoid_water": true
+      },
+      "minecraft:fire_immune": {},
+      "minecraft:type_family": {
+        "family": [
+          "monster",
+          "skeleton",
+          "mob",
+          "reaper_skeleton",
+          "weeweejuice",
+          "projectile_immune"
+        ]
+      },
+      "minecraft:physics": {},
+      "minecraft:pushable": {
+        "is_pushable": true,
+        "is_pushable_by_piston": true
+      },
+      "minecraft:conditional_bandwidth_optimization": {}
+    },
+    "events": {
+      "yes:despawn": {
+        "add": {
+          "component_groups": [
+            "yes:despawn"
+          ]
+        }
+      },
+      "minecraft:entity_spawned": {
+        "add": {
+          "component_groups": [
+            "yes:spawned"
+          ]
+        }
+      },
+      "yes:tp": {
+        "queue_command": {
+          "command": [
+            "tp @s[tag=tped] ~~~",
+            "tp @s[tag=!tped] ~~~ facing @p[r=20]",
+            "tag @s add tped"
+          ],
+          "target": "self"
+        }
+      },
+      "yes:buffer": {
+        "remove": {
+          "component_groups": [
+            "yes:spawned"
+          ]
+        },
+        "add": {
+          "component_groups": [
+            "yes:buffer"
+          ]
+        }
+      },
+      "yes:initiate_entity": {
+        "remove": {
+          "component_groups": [
+            "yes:buffer"
+          ]
+        },
+        "add": {
+          "component_groups": [
+            "yes:initiate_entity"
+          ]
+        },
+        "queue_command": {
+          "command": [
+            "playanimation @s animation.reaper_skeleton.spawn"
+          ],
+          "target": "self"
+        }
+      },
+      "yes:entity_behaviors": {
+        "add": {
+          "component_groups": [
+            "yes:walking",
+            "yes:entity_behaviors"
+          ]
+        },
+        "remove": {
+          "component_groups": [
+            "yes:initiate_entity"
+          ]
+        }
+      },
+      "yes:tick": {
+        "queue_command": {
+          "command": [
+            "scoreboard players add @s reaper_skeleton_speed 0",
+            "scoreboard players remove @s[scores={reaper_skeleton_speed=1..}] reaper_skeleton_speed 1",
+            "execute as @s at @s if block ~~~ soul_sand run scoreboard players set @s reaper_skeleton_speed 1",
+            "execute as @s at @s if block ^^-1.1^1 soul_sand run scoreboard players set @s reaper_skeleton_speed 1",
+            "effect @s[scores={reaper_skeleton_speed=1}] speed 1 1 true",
+            "effect @s[scores={reaper_skeleton_speed=0}] speed 0"
+          ],
+          "target": "self"
+        }
+      },
+      "yes:crouch_test": {
+        "queue_command": {
+          "command": [
+            "scoreboard players set @s reaper_skeleton 4",
+            "execute as @s at @s if block ^^2.5^1 air run scoreboard players remove @s reaper_skeleton 1",
+            "execute as @s at @s if block ^^2.5^-1 air run scoreboard players remove @s reaper_skeleton 1",
+            "execute as @s at @s if block ^1^2.5^ air run scoreboard players remove @s reaper_skeleton 1",
+            "execute as @s at @s if block ^-1^2.5^ air run scoreboard players remove @s reaper_skeleton 1",
+            "execute as @s[scores={reaper_skeleton=1..}] run event entity @s yes:crouch",
+            "scoreboard players set @s[scores={reaper_skeleton=1..}] reaper_skeleton 0"
+          ],
+          "target": "self"
+        }
+      },
+      "yes:crouch": {
+        "add": {
+          "component_groups": [
+            "yes:crouched"
+          ]
+        },
+        "remove": {
+          "component_groups": [
+            "yes:walking"
+          ]
+        }
+      },
+      "yes:walk_test": {
+        "queue_command": {
+          "command": [
+            "execute as @s at @s if block ~~2~ air run scoreboard players set @s reaper_skeleton 1",
+            "execute as @s[scores={reaper_skeleton=1}] run event entity @s yes:walk"
+          ],
+          "target": "self"
+        }
+      },
+      "yes:walk": {
+        "add": {
+          "component_groups": [
+            "yes:walking"
+          ]
+        },
+        "remove": {
+          "component_groups": [
+            "yes:crouched"
+          ]
+        }
+      },
+      "yes:death_buff": {
+        "queue_command": {
+          "command": [
+            "effect @s speed 20 0 true",
+            "effect @s strength 20 0",
+            "effect @s regeneration 5 3",
+            "tag @s remove death_buff",
+            "scoreboard players set @s[scores={reaper_skeleton=1}] reaper_skeleton 0",
+            "scoreboard players random @s weapon_sound 1 5",
+            "execute as @s[scores={weapon_sound=1}] run playsound mob.reaper_skeleton_call_weewee @a[r=20] ~~~ 0.8 1.25 0.3",
+            "execute as @s[scores={weapon_sound=2}] run playsound mob.reaper_skeleton_call_weewee @a[r=20] ~~~ 0.7 1.1 0.3",
+            "execute as @s[scores={weapon_sound=3}] run playsound mob.reaper_skeleton_call_weewee @a[r=20] ~~~ 0.7 1 0.3",
+            "execute as @s[scores={weapon_sound=4}] run playsound mob.reaper_skeleton_call_weewee @a[r=20] ~~~ 0.9 0.9 0.3",
+            "execute as @s[scores={weapon_sound=5}] run playsound mob.reaper_skeleton_call_weewee @a[r=20] ~~~ 1 0.8 0.3",
+            "scoreboard players reset @s weapon_sound"
+          ],
+          "target": "self"
+        }
+      },
+      "yes:on_death": {
+        "queue_command": {
+          "command": [
+            "execute if entity @s[tag=!dead] run tag @e[type=yes:reaper_skeleton,r=20] add death_buff",
+            "tag @s add dead"
+          ],
+          "target": "self"
+        }
+      },
+      "yes:shot_by_projectile": {
+        "add": {
+          "component_groups": [
+            "yes:invincible"
+          ]
+        },
+        "remove": {
+          "component_groups": [
+            "yes:entity_behaviors",
+            "yes:walking",
+            "yes:crouched"
+          ]
+        },
+        "queue_command": {
+          "command": [
+            "effect @s invisibility 99999 1 true"
+          ],
+          "target": "self"
+        }
+      },
+      "yes:projectile_invincibility": {
+        "queue_command": {
+          "command": [
+            "tp @s ~~~",
+            "scoreboard objectives add reaper_proj dummy",
+            "scoreboard players add @s reaper_proj 1",
+            "execute as @s[scores={reaper_proj=1}]  at @s run particle yes:reaper_projectile_particle1 ~~1~",
+            "execute as @s[scores={reaper_proj=21}] at @s run particle yes:reaper_projectile_particle2 ~~1~",
+            "execute as @s[scores={reaper_proj=35}] at @s run event entity @s yes:stop_invincibility",
+            "execute as @s[scores={reaper_proj=35}] at @s run scoreboard players set @s reaper_proj 0"
+          ],
+          "target": "self"
+        }
+      },
+      "yes:stop_invincibility": {
+        "add": {
+          "component_groups": [
+            "yes:walking",
+            "yes:entity_behaviors"
+          ]
+        },
+        "remove": {
+          "component_groups": [
+            "yes:invincible"
+          ]
+        },
+        "queue_command": {
+          "command": [
+            "effect @s invisibility 0"
+          ],
+          "target": "self"
+        }
+      }
+    }
+  }
+}

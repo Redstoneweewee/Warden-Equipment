@@ -1,0 +1,18 @@
+
+{
+  "format_version": "1.13.0",
+  "minecraft:ore_feature": {
+    "description": {
+      "identifier": "yes:aetherium_ore_feature_test"
+    },
+  "count": 40,
+  "replace_rules": [
+    {
+      "places_block": "yes:aetherium_ore",
+      "may_replace": [
+        "minecraft:deepslate"
+      ]
+    }
+  ]
+  }
+}

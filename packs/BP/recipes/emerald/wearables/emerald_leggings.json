@@ -1,0 +1,27 @@
+{
+  "format_version": "1.20.0",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "yes:emerald_leggings"
+    },
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      "ZZZ",
+      "Z Z",
+      "Z Z"
+    ],
+    "key": {
+      "Z": {
+        "item": "minecraft:emerald"
+      }
+    },
+		"unlock": [
+			{
+				"item": "minecraft:emerald"
+			}
+		],
+    "result": {
+      "item": "yes:emerald_leggings"
+    }
+  }
+}

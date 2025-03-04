@@ -1,0 +1,23 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:attachable": {
+    "description": {
+      "identifier": "yes:glowing_obsidian_battleaxe_ad3",
+      "materials": {
+        "default": "armor",
+        "enchanted": "armor_enchanted"
+      },
+      "textures": {
+        "default": "textures/items/glowing_obsidian/glowing_obsidian_battleaxe2",
+        "invisible": "textures/items/glowing_obsidian/glowing_obsidian_battleaxe_invisible",			
+        "enchanted": "textures/misc/enchanted_item_glint"
+      },
+      "geometry": {
+        "default": "geometry.glowing_obsidian_battleaxe"
+      },
+      "scripts": {
+      },
+      "render_controllers": [ "controller.render.enchanted_item" ]
+    }
+  }
+}

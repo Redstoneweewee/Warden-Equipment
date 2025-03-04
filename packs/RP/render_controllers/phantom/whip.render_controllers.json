@@ -1,0 +1,16 @@
+{
+	"format_version": "1.8.0",
+	"render_controllers": {
+		"controller.render.phantom_whip": {
+			"textures": [
+				"Texture.whip"
+			],
+			"geometry": "Geometry.whip",
+			"materials": [
+				{
+					"*": "Material.whip"
+				}
+			]
+		}
+	}
+}

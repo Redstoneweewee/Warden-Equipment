@@ -1,0 +1,46 @@
+{
+	"format_version" : "1.10.0",
+	"animation_controllers" : {
+		"controller.animation.battleaxe" : {
+			"initial_state" : "default",
+			"states" : {
+				"default" : {
+					"transitions" : [
+						{
+							"battleaxe_idle" : "v.battleaxe && !v.using_weapon"
+						},
+						{
+							"battleaxe_attack" : "v.battleaxe && v.using_weapon"
+						}
+					]
+				},
+				"battleaxe_idle" : {
+					"animations" : [
+						{ "battleaxe_first_person": "v.is_first_person" }
+					],
+					"transitions" : [
+						{
+							"battleaxe_attack" : "v.using_weapon"
+						},
+						{
+							"default" : "!v.battleaxe"
+						}
+					]
+				},
+				"battleaxe_attack" : {
+					"animations" : [
+						{ "first_person_attack": "v.is_first_person" }
+					],
+					"transitions" : [
+						{
+							"battleaxe_idle" : "!v.using_weapon"
+						},
+						{
+							"default" : "!v.battleaxe"
+						}
+					]
+				}
+			}
+		}
+	}
+}

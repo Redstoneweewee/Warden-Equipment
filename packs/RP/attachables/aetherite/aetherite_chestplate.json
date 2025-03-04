@@ -1,0 +1,24 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:attachable": {
+    "description": {
+      "identifier": "yes:aetherite_chestplate",
+      "item": { "yes:aetherite_chestplate": "query.owner_identifier == 'minecraft:player'" },
+      "materials": {
+        "default": "phantom",
+        "enchanted": "armor_enchanted"
+      },
+      "textures": {
+        "default": "textures/models/aetherite/armor/aetherite_chestplate",
+        "enchanted": "textures/misc/enchanted_item_glint"
+      },
+      "geometry": {
+        "default": "geometry.aetherite_chestplate"
+      },
+      "scripts": {
+        "parent_setup": "variable.chest_layer_visible = 0.0;"
+      },
+      "render_controllers": [ "controller.render.armor" ]
+    }
+  }
+}

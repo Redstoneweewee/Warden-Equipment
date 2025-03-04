@@ -1,0 +1,22 @@
+{
+    "format_version": "1.20.80",
+    "minecraft:item": {
+        "description": {
+            "identifier": "yes:glowing_obsidian_shard",
+            "menu_category": {
+                "category": "items",
+                "group": "itemGroup.name.ingot"
+            }
+        },
+        "components": {
+            "minecraft:tags": {
+                "tags": []
+            },
+            "minecraft:max_stack_size": 64,
+            "minecraft:display_name": {
+                "value": "\u00a75Glowing Obsidian Shard\n\ue116\u00a7l\ue05b\u00a7r\ue115\n\ue05c"
+            },
+            "minecraft:icon": "glowing_obsidian_shard"
+        }
+    }
+}

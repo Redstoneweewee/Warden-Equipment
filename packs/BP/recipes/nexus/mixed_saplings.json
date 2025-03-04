@@ -1,0 +1,87 @@
+{
+  "format_version": "1.20.0",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "yes:mixed_saplings"
+    },  
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      "EGF",
+      "CHD",
+      "AIB"
+    ],
+    "key": {
+      "A": {
+        "item": "minecraft:sapling",
+        "data": 0
+      },
+      "B": {
+        "item": "minecraft:sapling",
+        "data": 1
+      },
+      "C": {
+        "item": "minecraft:sapling",
+        "data": 2
+      },
+      "D": {
+        "item": "minecraft:sapling",
+        "data": 3
+      },
+      "E": {
+        "item": "minecraft:sapling",
+        "data": 4
+      },
+      "F": {
+        "item": "minecraft:sapling",
+        "data": 5
+      },
+      "G": {
+        "item": "minecraft:mangrove_propagule"
+      },
+      "H": {
+        "item": "minecraft:nether_wart_block"
+      },
+      "I": {
+        "item": "minecraft:cherry_sapling"
+      }
+    },
+		"unlock": [
+			{
+				"item": "minecraft:sapling",
+        "data": 0
+			},
+			{
+				"item": "minecraft:sapling",
+        "data": 1
+			},
+			{
+				"item": "minecraft:sapling",
+        "data": 2
+			},
+			{
+				"item": "minecraft:sapling",
+        "data": 3
+			},
+			{
+				"item": "minecraft:sapling",
+        "data": 4
+			},
+			{
+				"item": "minecraft:sapling",
+        "data": 5
+			},
+			{
+				"item": "minecraft:mangrove_propagule"
+			},
+			{
+				"item": "minecraft:nether_wart_block"
+			},
+			{
+				"item": "minecraft:cherry_sapling"
+			}
+		],
+    "result": {
+      "item": "yes:mixed_saplings"
+    }
+  }
+}

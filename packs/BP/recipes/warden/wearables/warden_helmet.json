@@ -1,0 +1,32 @@
+{
+  "format_version": "1.20.0",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "yes:warden_helmet"
+    },
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      "XZX",
+      "Z Z"
+    ],
+    "key": {
+      "Z": {
+        "item": "minecraft:echo_shard"
+      },
+      "X": {
+        "item": "yes:warden_tendril"
+      }
+    },
+		"unlock": [
+			{
+				"item": "minecraft:echo_shard"
+			},
+			{
+				"item": "yes:warden_tendril"
+			}
+		],
+    "result": {
+      "item": "yes:warden_helmet"
+    }
+  }
+}

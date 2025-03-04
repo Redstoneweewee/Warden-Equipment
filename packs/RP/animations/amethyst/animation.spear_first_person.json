@@ -1,0 +1,14 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.spear_first_person": {
+			"loop": true,
+			"bones": {
+				"rightItem": {
+					"rotation": [37.78064, 67.99091, -44.35446],
+					"position": [-2.94898, 3.65869, 1.21336]
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,71 @@
+{
+	"format_version": "1.19.70",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "yes:player_entity",
+			"is_spawnable": false,
+			"is_summonable": true,
+			"is_experimental": false
+		},
+		"components": {
+			"minecraft:navigation.walk": {
+			  "is_amphibious": false,
+			  "can_pass_doors": false,
+			  "can_walk": false,
+			  "can_break_doors": false
+			},
+			"minecraft:behavior.find_mount": {
+				"priority": 1,
+				"within_radius": 20,
+				"avoid_water": false,
+				"start_delay": 0,
+				"target_needed": false,
+				"mount_distance": 20.0
+			},
+			"minecraft:physics": {},
+			"minecraft:pushable": {
+				"is_pushable": false,
+				"is_pushable_by_piston": false
+			},
+			"minecraft:custom_hit_test": {
+				"hitboxes": [
+					{
+						"pivot": [
+							0,
+							100,
+							0
+						],
+						"width": 0,
+						"height": 0
+					}
+				]
+			},
+			"minecraft:collision_box": {
+				"width": 0.0001,
+				"height": 0.0001
+			},
+			"minecraft:knockback_resistance": {
+				"value": 1.0
+			},
+			"minecraft:type_family": {
+				"family": [
+					"inanimate",
+					"parrot_tame",
+					"weeweejuice",
+					"player_entity"
+				]
+			},
+			"minecraft:damage_sensor": {
+				"triggers": {
+					"cause": "all",
+					"deals_damage": false
+				}
+			},
+			"minecraft:behavior.player_ride_tamed": {}
+		},
+		"events": {
+			"yes:despawn": {
+			}
+		}
+	}
+}

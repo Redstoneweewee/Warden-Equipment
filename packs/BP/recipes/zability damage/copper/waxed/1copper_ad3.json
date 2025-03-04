@@ -1,0 +1,29 @@
+{
+  "format_version": "1.20.0",
+	"minecraft:recipe_shapeless": {
+		"description": {
+			"identifier": "yes:waxed_copper_ad3"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"ingredients": [
+			{
+				"item": "yes:waxed_oxidized_copper_hammer"
+			},
+			{
+				"item": "yes:ability_damage_book3"
+			}
+		],
+		"unlock": [
+			{
+				"item": "yes:ability_damage_book3"
+			}
+		],
+		"result": [
+			{
+				"item": "yes:waxed_oxidized_copper_hammer_ad3"
+			}
+		]
+	}
+}

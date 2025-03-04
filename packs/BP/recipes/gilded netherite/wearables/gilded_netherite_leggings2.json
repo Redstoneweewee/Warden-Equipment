@@ -1,0 +1,39 @@
+{
+    "format_version": "1.19.70",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "yes:gilded_netherite_leggings2"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"pattern": [
+			"XYZ"
+		],
+		"key": {
+			"X": {
+				"item": "yes:gilded_netherite_upgrade_smithing_template"
+			},
+			"Y": {
+				"item": "minecraft:netherite_leggings"
+			},
+			"Z": {
+				"item": "yes:gilded_blackstone_ingot"
+			}
+		},
+		"unlock": [
+			{
+				"item": "yes:gilded_netherite_upgrade_smithing_template"
+			},
+			{
+				"item": "minecraft:netherite_leggings"
+			},
+			{
+				"item": "yes:gilded_blackstone_ingot"
+			}
+		],
+		"result": {
+			"item": "yes:gilded_netherite_leggings"
+		}
+	}
+}

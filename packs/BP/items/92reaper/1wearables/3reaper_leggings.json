@@ -1,0 +1,71 @@
+{
+    "format_version": "1.20.80",
+    "minecraft:item": {
+        "description": {
+            "identifier": "yes:reaper_leggings",
+            "menu_category": {
+                "category": "equipment",
+                "group": "itemGroup.name.leggings"
+            }
+        },
+        "components": {
+            "minecraft:tags": {
+                "tags": [
+                    "yes:reaper_tier",
+                    "minecraft:trimmable_armors",
+                    "minecraft:transformable_items",
+                    "minecraft:is_armor",
+                    "minecraft:fire_immune",
+                    "minecraft:netherite_tier",
+                    "ability:reaper_armor"
+                ]
+            },
+            "minecraft:custom_components": [
+                "yes:mining_durability_damage",
+                "yes:hit_durability_damage"
+            ],
+            "minecraft:max_stack_size": 1,
+            "minecraft:durability": {
+                "max_durability": 444,
+                "damage_chance": {
+                    "min": 60,
+                    "max": 100
+                }
+            },
+            "minecraft:display_name": {
+                "value": "Reaper Leggings\n\ue116\u00a7l\ue05b\u00a7r\ue115\n\ue05c"
+            },
+            "minecraft:icon": "reaper_leggings",
+            "minecraft:enchantable": {
+                "value": 28,
+                "slot": "armor_legs"
+            },
+            "minecraft:wearable": {
+                "protection": 7,
+                "slot": "slot.armor.legs"
+            },
+            "minecraft:repairable": {
+                "repair_items": [
+                    {
+                        "items": [
+                            "yes:reaper_leggings"
+                        ],
+                        "repair_amount": "context.other->query.remaining_durability+0.12*context.other->query.max_durability"
+                    },
+                    {
+                        "items": [
+                            "yes:reaper_essence"
+                        ],
+                        "repair_amount": "query.max_durability*0.33"
+                    },
+                    {
+                        "items": [
+                            "minecraft:netherite_ingot"
+                        ],
+                        "repair_amount": "query.max_durability*0.75"
+                    }
+                ]
+            }
+        }
+    }
+}

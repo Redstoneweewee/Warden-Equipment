@@ -1,0 +1,29 @@
+{
+  "format_version": "1.20.0",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "yes:emerald_dagger"
+    },  
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      " X ",
+      " Y "
+    ],
+    "key": {
+      "Y": {
+        "item": "minecraft:stick"
+      },
+      "X": {
+        "item": "minecraft:emerald"
+      }
+    },
+		"unlock": [
+			{
+				"item": "minecraft:emerald"
+			}
+		],
+    "result": {
+      "item": "yes:emerald_dagger"
+    }
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "format_version": 2,
+  "header": {
+    "description": "Warden Armor & Echo Tools Reworked v1! (Developer Pack) \nYT: §b§lWeeweeJuice (Developer Pack)",
+    "name": "!!Warden Equipment Reworked v1! [RP] (Developer Pack)",
+    "uuid": "309fb9ad-dbbd-4d0d-9a01-e79e11145d1d",
+    "version": [ 1, 0, 0 ],
+    "min_engine_version": [ 1, 13, 0 ]
+  },
+  "modules": [
+      {
+          "description": "Addon by Warden (WeeweeJuice)",
+          "type": "resources",
+    "uuid": "984f80ce-aaf9-4e1f-94fc-386a64afd7ba",
+          "version": [ 1, 0, 0 ]
+      }
+  ],
+"dependencies": [
+  {
+    "uuid": "6365f9f1-f7d5-4dde-b02c-b1bebaefab19",
+          "version": [ 1, 0, 0 ]
+  }
+]
+}

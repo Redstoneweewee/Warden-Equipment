@@ -1,0 +1,24 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:attachable": {
+    "description": {
+      "identifier": "yes:reaper_boots",
+      "item": { "yes:reaper_boots": "query.owner_identifier == 'minecraft:player'" },
+      "materials": {
+        "default": "phantom",
+        "enchanted": "armor_enchanted"
+      },
+      "textures": {
+        "default": "textures/models/reaper/armor/reaper_boots",
+        "enchanted": "textures/misc/enchanted_item_glint"
+      },
+      "geometry": {
+        "default": "geometry.player.armor.boots"
+      },
+      "scripts": {
+        "parent_setup": "variable.boot_layer_visible = 0.0;"
+      },
+      "render_controllers": [ "controller.render.armor" ]
+    }
+  }
+}

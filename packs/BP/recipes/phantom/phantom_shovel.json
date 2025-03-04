@@ -1,0 +1,33 @@
+{
+  "format_version": "1.20.0",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "yes:phantom_shovel"
+    },  
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      "Y",
+      "X",
+      "X"
+    ],
+    "key": {
+      "X": {
+        "item": "minecraft:stick"
+      },
+      "Y": {
+        "item": "yes:phantom_cloth"
+      }
+    },
+		"unlock": [
+			{
+				"item": "yes:phantom_cloth"
+			},
+			{
+				"item": "minecraft:bone"
+			}
+		],
+    "result": {
+      "item": "yes:phantom_shovel"
+    }
+  }
+}

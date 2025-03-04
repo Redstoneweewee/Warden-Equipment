@@ -1,0 +1,37 @@
+{
+  "format_version": "1.19.70",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "yes:nexus_slate2"
+    },  
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      " X ",
+      "YYY",
+      " Z "
+    ],
+    "key": {
+      "X": {
+        "item": "yes:mixed_saplings"
+      },
+      "Y": {
+        "item": "minecraft:lapis_lazuli"
+      },
+      "Z": {
+        "item": "yes:brewing_stand_crafting"
+      }
+    },
+		"unlock": [
+			{
+				"item": "yes:mixed_saplings"
+			},
+			{
+				"item": "minecraft:lapis_lazuli"
+			}
+		],
+    "result": {
+      "item": "yes:nexus_slate",
+		 "count": 3
+    }
+  }
+}

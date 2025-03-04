@@ -1,0 +1,40 @@
+{
+	"format_version" : "1.10.0",
+	"animation_controllers" : {
+		"controller.animation.enderite_levitation_animation" : {
+			"initial_state" : "default",
+			"states" : {
+				"default" : {
+					"transitions" : [
+						{
+							"levitate" : "(q.is_jumping || v.upside_down_int) && v.enderite_armor_energy_int"
+						}
+					]
+				},
+				"levitate" : {
+					"animations" : [ "enderite_levitate" ],
+                    "blend_transition": 0.3,
+                    "blend_via_shortest_path": true,
+					"transitions" : [
+						{
+							"back" : "(!q.is_jumping && !v.upside_down_int) || !v.enderite_armor_energy_int"
+						}
+					]
+				},
+				"back" : {
+					"animations" : [ "enderite_levitate_back" ],
+                    "blend_transition": 0.3,
+                    "blend_via_shortest_path": true,
+					"transitions" : [
+						{
+							"default" : "query.all_animations_finished"
+						},
+						{
+							"levitate" : "(q.is_jumping || v.upside_down_int) && v.enderite_armor_energy_int"
+						}
+					]
+				}
+			}
+		}
+	}
+}

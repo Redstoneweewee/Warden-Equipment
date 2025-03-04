@@ -1,0 +1,129 @@
+{
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "item",
+          "name": "minecraft:crossbow",
+          "weight": 1,
+          "functions": [
+            {
+              "function": "looting_enchant",
+              "count": {
+                "min": 0,
+                "max": 1
+              }
+            },
+            {
+              "function": "enchant_random_gear",
+              "chance": 0.10
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "conditions": [
+        {
+          "condition": "random_regional_difficulty_chance",
+          "max_chance": 0.05
+        }
+      ],
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "item",
+          "name": "yes:emerald_helmet",
+          "weight": 1,
+          "functions": [
+            {
+              "function": "enchant_random_gear",
+              "chance": 0.25
+            }
+          ],
+          "pools": [
+            {
+              "conditions": [
+                {
+                  "condition": "random_difficulty_chance",
+                  "default_chance": 0.6,
+                  "peaceful": 0,
+                  "hard": 0.7
+                }
+      			],
+              "rolls": 1,
+              "entries": [
+                {
+                  "type": "item",
+                  "name": "yes:emerald_chestplate",
+                  "weight": 1,
+                  "functions": [
+                    {
+                      "function": "enchant_random_gear",
+                      "chance": 0.25
+                    }
+                  ],
+                  "pools": [
+                    {
+                      "conditions": [
+                        {
+                          "condition": "random_difficulty_chance",
+                          "default_chance": 0.6,
+                          "peaceful": 0,
+                          "hard": 0.7
+                        }
+                      ],
+                      "rolls": 1,
+                      "entries": [
+                        {
+                          "type": "item",
+                          "name": "yes:emerald_leggings",
+                          "weight": 1,
+                          "functions": [
+                            {
+                              "function": "enchant_random_gear",
+                              "chance": 0.25
+                            }
+                          ],
+                          "pools": [
+                            {
+                              "conditions": [
+                                {
+                                  "condition": "random_difficulty_chance",
+                                  "default_chance": 0.6,
+                                  "peaceful": 0,
+                                  "hard": 0.7
+                                }
+                              ],
+                              "rolls": 1,
+                              "entries": [
+                                {
+                                  "type": "item",
+                                  "name": "yes:emerald_boots",
+                                  "weight": 1,
+                                  "functions": [
+                                    {
+                                      "function": "enchant_random_gear",
+                                      "chance": 0.25
+                                    }
+                                  ]
+										  }
+			
+										  
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                 		     ]
+               		   }
+              			 ]
+            		  }
+          			]
+        			 }
+      		  ]
+    			}
+			 ]
+		  }

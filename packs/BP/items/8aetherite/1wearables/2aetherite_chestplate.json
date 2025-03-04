@@ -1,0 +1,63 @@
+{
+    "format_version": "1.20.80",
+    "minecraft:item": {
+        "description": {
+            "identifier": "yes:aetherite_chestplate",
+            "menu_category": {
+                "category": "equipment",
+                "group": "itemGroup.name.chestplate"
+            }
+        },
+        "components": {
+            "minecraft:tags": {
+                "tags": [
+                    "minecraft:trimmable_armors",
+                    "minecraft:transformable_items",
+                    "minecraft:is_armor",
+                    "minecraft:netherite_tier",
+                    "ability:aetherite_armor"
+                ]
+            },
+            "minecraft:custom_components": [
+                "yes:mining_durability_damage",
+                "yes:hit_durability_damage"
+            ],
+            "minecraft:max_stack_size": 1,
+            "minecraft:durability": {
+                "max_durability": 592,
+                "damage_chance": {
+                    "min": 60,
+                    "max": 100
+                }
+            },
+            "minecraft:display_name": {
+                "value": "Aetherite Chestplate\n\ue116\u00a7l\ue05b\u00a7r\ue115\n\ue05c"
+            },
+            "minecraft:icon": "aetherite_chestplate",
+            "minecraft:enchantable": {
+                "value": 20,
+                "slot": "armor_torso"
+            },
+            "minecraft:wearable": {
+                "protection": 9,
+                "slot": "slot.armor.chest"
+            },
+            "minecraft:repairable": {
+                "repair_items": [
+                    {
+                        "items": [
+                            "yes:aetherite_chestplate"
+                        ],
+                        "repair_amount": "context.other->query.remaining_durability+0.12*context.other->query.max_durability"
+                    },
+                    {
+                        "items": [
+                            "yes:aetherite_ingot"
+                        ],
+                        "repair_amount": "query.max_durability*0.75"
+                    }
+                ]
+            }
+        }
+    }
+}

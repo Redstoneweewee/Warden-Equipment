@@ -1,0 +1,15 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.echo_staff_first_person": {
+			"loop": true,
+			"animation_length": 0.25,
+			"bones": {
+				"rightItem": {
+					"rotation": [-29.51954, 62.96376, -76.42291],
+					"position": [-0.82766, 1.54544, 1.02848]
+				}
+			}
+		}
+	}
+}

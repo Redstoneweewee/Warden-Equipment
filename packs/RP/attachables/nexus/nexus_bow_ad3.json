@@ -1,0 +1,56 @@
+{
+  "format_version": "1.20.10",
+  "minecraft:attachable": {
+    "description": {
+      "identifier": "yes:nexus_bow_ad3",
+      "materials": {
+        "default": "entity_alphatest",
+        "enchanted": "entity_alphatest_glint"
+      },
+      "textures": {
+        "bow_standby":   "textures/items/nexus/nexus_bow/nexus_bow_standby",
+        "bow_pulling_0": "textures/items/nexus/nexus_bow/nexus_bow_pulling_0",
+        "bow_pulling_1": "textures/items/nexus/nexus_bow/nexus_bow_pulling_1",
+        "bow_pulling_2": "textures/items/nexus/nexus_bow/nexus_bow_pulling_2",
+        "enchanted":     "textures/misc/enchanted_item_glint"
+      },
+      "geometry": {
+        "bow_standby":   "geometry.nexus_bow_standby",
+        "bow_pulling_0": "geometry.nexus_bow_pulling_0",
+        "bow_pulling_1": "geometry.nexus_bow_pulling_1",
+        "bow_pulling_2": "geometry.nexus_bow_pulling_2"
+      },
+      "animations": {
+        "wield": "animation.nexus_bow.wield",
+        "wield_first_person_pull": "animation.nexus_bow.wield_first_person_pull"
+      },
+      "scripts": {
+        "pre_animation": [
+          "v.rotYOriginal = (Math.round(query.rider_head_y_rotation(0)*32/45) - 1);",
+          "v.rotY         = (Math.round(query.rider_head_y_rotation(0)*32/45) - 1);",
+          "v.in_creative           = (v.rotY > 0) ? 1 : 0;",
+					"v.operation             = (v.rotY > 0) ? (v.rotY = v.rotY - 1) : 0;",
+          
+          "v.inv_has_arrow = 0;",
+          "v.hbr_has_arrow = 0;",
+          "v.i = 0;",
+          "v.inv_check = loop(27, { v.inv_has_arrow = query.is_item_name_any('slot.inventory', v.i, 'minecraft:arrow'); v.i = v.i + 1; v.inv_has_arrow == 1 ? break; });",
+          "v.i = 0;",
+          "v.hotbar_check = loop(9, { v.hbr_has_arrow = query.is_item_name_any('slot.hotbar', v.i, 'minecraft:arrow'); v.i = v.i + 1; v.hbr_has_arrow == 1 ? break; });",
+          "v.ofd_has_arrow = query.is_item_name_any('slot.weapon.offhand', 'minecraft:arrow');", //checks offhand
+          "v.has_arrow = v.inv_has_arrow || v.hbr_has_arrow || v.ofd_has_arrow;",
+          "v.charge_amount = ((v.has_arrow || v.in_creative) && q.main_hand_item_use_duration > 0.0f) ? (math.clamp((q.main_hand_item_max_duration - q.main_hand_item_use_duration) / 5, 1, 5)) : 0;"
+        ],
+        "animate": [
+          "wield",
+          {
+            "wield_first_person_pull": "(v.has_arrow || v.in_creative) && q.main_hand_item_use_duration > 0.0f && c.is_first_person"
+          }
+        ]
+      },
+      "render_controllers": [
+        "controller.render.nexus_bow"
+      ]
+    }
+  }
+}

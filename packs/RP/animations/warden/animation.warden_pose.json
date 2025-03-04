@@ -1,0 +1,33 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.warden_pose": {
+			"animation_length": 20.12,
+			"override_previous_animation": true,
+			"bones": {
+				"waist": {
+					"rotation": [0, 0, 0]
+				},
+				"head": {
+					"rotation": [-25.18908, -6.79382, 3.18458]
+				},
+				"leftArm": {
+					"rotation": [-131.17039, -38.68525, 5.85991]
+				},
+				"rightArm": {
+					"rotation": [-115.57313, 14.08091, -24.03971]
+				},
+				"rightItem": {
+					"rotation": [-10.9447, -23.94669, 73.79298],
+					"position": [15, 0, -3]
+				},
+				"leftLeg": {
+					"rotation": [7.61435, -9.91358, -18.81845]
+				},
+				"rightLeg": {
+					"rotation": [-4.97702, 16.83716, 15.74487]
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,19 @@
+
+{
+	"format_version": "1.13.0",
+
+	"minecraft:single_block_feature": {
+		"description": {
+			"identifier": "yes:aetherium_ore_feature"
+		},
+
+		"places_block": "yes:aetherium_ore",
+
+		"enforce_placement_rules": false,
+		"enforce_survivability_rules": false,
+		"may_replace": ["minecraft:deepslate"],
+		"may_attach_to": {
+			"top": ["minecraft:water", "minecraft:flowing_water"]
+		}
+	}
+}

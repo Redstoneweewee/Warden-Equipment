@@ -1,0 +1,26 @@
+{
+	"format_version": "1.13.0",
+	"minecraft:structure_template_feature": {
+		"description": {
+			"identifier": "yes:reaper_shrine_feature"
+		},
+		"structure_name": "mystructure:reaper_shrine",
+		"adjustment_radius": 0,
+		"facing_direction": "south",
+		"constraints": {
+			"grounded": {},
+			"block_intersection": {
+				"block_allowlist": [
+					"minecraft:water",
+					"minecraft:air",
+					"minecraft:netherrack",
+					"minecraft:soul_sand",
+					"minecraft:soul_soil",
+					"minecraft:magma",
+					"minecraft:lava",
+					"minecraft:basalt"
+				]
+			} 
+		}
+	}
+}

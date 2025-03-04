@@ -1,0 +1,49 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:attachable": {
+    "description": {
+      "identifier": "yes:warden_chestplate",
+      "item": { "yes:warden_chestplate": "query.owner_identifier == 'minecraft:player'" },
+      "materials": {
+        "default": "phantom",
+			"default2": "armor",
+        "enchanted": "armor_enchanted"
+      },
+      "textures": {
+        "default": "textures/models/warden/armor/warden_chestplate",
+        "default2": "textures/models/warden/armor/warden_chestplate2",
+		  "heartbeat_1": "textures/models/warden/armor/heartbeat1/warden_chestplate_heartbeat_1",
+		  "heartbeat_2": "textures/models/warden/armor/heartbeat1/warden_chestplate_heartbeat_2",
+		  "heartbeat_3": "textures/models/warden/armor/heartbeat1/warden_chestplate_heartbeat_3",
+		  "heartbeat_4": "textures/models/warden/armor/heartbeat1/warden_chestplate_heartbeat_4",
+		  "heartbeat_5": "textures/models/warden/armor/heartbeat1/warden_chestplate_heartbeat_5",
+		  "heartbeat_6": "textures/models/warden/armor/heartbeat1/warden_chestplate_heartbeat_6",
+		  "heartbeat_7": "textures/models/warden/armor/heartbeat1/warden_chestplate_heartbeat_7",
+		  "heartbeat_8": "textures/models/warden/armor/heartbeat1/warden_chestplate_heartbeat_8",
+		  "heartbeat_9": "textures/models/warden/armor/heartbeat1/warden_chestplate_heartbeat_9",
+		  "heartbeat_10": "textures/models/warden/armor/heartbeat1/warden_chestplate_heartbeat_10",
+		  "heartbeat_11": "textures/models/warden/armor/heartbeat1/warden_chestplate_heartbeat_11",
+		  "heartbeat1": "textures/models/warden/armor/heartbeat2/warden_chestplate_heartbeat1",
+         "heartbeat2": "textures/models/warden/armor/heartbeat2/warden_chestplate_heartbeat2",
+         "heartbeat3": "textures/models/warden/armor/heartbeat2/warden_chestplate_heartbeat3",
+         "heartbeat4": "textures/models/warden/armor/heartbeat2/warden_chestplate_heartbeat4",
+         "heartbeat5": "textures/models/warden/armor/heartbeat2/warden_chestplate_heartbeat5",
+         "heartbeat6": "textures/models/warden/armor/heartbeat2/warden_chestplate_heartbeat6",
+         "heartbeat7": "textures/models/warden/armor/heartbeat2/warden_chestplate_heartbeat7",
+         "heartbeat8": "textures/models/warden/armor/heartbeat2/warden_chestplate_heartbeat8",
+         "heartbeat9": "textures/models/warden/armor/heartbeat2/warden_chestplate_heartbeat9",
+         "heartbeat10": "textures/models/warden/armor/heartbeat2/warden_chestplate_heartbeat10",
+         "heartbeat11": "textures/models/warden/armor/heartbeat2/warden_chestplate_heartbeat11",
+        "enchanted": "textures/misc/enchanted_item_glint"
+      },
+      "geometry": {
+        "default": "geometry.warden_chestplate",
+        "default2": "geometry.warden_chestplate2"
+      },
+      "scripts": {
+        "parent_setup": "variable.chest_layer_visible = 0.0;"
+      },
+      "render_controllers": [ "controller.render.warden_armor_heartbeat", "controller.render.warden_armor_heartbeat2" ]
+    }
+  }
+}

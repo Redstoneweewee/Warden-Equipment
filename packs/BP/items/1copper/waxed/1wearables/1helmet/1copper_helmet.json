@@ -1,0 +1,62 @@
+{
+    "format_version": "1.20.80",
+    "minecraft:item": {
+        "description": {
+            "identifier": "yes:waxed_copper_helmet",
+            "menu_category": {
+                "category": "nature",
+                "group": "itemGroup.name.monsterStoneEgg"
+            }
+        },
+        "components": {
+            "minecraft:tags": {
+                "tags": [
+                    "minecraft:trimmable_armors",
+                    "minecraft:is_armor",
+                    "ability:copper_armor",
+                    "yes:skip_first_word_type"
+                ]
+            },
+            "minecraft:custom_components": [
+                "yes:mining_durability_damage",
+                "yes:hit_durability_damage"
+            ],
+            "minecraft:max_stack_size": 1,
+            "minecraft:durability": {
+                "max_durability": 120,
+                "damage_chance": {
+                    "min": 60,
+                    "max": 100
+                }
+            },
+            "minecraft:display_name": {
+                "value": "Waxed Copper Helmet\n\ue116\u00a7l\ue05b\u00a7r\ue115\n\ue05c"
+            },
+            "minecraft:icon": "copper_helmet",
+            "minecraft:enchantable": {
+                "value": 10,
+                "slot": "armor_head"
+            },
+            "minecraft:wearable": {
+                "protection": 2,
+                "slot": "slot.armor.head"
+            },
+            "minecraft:repairable": {
+                "repair_items": [
+                    {
+                        "items": [
+                            "yes:waxed_copper_helmet"
+                        ],
+                        "repair_amount": "context.other->query.remaining_durability+0.12*context.other->query.max_durability"
+                    },
+                    {
+                        "items": [
+                            "minecraft:copper_ingot"
+                        ],
+                        "repair_amount": "query.max_durability*0.33"
+                    }
+                ]
+            }
+        }
+    }
+}

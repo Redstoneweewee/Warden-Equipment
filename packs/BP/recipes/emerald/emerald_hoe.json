@@ -1,0 +1,30 @@
+{
+  "format_version": "1.20.0",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "yes:emerald_hoe"
+    },  
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      "XX",
+      " Y",
+      " Y"
+    ],
+    "key": {
+      "Y": {
+        "item": "minecraft:stick"
+      },
+      "X": {
+        "item": "minecraft:emerald"
+      }
+    },
+		"unlock": [
+			{
+				"item": "minecraft:emerald"
+			}
+		],
+    "result": {
+      "item": "yes:emerald_hoe"
+    }
+  }
+}

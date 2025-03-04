@@ -1,0 +1,92 @@
+{
+    "format_version": "1.20.80",
+    "minecraft:item": {
+        "description": {
+            "identifier": "yes:gilded_netherite_morningstar_ad2",
+            "menu_category": {
+                "category": "nature",
+                "group": "itemGroup.name.monsterStoneEgg"
+            }
+        },
+        "components": {
+            "minecraft:tags": {
+                "tags": [
+                    "minecraft:transformable_items",
+                    "minecraft:fire_immune",
+                    "ability:morningstar",
+                    "yes:charge_weapon",
+                    "yes:alloy_tier"
+                ]
+            },
+            "minecraft:custom_components": [
+                "yes:mining_durability_damage",
+                "yes:on_hit",
+                "yes:on_use",
+                "yes:hit_durability_damage"
+            ],
+            "minecraft:max_stack_size": 1,
+            "minecraft:hand_equipped": true,
+            "minecraft:allow_off_hand": true,
+            "minecraft:durability": {
+                "max_durability": 2539,
+                "damage_chance": {
+                    "min": 60,
+                    "max": 100
+                }
+            },
+            "minecraft:display_name": {
+                "value": "\u00a7bGilded Netherite Morningstar\n\ue196\u00a7l\ue05b\u00a7r\ue195\n\ue05c\n\n\u00a76Normal Attack:   \u00a76Special Attack:\n \u00a7e[\u00a79+50 atk\ue19c\u00a7e]    \u00a7e[\u00a791.75 secs\ue18a\u00a7e]\n  \u00a7e[\u00a79+7 atk\ue198\u00a7e]       \u00a7e[\u00a79+7 atk\ue198\u00a7e]  \n                      \u00a7e[\u00a790.6 secs\ue189\u00a7e] \n\u00a77Ability Damage II"
+            },
+            "minecraft:icon": "gilded_netherite_morningstar",
+            "minecraft:damage": 6,
+            "minecraft:repairable": {
+                "repair_items": [
+                    {
+                        "items": [
+                            "yes:gilded_netherite_morningstar"
+                        ],
+                        "repair_amount": "context.other->query.remaining_durability+0.12*context.other->query.max_durability"
+                    },
+                    {
+                        "items": [
+                            "yes:gilded_blackstone_ingot"
+                        ],
+                        "repair_amount": "query.max_durability*0.33"
+                    },
+                    {
+                        "items": [
+                            "minecraft:netherite_ingot"
+                        ],
+                        "repair_amount": "query.max_durability*0.75"
+                    }
+                ]
+            },
+            "minecraft:use_modifiers": {
+                "use_duration": 99999,
+                "movement_modifier": 1
+            },
+            "minecraft:cooldown": {
+                "category": "morningstar",
+                "duration": 0
+            },
+            "minecraft:glint": true,
+            "minecraft:can_destroy_in_creative": false,
+            "minecraft:enchantable": {
+                "value": 20,
+                "slot": "sword"
+            },
+            "minecraft:digger": {
+                "destroy_speeds": [
+                    {
+                        "block": "minecraft:web",
+                        "speed": 10
+                    },
+                    {
+                        "block": "minecraft:bamboo",
+                        "speed": 10
+                    }
+                ]
+            }
+        }
+    }
+}

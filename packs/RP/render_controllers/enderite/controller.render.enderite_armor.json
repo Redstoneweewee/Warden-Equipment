@@ -1,0 +1,11 @@
+
+{
+  "format_version": "1.8.0",
+  "render_controllers": {
+    "controller.render.enderite_armor": {
+      "geometry": "Geometry.default",
+      "textures": [ "t.x = 0.0;  for_each(t.test, query.get_riders, { t.x = (t.test -> q.property('property:enderite_armor_invis')); }); return t.x > 0 ? texture.additive : texture.default;" ],
+      "materials": [ { "*": "variable.is_enchanted ? material.enchanted : (t.x = 0.0;  for_each(t.test, query.get_riders, { t.x = (t.test -> q.property('property:enderite_armor_invis')); }); return t.x > 0 ? material.additive : material.default);" } ]
+    }
+  }
+}

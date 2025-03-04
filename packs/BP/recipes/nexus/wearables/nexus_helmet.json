@@ -1,0 +1,26 @@
+{
+  "format_version": "1.20.0",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "yes:nexus_helmet"
+    },
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      "ZZZ",
+      "Z Z"
+    ],
+    "key": {
+      "Z": {
+        "item": "yes:nexus_slate"
+      }
+    },
+		"unlock": [
+			{
+				"item": "yes:nexus_slate"
+			}
+		],
+    "result": {
+      "item": "yes:nexus_helmet"
+    }
+  }
+}

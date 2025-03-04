@@ -1,0 +1,1524 @@
+{
+  "format_version": "1.16.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "minecraft:skeleton",
+      "is_spawnable": true,
+      "is_summonable": true,
+      "is_experimental": false
+    },
+    "component_groups": {
+      "yes:emerald_dagger_effect": {
+      "minecraft:attack": {
+        "damage": 3,
+        "effect_name": "fatal_poison",
+        "effect_duration": 10
+      		}
+		},
+	  "yes:weapon_remove": {
+      "minecraft:attack": {
+        "damage": 3
+      		}
+	  },
+      "yes:knockback_resistance": {
+      	"minecraft:knockback_resistance": {
+        		"value": 1.0
+      	}
+		},
+	      "yes:knockback_resistance_null": {
+      	"minecraft:knockback_resistance": {
+        		"value": 0.0
+      	}
+		},
+      "in_powder_snow": {
+        "minecraft:is_shaking": {},
+        "minecraft:timer": {
+          "looping": false,
+          "time": 45,
+          "time_down_event": {
+            "event": "become_stray_event"
+          }
+        },
+        "minecraft:environment_sensor": {
+          "triggers": [
+			  {
+            "filters": {
+              "all_of": [
+                {
+                  "test": "is_family",
+                  "subject": "self",
+                  "value": "skeleton"
+                }
+              ]
+            },
+            "event": "yes:weapon_remove"
+            },
+		      {
+              "filters": {
+                "test": "in_block",
+                "subject": "self",
+                "operator": "!=",
+                "value": "minecraft:powder_snow"
+              },
+              "event": "got_out_of_powder_snow"
+            }
+          ]
+        }
+      },
+      "got_out_of_powder_snow_environment_sensor": {
+        "minecraft:environment_sensor": {
+          "triggers": [
+			  {
+            "filters": {
+              "all_of": [
+                {
+                  "test": "is_family",
+                  "subject": "self",
+                  "value": "skeleton"
+                }
+              ]
+            },
+            "event": "yes:weapon_remove"
+            },
+			  {
+              "filters": {
+                "test": "is_underwater",
+                "subject": "self",
+                "operator": "==",
+                "value": true
+              },
+              "event": "minecraft:melee_mode"
+            },
+            {
+              "filters": {
+                "test": "has_ranged_weapon",
+                "subject": "self",
+                "operator": "==",
+                "value": false
+              },
+              "event": "minecraft:melee_mode"
+            },
+            {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "in_water",
+                    "subject": "self",
+                    "operator": "==",
+                    "value": false
+                  },
+                  {
+                    "test": "has_ranged_weapon",
+                    "subject": "self",
+                    "operator": "==",
+                    "value": true
+                  }
+                ]
+              },
+              "event": "minecraft:ranged_mode"
+            }
+          ]
+        }
+      },
+      "minecraft:lightning_immune": {
+        "minecraft:damage_sensor": {
+          "triggers": {
+            "on_damage": { "filters": { "other_with_families": "lightning" } },
+            "deals_damage": false
+          }
+        }
+      },
+      "become_stray": {
+        "minecraft:transformation": {
+          "into": "minecraft:stray",
+          "transformation_sound" : "convert_to_stray",
+          "keep_level": true,
+          "drop_inventory": true,
+          "preserve_equipment": true
+        }
+      },
+      "minecraft:ranged_attack": {
+        "minecraft:behavior.ranged_attack": {
+          "priority": 0,
+          "attack_interval_min": 1.0,
+          "attack_interval_max": 3.0,
+          "attack_radius": 15.0
+        },
+        "minecraft:shooter": {
+          "def": "minecraft:arrow"
+        },
+        "minecraft:environment_sensor": {
+          "triggers": [
+			  {
+            "filters": {
+              "all_of": [
+                {
+                  "test": "is_family",
+                  "subject": "self",
+                  "value": "skeleton"
+                }
+              ]
+            },
+            "event": "yes:weapon_remove"
+            },
+			  {
+              "filters": {
+                "test": "is_underwater",
+                "subject": "self",
+                "operator": "==",
+                "value": true
+              },
+              "event": "minecraft:melee_mode"
+            },
+            {
+              "filters": {
+                "test": "has_ranged_weapon",
+                "subject": "self",
+                "operator": "==",
+                "value": false
+              },
+              "event": "minecraft:melee_mode"
+            },
+            {
+              "filters": {
+                "test": "in_block",
+                "subject": "self",
+                "operator": "==",
+                "value": "minecraft:powder_snow"
+              },
+              "event": "got_in_powder_snow"
+            }
+          ]
+        }
+      },
+      "minecraft:melee_attack": {
+        "minecraft:behavior.melee_attack": {
+          "priority": 4,
+          "track_target": true,
+          "speed_multiplier": 1.25
+        },
+        "minecraft:attack": {
+          "damage": 3
+        },
+        "minecraft:environment_sensor": {
+          "triggers": [
+			  {
+            "filters": {
+              "all_of": [
+                {
+                  "test": "is_family",
+                  "subject": "self",
+                  "value": "skeleton"
+                }
+              ]
+            },
+            "event": "yes:weapon_remove"
+            },
+			  {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "in_water",
+                    "subject": "self",
+                    "operator": "==",
+                    "value": false
+                  },
+                  {
+                    "test": "has_ranged_weapon",
+                    "subject": "self",
+                    "operator": "==",
+                    "value": true
+                  }
+                ]
+              },
+              "event": "minecraft:ranged_mode"
+            },
+            {
+              "filters": {
+                "test": "in_block",
+                "subject": "self",
+                "operator": "==",
+                "value": "minecraft:powder_snow"
+              },
+              "event": "got_in_powder_snow"
+            },
+		    {
+            "filters": {
+                "test": "has_equipment", 
+			    "subject": "self", 
+				"domain": "hand",
+				"operator": "==",
+				"value": "yes:emerald_dagger"
+              },
+            "event": "yes:emerald_dagger_effect"
+			},
+		    {
+            "filters": {
+                "test": "has_equipment", 
+			    "subject": "self", 
+				"domain": "hand",
+				"operator": "==",
+				"value": "yes:amethyst_spear"
+              },
+            "event": "yes:amethyst_spear_effect"
+			   },
+		    {
+            "filters": {
+              "any_of": [
+                {
+                "test": "has_equipment", 
+			   	 "subject": "self", 
+					 "domain": "hand",
+					 "operator": "==",
+					 "value": "yes:copper_hammer"
+              },
+                {
+                "test": "has_equipment", 
+			   	 "subject": "self", 
+					 "domain": "hand",
+					 "operator": "==",
+					 "value": "yes:exposed_copper_hammer"
+              },
+                {
+                "test": "has_equipment", 
+			   	 "subject": "self", 
+					 "domain": "hand",
+					 "operator": "==",
+					 "value": "yes:weathered_copper_hammer"
+              },
+                {
+                "test": "has_equipment", 
+			   	 "subject": "self", 
+					 "domain": "hand",
+					 "operator": "==",
+					 "value": "yes:oxidized_copper_hammer"
+                }
+				  ]
+				},
+            "event": "yes:copper_hammer_effect"
+		  	   },
+		    {
+            "filters": {
+                "test": "has_equipment", 
+			    "subject": "self", 
+				"domain": "hand",
+				"operator": "==",
+				"value": "yes:glowing_obsidian_battleaxe"
+              },
+            "event": "yes:glowing_obsidian_battleaxe_effect"
+		  	   },
+		    {
+            "filters": {
+                "test": "has_equipment", 
+			    "subject": "self", 
+				"domain": "hand",
+				"operator": "==",
+				"value": "yes:echo_staff"
+              },
+            "event": "yes:echo_staff_effect"
+		  	   },
+		    {
+            "filters": {
+              "all_of": [
+                {
+                  "test": "has_equipment",
+                  "subject": "self",
+                  "operator": "==",
+                  "domain": "head",
+                  "value": "yes:copper_helmet"
+                },
+                {
+                  "test": "has_tag",
+                  "subject": "self",
+                  "operator": "!=",
+                  "value": "spawn_tag"
+                }
+              ]
+            },
+            "event": "yes:copper_helmet_random"
+          },
+          {
+            "filters": {
+              "all_of": [
+                {
+                  "test": "has_equipment",
+                  "subject": "self",
+                  "operator": "==",
+                  "domain": "torso",
+                  "value": "yes:copper_chestplate"
+                },
+                {
+                  "test": "has_tag",
+                  "subject": "self",
+                  "operator": "!=",
+                  "value": "spawn_tag"
+                }
+              ]
+            },
+            "event": "yes:copper_chestplate_random"
+          },
+          {
+            "filters": {
+              "all_of": [
+                {
+                  "test": "has_equipment",
+                  "subject": "self",
+                  "operator": "==",
+                  "domain": "leg",
+                  "value": "yes:copper_leggings"
+                },
+                {
+                  "test": "has_tag",
+                  "subject": "self",
+                  "operator": "!=",
+                  "value": "spawn_tag"
+                }
+              ]
+            },
+            "event": "yes:copper_leggings_random"
+          },
+          {
+            "filters": {
+              "all_of": [
+                {
+                  "test": "has_equipment",
+                  "subject": "self",
+                  "operator": "==",
+                  "domain": "feet",
+                  "value": "yes:copper_boots"
+                },
+                {
+                  "test": "has_tag",
+                  "subject": "self",
+                  "operator": "!=",
+                  "value": "spawn_tag"
+                }
+              ]
+            },
+            "event": "yes:copper_boots_random"
+            },
+          {
+            "filters": {
+              "all_of": [
+                {
+                  "test": "is_underground",
+                  "subject": "self",
+                  "operator": "==",
+                  "value": true
+                },
+                {
+                  "test": "is_altitude",
+                  "subject": "self",
+                  "operator": "<=",
+                  "value": 0
+                },
+                {
+                  "test": "has_tag",
+                  "subject": "self",
+                  "operator": "!=",
+                  "value": "spawn_tag"
+                }
+              ]
+            },
+            "event": "yes:warden_equipment"
+            },
+          {
+            "filters": {
+                "test": "has_tag", 
+			    "subject": "self",
+				"operator": "!=",
+				"value": "spawn_tag"
+              },
+            "event": "yes:spawn_remove"
+			}
+          ]
+        }
+      }
+    },
+
+    "components": {
+      "minecraft:is_hidden_when_invisible": {
+      },
+      "minecraft:experience_reward": {
+        "on_death": "query.last_hit_by_player ? 5 + (query.equipment_count * Math.Random(1,3)) : 0"
+      },
+      "minecraft:equip_item": {
+      },
+      "minecraft:collision_box": {
+        "width": 0.6,
+        "height": 1.9
+      },
+      "minecraft:type_family": {
+        "family": [ "skeleton", "undead", "monster", "mob" ]
+      },
+      "minecraft:breathable": {
+        "total_supply": 15,
+        "suffocate_time": 0,
+        "breathes_water": true
+      },
+
+      "minecraft:burns_in_daylight": {
+      },
+
+      "minecraft:health": {
+        "value": 20,
+        "max": 20
+      },
+      "minecraft:hurt_on_condition": {
+        "damage_conditions": [
+          {
+            "filters": { "test": "in_lava", "subject": "self", "operator": "==", "value": true },
+            "cause": "lava",
+            "damage_per_tick": 4
+          }
+        ]
+      },
+      "minecraft:loot": {
+        "table": "loot_tables/entities/skeleton.json"
+      },
+      "minecraft:movement": {
+        "value": 0.25
+      },
+      "minecraft:navigation.walk": {
+        "is_amphibious": true,
+        "avoid_sun": true,
+        "avoid_water": true
+      },
+      "minecraft:movement.basic": {
+      },
+      "minecraft:jump.static": {
+      },
+      "minecraft:can_climb": {
+      },
+      "minecraft:nameable": {
+      },
+      "minecraft:equipment": {
+        "table": "loot_tables/entities/skeleton_gear.json"
+      },
+      "minecraft:shooter": {
+        "def": "minecraft:arrow"
+      },
+      "minecraft:environment_sensor": {
+          "triggers": [
+			  {
+            "filters": {
+              "all_of": [
+                {
+                  "test": "is_family",
+                  "subject": "self",
+                  "value": "skeleton"
+                }
+              ]
+            },
+            "event": "yes:weapon_remove"
+            },
+			  {
+            "filters": {
+              "test": "is_underwater",
+              "subject": "self",
+              "operator": "==",
+              "value": true
+            },
+            "event": "minecraft:melee_mode"
+          },
+          {
+            "filters": {
+              "test": "has_ranged_weapon",
+              "subject": "self",
+              "operator": "==",
+              "value": false
+            },
+            "event": "minecraft:melee_mode"
+          },
+          {
+            "filters": {
+              "test": "in_block",
+              "subject": "self",
+              "operator": "==",
+              "value": "minecraft:powder_snow"
+            },
+            "event": "got_in_powder_snow"
+          }
+          ]
+        },
+      "minecraft:despawn": {
+        "despawn_from_distance": {}
+      },
+      "minecraft:shareables": {
+        "items": [
+         {
+            "item": "yes:gilded_netherite_mace",
+            "want_amount": 1,
+            "surplus_amount": 1,
+            "priority": 0
+          },
+		  {
+            "item": "yes:gilded_netherite_sword",
+            "want_amount": 1,
+            "surplus_amount": 1,
+            "priority": 1
+          },
+		  {
+            "item": "yes:netherite_mace",
+            "want_amount": 1,
+            "surplus_amount": 1,
+            "priority": 2
+          },
+          {
+            "item": "yes:phantom_sword",
+            "want_amount": 1,
+            "surplus_amount": 1,
+            "priority": 3
+          },
+          {
+            "item": "minecraft:netherite_sword",
+            "want_amount": 1,
+            "surplus_amount": 1,
+            "priority": 4
+          },
+          {
+            "item": "yes:glowing_obsidian_battleaxe",
+            "want_amount": 1,
+            "surplus_amount": 1,
+            "priority": 7
+          },
+          {
+            "item": "yes:glowing_obsidian_sword",
+            "want_amount": 1,
+            "surplus_amount": 1,
+            "priority": 8
+          },
+          {
+            "item": "yes:phantom_whip",
+            "want_amount": 1,
+            "surplus_amount": 1,
+            "priority": 9
+          },
+		  {
+            "item": "yes:diamond_mace",
+            "want_amount": 1,
+            "surplus_amount": 1,
+            "priority": 10
+          },
+          {
+            "item": "minecraft:diamond_sword",
+            "want_amount": 1,
+            "surplus_amount": 1,
+            "priority": 11
+          },
+          {
+            "item": "yes:emerald_dagger",
+            "want_amount": 1,
+            "surplus_amount": 1,
+            "priority": 12
+          },
+          {
+            "item": "yes:emerald_sword",
+            "want_amount": 1,
+            "surplus_amount": 1,
+            "priority": 13
+          },
+          {
+            "item": "yes:amethyst_spear",
+            "want_amount": 1,
+            "surplus_amount": 1,
+            "priority": 14
+          },
+          {
+            "item": "yes:oxidized_copper_hammer",
+            "want_amount": 1,
+            "surplus_amount": 1,
+            "priority": 15
+          },
+          {
+            "item": "yes:weathered_copper_hammer",
+            "want_amount": 1,
+            "surplus_amount": 1,
+            "priority": 16
+          },
+          {
+            "item": "yes:copper_hammer",
+            "want_amount": 1,
+            "surplus_amount": 1,
+            "priority": 17
+          },
+          {
+            "item": "yes:exposed_copper_hammer",
+            "want_amount": 1,
+            "surplus_amount": 1,
+            "priority": 18
+          },
+          {
+            "item": "yes:amethyst_sword",
+            "want_amount": 1,
+            "surplus_amount": 1,
+            "priority": 19
+          },
+			 {
+            "item": "yes:oxidized_copper_sword",
+            "want_amount": 1,
+            "surplus_amount": 1,
+            "priority": 20
+          },
+          {
+            "item": "minecraft:iron_sword",
+            "want_amount": 1,
+            "surplus_amount": 1,
+            "priority": 21
+          },
+          {
+            "item": "yes:copper_sword",
+            "want_amount": 1,
+            "surplus_amount": 1,
+            "priority": 24
+          },
+			 {
+            "item": "yes:exposed_copper_sword",
+            "want_amount": 1,
+            "surplus_amount": 1,
+            "priority": 25
+          },
+			 {
+            "item": "yes:weathered_copper_sword",
+            "want_amount": 1,
+            "surplus_amount": 1,
+            "priority": 26
+          },
+          {
+            "item": "minecraft:stone_sword",
+            "want_amount": 1,
+            "surplus_amount": 1,
+            "priority": 27
+          },
+          {
+            "item": "minecraft:golden_sword",
+            "want_amount": 1,
+            "surplus_amount": 1,
+            "priority": 28
+          },
+          {
+            "item": "minecraft:wooden_sword",
+            "want_amount": 1,
+            "surplus_amount": 1,
+            "priority": 29
+          },
+			 
+			 
+			 
+          {
+            "item": "yes:gilded_netherite_helmet",
+            "want_amount": 1,
+            "surplus_amount": 1,
+            "priority": 0
+          },
+          {
+            "item": "minecraft:netherite_helmet",
+            "want_amount": 1,
+            "surplus_amount": 1,
+            "priority": 1
+          },
+          {
+            "item": "yes:glowing_obsidian_helmet",
+            "want_amount": 1,
+            "surplus_amount": 1,
+            "priority": 3
+          },
+          {
+            "item": "minecraft:diamond_helmet",
+            "want_amount": 1,
+            "surplus_amount": 1,
+            "priority": 4
+          },
+          {
+            "item": "yes:emerald_helmet",
+            "want_amount": 1,
+            "surplus_amount": 1,
+            "priority": 5
+          },
+          {
+            "item": "yes:amethyst_helmet",
+            "want_amount": 1,
+            "surplus_amount": 1,
+            "priority": 6
+          },
+          {
+            "item": "minecraft:iron_helmet",
+            "want_amount": 1,
+            "surplus_amount": 1,
+            "priority": 7
+          },
+			 {
+            "item": "yes:weathered_copper_helmet",
+            "want_amount": 1,
+            "surplus_amount": 1,
+            "priority": 8
+          },
+			 {
+            "item": "yes:oxidized_copper_helmet",
+            "want_amount": 1,
+            "surplus_amount": 1,
+            "priority": 9
+          },
+          {
+            "item": "yes:phantom_helmet",
+            "want_amount": 1,
+            "surplus_amount": 1,
+            "priority": 10
+          },
+          {
+            "item": "yes:copper_helmet",
+            "want_amount": 1,
+            "surplus_amount": 1,
+            "priority": 12
+          },
+			 {
+            "item": "yes:exposed_copper_helmet",
+            "want_amount": 1,
+            "surplus_amount": 1,
+            "priority": 13
+          },
+          {
+            "item": "minecraft:chainmail_helmet",
+            "want_amount": 1,
+            "surplus_amount": 1,
+            "priority": 14
+          },
+          {
+            "item": "minecraft:golden_helmet",
+            "want_amount": 1,
+            "surplus_amount": 1,
+            "priority": 15
+          },
+          {
+            "item": "minecraft:leather_helmet",
+            "want_amount": 1,
+            "surplus_amount": 1,
+            "priority": 16
+          },
+          {
+            "item": "yes:turtle_helmet",
+            "want_amount": 1,
+            "surplus_amount": 1,
+            "priority": 17
+          },
+          {
+            "item": "minecraft:skull:0",
+            "want_amount": 1,
+            "surplus_amount": 1,
+            "priority": 18
+          },
+          {
+            "item": "minecraft:skull:1",
+            "want_amount": 1,
+            "surplus_amount": 1,
+            "priority": 19
+          },
+          {
+            "item": "minecraft:carved_pumpkin",
+            "want_amount": 1,
+            "surplus_amount": 1,
+            "priority": 20
+          },
+			 
+			 
+			 
+          {
+            "item": "yes:gilded_netherite_chestplate",
+            "want_amount": 1,
+            "surplus_amount": 1,
+            "priority": 0
+          },
+          {
+            "item": "minecraft:netherite_chestplate",
+            "want_amount": 1,
+            "surplus_amount": 1,
+            "priority": 1
+          },
+          {
+            "item": "yes:glowing_obsidian_chestplate",
+            "want_amount": 1,
+            "surplus_amount": 1,
+            "priority": 3
+          },
+          {
+            "item": "minecraft:diamond_chestplate",
+            "want_amount": 1,
+            "surplus_amount": 1,
+            "priority": 4
+          },
+          {
+            "item": "yes:emerald_chestplate",
+            "want_amount": 1,
+            "surplus_amount": 1,
+            "priority": 5
+          },
+          {
+            "item": "yes:amethyst_chestplate",
+            "want_amount": 1,
+            "surplus_amount": 1,
+            "priority": 6
+          },
+          {
+            "item": "minecraft:iron_chestplate",
+            "want_amount": 1,
+            "surplus_amount": 1,
+            "priority": 7
+          },
+			 {
+            "item": "yes:oxidized_copper_chestplate",
+            "want_amount": 1,
+            "surplus_amount": 1,
+            "priority": 8
+          },
+          {
+            "item": "yes:phantom_chestplate",
+            "want_amount": 1,
+            "surplus_amount": 1,
+            "priority": 9
+          },
+          {
+            "item": "yes:copper_chestplate",
+            "want_amount": 1,
+            "surplus_amount": 1,
+            "priority": 11
+          },
+			 {
+            "item": "yes:exposed_copper_chestplate",
+            "want_amount": 1,
+            "surplus_amount": 1,
+            "priority": 12
+          },
+			 {
+            "item": "yes:weathered_copper_chestplate",
+            "want_amount": 1,
+            "surplus_amount": 1,
+            "priority": 13
+          },
+          {
+            "item": "minecraft:chainmail_chestplate",
+            "want_amount": 1,
+            "surplus_amount": 1,
+            "priority": 14
+          },
+          {
+            "item": "minecraft:golden_chestplate",
+            "want_amount": 1,
+            "surplus_amount": 1,
+            "priority": 15
+          },
+          {
+            "item": "minecraft:leather_chestplate",
+            "want_amount": 1,
+            "surplus_amount": 1,
+            "priority": 16
+          },
+			 
+			 
+			 
+          {
+            "item": "yes:gilded_netherite_leggings",
+            "want_amount": 1,
+            "surplus_amount": 1,
+            "priority": 0
+          },
+          {
+            "item": "minecraft:netherite_leggings",
+            "want_amount": 1,
+            "surplus_amount": 1,
+            "priority": 1
+          },
+          {
+            "item": "yes:glowing_obsidian_leggings",
+            "want_amount": 1,
+            "surplus_amount": 1,
+            "priority": 3
+          },
+          {
+            "item": "minecraft:diamond_leggings",
+            "want_amount": 1,
+            "surplus_amount": 1,
+            "priority": 4
+          },
+          {
+            "item": "yes:emerald_leggings",
+            "want_amount": 1,
+            "surplus_amount": 1,
+            "priority": 5
+          },
+          {
+            "item": "yes:amethyst_leggings",
+            "want_amount": 1,
+            "surplus_amount": 1,
+            "priority": 6
+          },
+          {
+            "item": "minecraft:iron_leggings",
+            "want_amount": 1,
+            "surplus_amount": 1,
+            "priority": 7
+          },
+			 {
+            "item": "yes:oxidized_copper_leggings",
+            "want_amount": 1,
+            "surplus_amount": 1,
+            "priority": 8
+          },
+          {
+            "item": "yes:phantom_leggings",
+            "want_amount": 1,
+            "surplus_amount": 1,
+            "priority": 9
+          },
+          {
+            "item": "yes:copper_leggings",
+            "want_amount": 1,
+            "surplus_amount": 1,
+            "priority": 11
+          },
+			 {
+            "item": "yes:exposed_copper_leggings",
+            "want_amount": 1,
+            "surplus_amount": 1,
+            "priority": 12
+          },
+			 {
+            "item": "yes:weathered_copper_leggings",
+            "want_amount": 1,
+            "surplus_amount": 1,
+            "priority": 13
+          },
+          {
+            "item": "minecraft:chainmail_leggings",
+            "want_amount": 1,
+            "surplus_amount": 1,
+            "priority": 14
+          },
+          {
+            "item": "minecraft:golden_leggings",
+            "want_amount": 1,
+            "surplus_amount": 1,
+            "priority": 15
+          },
+          {
+            "item": "minecraft:leather_leggings",
+            "want_amount": 1,
+            "surplus_amount": 1,
+            "priority": 16
+          },
+			 
+			 
+			 
+          {
+            "item": "yes:gilded_netherite_boots",
+            "want_amount": 1,
+            "surplus_amount": 1,
+            "priority": 0
+          },
+          {
+            "item": "minecraft:netherite_boots",
+            "want_amount": 1,
+            "surplus_amount": 1,
+            "priority": 1
+          },
+          {
+            "item": "yes:glowing_obsidian_boots",
+            "want_amount": 1,
+            "surplus_amount": 1,
+            "priority": 3
+          },
+          {
+            "item": "minecraft:diamond_boots",
+            "want_amount": 1,
+            "surplus_amount": 1,
+            "priority": 4
+          },
+          {
+            "item": "yes:emerald_boots",
+            "want_amount": 1,
+            "surplus_amount": 1,
+            "priority": 5
+          },
+          {
+            "item": "yes:amethyst_boots",
+            "want_amount": 1,
+            "surplus_amount": 1,
+            "priority": 6
+          },
+          {
+            "item": "minecraft:iron_boots",
+            "want_amount": 1,
+            "surplus_amount": 1,
+            "priority": 7
+          },
+			 {
+            "item": "yes:weathered_copper_boots",
+            "want_amount": 1,
+            "surplus_amount": 1,
+            "priority": 8
+          },
+          {
+            "item": "yes:oxidized_copper_boots",
+            "want_amount": 1,
+            "surplus_amount": 1,
+            "priority": 9
+          },
+          {
+            "item": "yes:phantom_boots",
+            "want_amount": 1,
+            "surplus_amount": 1,
+            "priority": 10
+          },
+          {
+            "item": "yes:copper_boots",
+            "want_amount": 1,
+            "surplus_amount": 1,
+            "priority": 12
+          },
+			 {
+            "item": "yes:exposed_copper_boots",
+            "want_amount": 1,
+            "surplus_amount": 1,
+            "priority": 13
+          },
+          {
+            "item": "minecraft:chainmail_boots",
+            "want_amount": 1,
+            "surplus_amount": 1,
+            "priority": 14
+          },
+          {
+            "item": "minecraft:golden_boots",
+            "want_amount": 1,
+            "surplus_amount": 1,
+            "priority": 15
+          },
+          {
+            "item": "minecraft:leather_boots",
+            "want_amount": 1,
+            "surplus_amount": 1,
+            "priority": 16
+          }
+        ]
+      },
+      "minecraft:behavior.ranged_attack": {
+        "priority": 0,
+        "attack_interval_min": 1.0,
+        "attack_interval_max": 3.0,
+        "attack_radius": 15.0
+      },
+      "minecraft:behavior.hurt_by_target": {
+        "priority": 1
+      },
+      "minecraft:behavior.nearest_attackable_target": {
+        "priority": 2,
+        "must_see": true,
+        "reselect_targets": true,
+		  "target_invisible_multiplier": 0.01,
+		  "target_sneak_visibility_multiplier": 0.5,
+        "entity_types": [
+          {
+            "filters": {
+              "test": "is_family",
+              "subject": "other",
+              "value": "player"
+            },
+            "max_dist": 16
+          },
+          {
+            "filters": {
+              "test": "is_family",
+              "subject": "other",
+              "value": "irongolem"
+            },
+            "max_dist": 16
+          },
+          {
+            "filters": {
+              "all_of": [
+                {
+                  "test": "is_family",
+                  "subject": "other",
+                  "value": "baby_turtle"
+                },
+                {
+                  "test": "in_water",
+                  "subject": "other",
+                  "operator": "!=",
+                  "value": true
+                }
+              ]
+            },
+            "max_dist": 16
+          }
+        ]
+      },
+      "minecraft:behavior.flee_sun": {
+        "priority": 2,
+        "speed_multiplier": 1
+      },
+      "minecraft:behavior.equip_item": {
+        "priority": 0
+      },
+      "minecraft:behavior.avoid_mob_type": {
+        "priority": 4,
+        "entity_types": [
+          {
+            "filters": {
+              "test": "is_family",
+              "subject": "other",
+              "value": "wolf"
+            },
+            "max_dist": 6,
+            "walk_speed_multiplier": 1.2,
+            "sprint_speed_multiplier": 1.2
+          }
+        ]
+      },
+      "minecraft:behavior.pickup_items": {
+        "priority": 3,
+        "max_dist": 5,
+        "goal_radius": 2,
+        "speed_multiplier": 1.0,
+        "pickup_based_on_chance": false,
+        "can_pickup_any_item": true
+      },
+      "minecraft:behavior.random_stroll": {
+        "priority": 6,
+        "speed_multiplier": 1
+      },
+      "minecraft:behavior.look_at_player": {
+        "priority": 7,
+        "look_distance": 8
+      },
+      "minecraft:behavior.random_look_around": {
+        "priority": 8
+      },
+      "minecraft:physics": {
+      },
+      "minecraft:pushable": {
+        "is_pushable": true,
+        "is_pushable_by_piston": true
+      },
+      "minecraft:conditional_bandwidth_optimization": {
+      }
+    },
+
+    "events": {
+      "yes:emerald_dagger_effect": {
+        "remove": {
+        },
+        "add": {
+          "component_groups": [
+            "yes:emerald_dagger_effect"
+          ]
+        }
+      },
+      "yes:amethyst_spear_effect": {
+				  "queue_command": {
+   				 "command": [
+						 "scoreboard objectives add mobspear dummy",
+						 "scoreboard players add @s mobspear 1",
+						 "scoreboard players set @s[scores={mobspear=55..57}] mobspear 54",
+						 //"execute @s[scores={mobspear=54},tag=!mob_spear_attacking] ~~~ execute @a[r=5.5] ~~~ execute @e[type=husk,c=1,r=5.5,scores={mobspear=54},tag=!mob_spear_attacking] ~~~ summon yes:amethyst_spear_entityc",
+						 //"execute @s[scores={mobspear=54..57}] ~~~ execute @e[r=1,type=yes:amethyst_spear_entityc] ~~~ scoreboard players set @e[type=husk,c=1,r=5.5,scores={mobspear=54..57}] mobspear 58",
+						 "execute as @s[scores={mobspear=54},tag=!mob_spear_attacking] at @s if entity @a[r=5.5] run summon yes:amethyst_spear_entityc",
+						 "execute as @s[scores={mobspear=54..57}] at @s if entity @e[r=1,type=yes:amethyst_spear_entityc] run scoreboard players set @s mobspear 58",
+						 "playanimation @s[scores={mobspear=58}] animation.player.stab2c",
+						 "scoreboard players set @s[scores={mobspear=58}] mobspear 59"
+  						  ]
+ 					 }
+      },
+      "yes:copper_hammer_effect": {
+				  "queue_command": {
+   				 "command": [
+						 "scoreboard objectives add mobhammer dummy",
+						 "scoreboard players add @s mobhammer 1",
+						 "scoreboard players set @s[scores={mobhammer=24..26}] mobhammer 23",
+						 "execute as @s[scores={mobhammer=23},tag=!mob_hammer_attacking] at @s if entity @a[r=4.5] run summon yes:copper_hammer_attack_entityc",
+						 "execute as @s[scores={mobhammer=23..26}] at @s if entity @e[r=1,type=yes:copper_hammer_attack_entityc] run scoreboard players set @s mobhammer 27",
+						 "playanimation @s[scores={mobhammer=27}] animation.zombies.hammer1",
+						 "scoreboard players set @s[scores={mobhammer=27}] mobhammer 28"
+  						  ]
+ 					 }
+      },
+      "yes:glowing_obsidian_battleaxe_effect": {
+				  "queue_command": {
+   				 "command": [
+						 "tag @s add mob_battleaxe_hitting",
+						 "scoreboard objectives add mobbattleaxe dummy",
+						 "scoreboard players add @s mobbattleaxe 1",
+						 "scoreboard players set @s[scores={mobbattleaxe=47..49}] mobbattleaxe 46",
+						 "execute as @s[scores={mobbattleaxe=46}] at @s if entity @a[r=4.5] run summon yes:battleaxe_entity2c",
+						 "execute as @s[scores={mobbattleaxe=46..49}] at @s if entity @e[r=1,type=yes:battleaxe_entity2c] run scoreboard players set @s mobbattleaxe 50",
+						 "playanimation @s[scores={mobbattleaxe=50}] animation.battleaxe_attack1c",
+						 "scoreboard players set @s[scores={mobbattleaxe=50}] mobbattleaxe 51"
+  						  ]
+ 					 }
+      },
+      "yes:echo_staff_effect": {
+				  "queue_command": {
+   				 "command": [
+						 "scoreboard objectives add mobstaff dummy",
+						 "scoreboard players add @s mobstaff 1",
+						 "scoreboard players set @s[scores={mobstaff=127..129}] mobstaff 127",
+						 "execute as @s[scores={mobstaff=127}] at @s if entity @a[r=8] run summon yes:staff_hit_entityc",
+						 "execute as @s[scores={mobstaff=127}] at @s if entity @a[r=8] run summon yes:staff_random_entityc",
+						 "execute as @s[scores={mobstaff=127..129}] at @s if entity @e[r=4,type=yes:staff_hit_entityc] run scoreboard players set @s mobstaff 130",
+						 "playanimation @s[scores={mobstaff=130}] animation.staff_attack",
+						 "scoreboard players set @s[scores={mobstaff=130}] mobstaff 131"
+  						  ]
+ 					 }
+      },
+      "yes:weapon_remove": {
+        "remove": {
+          "component_groups": [
+            "yes:emerald_dagger_effect"
+          ]
+        },
+        "add": {
+          "component_groups": [
+            "yes:weapon_remove"
+          ]
+        }
+      },
+      "yes:copper_helmet_random": {
+        "randomize": [
+          {
+            "weight": 1,
+				  "queue_command": {
+   				 "command": [
+						 "replaceitem entity @s slot.armor.head 0 yes:copper_helmet"
+  						  ]
+ 					 }
+			 },
+          {
+            "weight": 2,
+				  "queue_command": {
+   				 "command": [
+						 "replaceitem entity @s slot.armor.head 0 yes:exposed_copper_helmet"
+  						  ]
+ 					 }
+			 },
+          {
+            "weight": 2,
+				  "queue_command": {
+   				 "command": [
+						 "replaceitem entity @s slot.armor.head 0 yes:weathered_copper_helmet"
+  						  ]
+ 					 }
+			 },
+	       {
+            "weight": 1,
+				  "queue_command": {
+   				 "command": [
+						 "replaceitem entity @s slot.armor.head 0 yes:oxidized_copper_helmet"
+  						  ]
+ 					 }
+			 }
+		  ]
+      },
+      "yes:copper_chestplate_random": {
+        "randomize": [
+          {
+            "weight": 1,
+				  "queue_command": {
+   				 "command": [
+						 "replaceitem entity @s slot.armor.chest 0 yes:copper_chestplate"
+  						  ]
+ 					 }
+			 },
+          {
+            "weight": 2,
+				  "queue_command": {
+   				 "command": [
+						 "replaceitem entity @s slot.armor.chest 0 yes:exposed_copper_chestplate"
+  						  ]
+ 					 }
+			 },
+          {
+            "weight": 2,
+				  "queue_command": {
+   				 "command": [
+						 "replaceitem entity @s slot.armor.chest 0 yes:weathered_copper_chestplate"
+  						  ]
+ 					 }
+			 },
+	       {
+            "weight": 1,
+				  "queue_command": {
+   				 "command": [
+						 "replaceitem entity @s slot.armor.chest 0 yes:oxidized_copper_chestplate"
+  						  ]
+ 					 }
+			 }
+		  ]
+      },
+      "yes:copper_leggings_random": {
+        "randomize": [
+          {
+            "weight": 1,
+				  "queue_command": {
+   				 "command": [
+						 "replaceitem entity @s slot.armor.legs 0 yes:copper_leggings"
+  						  ]
+ 					 }
+			 },
+          {
+            "weight": 2,
+				  "queue_command": {
+   				 "command": [
+						 "replaceitem entity @s slot.armor.legs 0 yes:exposed_copper_leggings"
+  						  ]
+ 					 }
+			 },
+          {
+            "weight": 2,
+				  "queue_command": {
+   				 "command": [
+						 "replaceitem entity @s slot.armor.legs 0 yes:weathered_copper_leggings"
+  						  ]
+ 					 }
+			 },
+	       {
+            "weight": 1,
+				  "queue_command": {
+   				 "command": [
+						 "replaceitem entity @s slot.armor.legs 0 yes:oxidized_copper_leggings"
+  						  ]
+ 					 }
+			 }
+		  ]
+      },
+      "yes:copper_boots_random": {
+        "randomize": [
+          {
+            "weight": 1,
+				  "queue_command": {
+   				 "command": [
+						 "replaceitem entity @s slot.armor.feet 0 yes:copper_boots"
+  						  ]
+ 					 }
+			 },
+          {
+            "weight": 2,
+				  "queue_command": {
+   				 "command": [
+						 "replaceitem entity @s slot.armor.feet 0 yes:exposed_copper_boots"
+  						  ]
+ 					 }
+			 },
+          {
+            "weight": 2,
+				  "queue_command": {
+   				 "command": [
+						 "replaceitem entity @s slot.armor.feet 0 yes:weathered_copper_boots"
+  						  ]
+ 					 }
+			 },
+	       {
+            "weight": 1,
+				  "queue_command": {
+   				 "command": [
+						 "replaceitem entity @s slot.armor.feet 0 yes:oxidized_copper_boots"
+  						  ]
+ 					 }
+			 }
+		  ]
+      },
+      "yes:warden_equipment": {
+		  "queue_command": {
+			 "command": [
+				 "scoreboard objectives add warden_equipment dummy",
+				 "scoreboard players random @s warden_equipment 1 20",
+				 "execute @s[scores={warden_equipment=1}] ~~~ replaceitem entity @s slot.weapon.mainhand 0 yes:echo_sword",
+				 
+				 "scoreboard players random @s warden_equipment 1 30",
+				 "execute @s[scores={warden_equipment=1}] ~~~ replaceitem entity @s slot.armor.feet 0 yes:warden_boots",
+				 "scoreboard players random @s warden_equipment 1 100",
+				 "execute @s[scores={warden_equipment=43..},hasitem={item=yes:warden_boots}] ~~~ replaceitem entity @s slot.armor.legs 0 yes:warden_leggings",
+				 "scoreboard players random @s warden_equipment 1 100",
+				 "execute @s[scores={warden_equipment=43..},hasitem={item=yes:warden_leggings}] ~~~ replaceitem entity @s slot.armor.chest 0 yes:warden_chestplate",
+				 "scoreboard players random @s warden_equipment 1 100",
+				 "execute @s[scores={warden_equipment=43..},hasitem={item=yes:warden_chestplate}] ~~~ replaceitem entity @s slot.armor.head 0 yes:warden_helmet",
+				 "scoreboard players random @s warden_equipment 1 100",
+				 "execute @s[scores={warden_equipment=31..},hasitem={item=yes:warden_helmet}] ~~~ replaceitem entity @s slot.weapon.mainhand 0 yes:echo_staff",
+				 "scoreboard players reset @s warden_equipment"
+				  ]
+			 }
+      },
+      "yes:spawn_remove": {
+				  "queue_command": {
+   				 "command": [
+						 "tag @s add spawn_tag"
+  						  ]
+ 					 }
+      },
+      "minecraft:entity_spawned": {
+        "add": {
+          "component_groups": [
+            "minecraft:ranged_attack"
+          ]
+        }
+      },
+      "become_stray_event": {
+        "add": {
+          "component_groups": [
+            "become_stray"
+          ]
+        }
+      },
+      "got_in_powder_snow": {
+        "add": {
+          "component_groups": [
+            "in_powder_snow"
+          ]
+        }
+      },
+      "got_out_of_powder_snow": {
+        "remove": {
+          "component_groups": [
+            "in_powder_snow"
+          ]
+        },
+        "add": {
+          "component_groups": [
+            "got_out_of_powder_snow_environment_sensor"
+          ]
+        }
+      },
+      "minecraft:spring_trap": {
+        "add": {
+          "component_groups": [
+            "minecraft:lightning_immune"
+          ]
+        }
+      },
+      "minecraft:melee_mode": {
+        "remove": {
+          "component_groups": [
+            "minecraft:ranged_attack",
+            "got_out_of_powder_snow_environment_sensor"
+          ]
+        },
+        "add": {
+          "component_groups": [
+            "minecraft:melee_attack"
+          ]
+        }
+      },
+      "minecraft:ranged_mode": {
+        "remove": {
+          "component_groups": [
+            "minecraft:melee_attack",
+            "got_out_of_powder_snow_environment_sensor"
+          ]
+        },
+        "add": {
+          "component_groups": [
+            "minecraft:ranged_attack"
+          ]
+        }
+      }
+    }
+  }
+}

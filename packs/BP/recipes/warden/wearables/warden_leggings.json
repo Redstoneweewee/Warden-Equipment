@@ -1,0 +1,27 @@
+{
+  "format_version": "1.20.0",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "yes:warden_leggings"
+    },
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      "ZZZ",
+      "Z Z",
+      "Z Z"
+    ],
+    "key": {
+      "Z": {
+        "item": "minecraft:echo_shard"
+      }
+    },
+		"unlock": [
+			{
+				"item": "minecraft:echo_shard"
+			}
+		],
+    "result": {
+      "item": "yes:warden_leggings"
+    }
+  }
+}

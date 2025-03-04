@@ -1,0 +1,26 @@
+{
+  "format_version": "1.20.0",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "yes:glowing_obsidian_boots"
+    },
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      "Z Z",
+      "Z Z"
+    ],
+    "key": {
+      "Z": {
+        "item": "yes:glowing_obsidian_shard"
+      }
+    },
+		"unlock": [
+			{
+				"item": "yes:glowing_obsidian_shard"
+			}
+		],
+    "result": {
+      "item": "yes:glowing_obsidian_boots"
+    }
+  }
+}

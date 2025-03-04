@@ -1,0 +1,24 @@
+{
+  "format_version": "1.16.100",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "yes:warden_ping_other",
+      "materials": { "default": "warden_ping" },
+      "textures": { 
+			"ping1": "textures/entity/ping1",
+			"ping2": "textures/entity/ping2",
+			"ping3": "textures/entity/ping3",
+			"ping4": "textures/entity/ping4",
+			"ping5": "textures/entity/ping5",
+			"ping6": "textures/entity/ping6" 
+		},
+      "geometry": { "default": "geometry.warden_ping_other" },
+      "enable_attachables": true,
+			"render_controllers": ["controller.render.warden_ping"],
+      "spawn_egg": {
+        "texture": "spawn_egg",
+        "texture_index": 29
+      }
+    }
+  }
+}

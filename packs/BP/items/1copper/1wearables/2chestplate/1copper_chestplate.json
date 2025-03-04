@@ -1,0 +1,61 @@
+{
+    "format_version": "1.20.80",
+    "minecraft:item": {
+        "description": {
+            "identifier": "yes:copper_chestplate",
+            "menu_category": {
+                "category": "equipment",
+                "group": "itemGroup.name.chestplate"
+            }
+        },
+        "components": {
+            "minecraft:tags": {
+                "tags": [
+                    "minecraft:trimmable_armors",
+                    "minecraft:is_armor",
+                    "ability:copper_armor"
+                ]
+            },
+            "minecraft:custom_components": [
+                "yes:mining_durability_damage",
+                "yes:hit_durability_damage"
+            ],
+            "minecraft:max_stack_size": 1,
+            "minecraft:durability": {
+                "max_durability": 175,
+                "damage_chance": {
+                    "min": 60,
+                    "max": 100
+                }
+            },
+            "minecraft:display_name": {
+                "value": "Copper Chestplate\n\ue116\u00a7l\ue05b\u00a7r\ue115\n\ue05c"
+            },
+            "minecraft:icon": "copper_chestplate",
+            "minecraft:enchantable": {
+                "value": 10,
+                "slot": "armor_torso"
+            },
+            "minecraft:wearable": {
+                "protection": 5,
+                "slot": "slot.armor.chest"
+            },
+            "minecraft:repairable": {
+                "repair_items": [
+                    {
+                        "items": [
+                            "yes:copper_chestplate"
+                        ],
+                        "repair_amount": "context.other->query.remaining_durability+0.12*context.other->query.max_durability"
+                    },
+                    {
+                        "items": [
+                            "minecraft:copper_ingot"
+                        ],
+                        "repair_amount": "query.max_durability*0.33"
+                    }
+                ]
+            }
+        }
+    }
+}

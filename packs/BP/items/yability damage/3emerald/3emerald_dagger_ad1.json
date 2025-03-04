@@ -1,0 +1,78 @@
+{
+    "format_version": "1.20.80",
+    "minecraft:item": {
+        "description": {
+            "identifier": "yes:emerald_dagger_ad1",
+            "menu_category": {
+                "category": "nature",
+                "group": "itemGroup.name.monsterStoneEgg"
+            }
+        },
+        "components": {
+            "minecraft:tags": {
+                "tags": [
+                    "ability:dagger",
+                    "yes:diamond_tier"
+                ]
+            },
+            "minecraft:custom_components": [
+                "yes:mining_durability_damage",
+                "yes:on_hit",
+                "yes:hit_durability_damage"
+            ],
+            "minecraft:max_stack_size": 1,
+            "minecraft:hand_equipped": true,
+            "minecraft:allow_off_hand": false,
+            "minecraft:durability": {
+                "max_durability": 468,
+                "damage_chance": {
+                    "min": 60,
+                    "max": 100
+                }
+            },
+            "minecraft:display_name": {
+                "value": "\u00a7bEmerald Dagger\n\ue196\u00a7l\ue05b\u00a7r\ue195\n\ue05c\n\n\u00a76Normal Attack:  \u00a76Critical Attack:\n\u00a7e[\u00a79+3 atk\ue19d\u00a7e]      \u00a7e[\u00a79+7 atk\ue19d\u00a7e]\n\u00a7e[\u00a792.0 secs\ue18b\u00a7e]    \u00a7e[\u00a794.5 secs\ue18b\u00a7e]\n\u00a77Ability Damage I"
+            },
+            "minecraft:icon": "emerald_dagger",
+            "minecraft:damage": 4,
+            "minecraft:repairable": {
+                "repair_items": [
+                    {
+                        "items": [
+                            "yes:emerald_dagger"
+                        ],
+                        "repair_amount": "context.other->query.remaining_durability+0.12*context.other->query.max_durability"
+                    },
+                    {
+                        "items": [
+                            "minecraft:emerald"
+                        ],
+                        "repair_amount": "query.max_durability*0.33"
+                    }
+                ]
+            },
+            "minecraft:glint": true,
+            "minecraft:can_destroy_in_creative": false,
+            "minecraft:enchantable": {
+                "value": 16,
+                "slot": "sword"
+            },
+            "minecraft:cooldown": {
+                "category": "dagger",
+                "duration": 0
+            },
+            "minecraft:digger": {
+                "destroy_speeds": [
+                    {
+                        "block": "minecraft:web",
+                        "speed": 12
+                    },
+                    {
+                        "block": "minecraft:bamboo",
+                        "speed": 12
+                    }
+                ]
+            }
+        }
+    }
+}

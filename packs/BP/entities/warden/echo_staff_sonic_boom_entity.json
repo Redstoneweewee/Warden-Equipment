@@ -1,0 +1,106 @@
+{
+	"format_version": "1.16.100",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "yes:echo_staff_sonic_boom_entity",
+			"is_spawnable": false,
+			"is_summonable": true,
+			"is_experimental": false
+		},
+		"components": {
+			"minecraft:conditional_bandwidth_optimization": {},
+			"minecraft:timer": {
+				"looping": false,
+				"time": 3,
+				"time_down_event": {
+					"event": "yes:despawn"
+				}
+			},
+			"minecraft:type_family": {
+				"family": [
+					"inanimate",
+					"weeweejuice",
+					"tp_to_above_owner_head_location",
+					"despawn_on_owner_death",
+					"echo_staff_sonic_boom_entity"
+				]
+			},
+			"minecraft:collision_box": {
+				"width": 0.0001,
+				"height": 0.0001
+			},
+			"minecraft:damage_sensor": {
+				"triggers": {
+					"cause": "all",
+					"deals_damage": false
+				}
+			},
+			"minecraft:fire_immune": {},
+			"minecraft:custom_hit_test": {
+				"hitboxes": [
+					{
+						"pivot": [
+							0,
+							100,
+							0
+						],
+						"width": 0,
+						"height": 0
+					}
+				]
+			},
+			"minecraft:behavior.sonic_boom": {
+				"priority": 0,
+				"attack_cooldown": 0.00,
+				"attack_damage": 0,
+				"duration": 0.025,
+				"duration_until_attack_sound": 0.0,
+				"attack_range_horizontal": 10,
+				"attack_range_vertical": 8,
+				"knockback_height_cap": 1,
+				"knockback_vertical_strength": 0.0,
+				"knockback_horizontal_strength": 0.0,
+				"speed_multiplier": 1
+			},
+			"minecraft:behavior.nearest_attackable_target": {
+				"priority": 0,
+				"reselect_targets": true,
+				"must_see": false,
+				"must_see_forget_duration": 0,
+				"entity_types": [
+					{
+						"filters": {
+							"all_of": [
+								{
+									"test": "is_family",
+									"subject": "other",
+									"operator": "==",
+									"value": "echo_staff_random_tp_entity"
+								}
+							]
+						},
+						"max_dist": 10
+					}
+				]
+			},
+			"minecraft:movement": {
+				"value": 0
+			},
+			"minecraft:physics": {},
+			"minecraft:navigation.walk": {
+				"is_amphibious": false,
+				"can_pass_doors": false,
+				"can_walk": false,
+				"can_break_doors": false
+			},
+			"minecraft:pushable": {
+				"is_pushable": false,
+				"is_pushable_by_piston": false
+			}
+		},
+		"events": {
+			"yes:despawn": {
+			}
+		}
+	}
+}

@@ -1,0 +1,29 @@
+{
+  "format_version": "1.20.0",
+	"minecraft:recipe_shapeless": {
+		"description": {
+			"identifier": "yes:amethyst_ad2"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"ingredients": [
+			{
+				"item": "yes:amethyst_spear"
+			},
+			{
+				"item": "yes:ability_damage_book2"
+			}
+		],
+		"unlock": [
+			{
+				"item": "yes:ability_damage_book2"
+			}
+		],
+		"result": [
+			{
+				"item": "yes:amethyst_spear_ad2"
+			}
+		]
+	}
+}

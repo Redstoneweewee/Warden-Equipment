@@ -1,0 +1,86 @@
+{
+	"format_version": "1.19.70",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "yes:nexus_projectile",
+			"runtime_identifier": "minecraft:snowball",
+			"is_spawnable": false,
+			"is_summonable": true,
+			"is_experimental": false,
+            "properties": {
+                "property:is_attacking": {
+					"type": "bool",
+					"default": false,
+					"client_sync": true
+                },
+                "property:ticks": {
+					"type": "int",
+					"range": [1, 999], 
+					"default": 1,
+					"client_sync": true
+                },
+                "property:damage": {
+					"type": "float",
+					"range": [0.0, 100.0], 
+					"default": 1.5,
+					"client_sync": true
+                },
+                "property:x_random": {
+					"type": "float",
+					"range": [-100.0, 100.0], 
+					"default": 0.0
+                },
+                "property:y_random": {
+					"type": "float",
+					"range": [-100.0, 100.0], 
+					"default": 0.0
+                }
+			}
+		},
+		"components": {
+			"minecraft:tick_world": {
+				"distance_to_players": 2500,
+				"never_despawn": false,
+				"radius": 3
+			},
+			"minecraft:projectile": {
+				"on_hit": {
+					"stick_in_ground": {
+					  "shake_time" : 0.35
+					},
+					"definition_event": {
+						"affect_target": true,
+						"affect_projectile": true
+					}
+				},
+				"power": 1,
+				"gravity": 0.00,
+				"anchor": 1,
+				"offset": [
+					0,
+					0.1,
+					0
+				],
+				"catch_fire": false
+			},
+			"minecraft:type_family": {
+				"family": [
+					"projectile",
+					"weeweejuice",
+					"weeweejuice_projectile",
+					"nexus_projectile",
+					"despawn_on_reload"
+				]
+			},
+			"minecraft:collision_box": {
+				"width": 0.01,
+				"height": 0.01
+			},
+			"minecraft:physics": {}
+		},
+		"events": {
+			"yes:despawn": {
+			}
+		}
+	}
+}

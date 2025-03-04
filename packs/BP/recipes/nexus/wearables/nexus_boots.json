@@ -1,0 +1,26 @@
+{
+  "format_version": "1.20.0",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "yes:nexus_boots"
+    },
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      "Z Z",
+      "Z Z"
+    ],
+    "key": {
+      "Z": {
+        "item": "yes:nexus_slate"
+      }
+    },
+		"unlock": [
+			{
+				"item": "yes:nexus_slate"
+			}
+		],
+    "result": {
+      "item": "yes:nexus_boots"
+    }
+  }
+}

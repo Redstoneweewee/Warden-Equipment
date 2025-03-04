@@ -1,0 +1,36 @@
+{
+  "format_version": "1.20.0",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "yes:echo_staff"
+    },  
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      " XZ",
+      " YX",
+      "Y  "
+    ],
+    "key": {
+      "Y": {
+        "item": "minecraft:stick"
+      },
+      "X": {
+        "item": "minecraft:echo_shard"
+      },
+      "Z": {
+        "item": "yes:warden_heart"
+      }
+    },
+		"unlock": [
+			{
+				"item": "minecraft:echo_shard"
+			},
+			{
+				"item": "yes:warden_heart"
+			}
+		],
+    "result": {
+      "item": "yes:echo_staff"
+    }
+  }
+}

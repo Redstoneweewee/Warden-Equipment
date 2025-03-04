@@ -1,0 +1,15 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.hammer_first_person": {
+			"loop": true,
+			"animation_length": 0.25,
+			"bones": {
+				"rightItem": {
+					"rotation": [-29.51954, 62.96376, -76.42291],
+					"position": [-1.42533, 0.79206, 2.7821]
+				}
+			}
+		}
+	}
+}

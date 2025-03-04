@@ -1,0 +1,46 @@
+{
+	"format_version" : "1.10.0",
+	"animation_controllers" : {
+		"controller.animation.echo_staff" : {
+			"initial_state" : "default",
+			"states" : {
+				"default" : {
+					"transitions" : [
+						{
+							"staff_idle" : "v.echo_staff && !v.using_weapon"
+						},
+						{
+							"staff_attack" : "v.echo_staff && v.using_weapon"
+						}
+					]
+				},
+				"staff_idle" : {
+					"animations" : [
+						{ "echo_staff_first_person": "v.is_first_person" }
+					],
+					"transitions" : [
+						{
+							"staff_attack" : "v.using_weapon"
+						},
+						{
+							"default" : "!v.echo_staff"
+						}
+					]
+				},
+				"staff_attack" : {
+					"animations" : [
+						{ "first_person_attack": "v.is_first_person" }
+					],
+					"transitions" : [
+						{
+							"staff_idle" : "!v.using_weapon"
+						},
+						{
+							"default" : "!v.echo_staff"
+						}
+					]
+				}
+			}
+		}
+	}
+}

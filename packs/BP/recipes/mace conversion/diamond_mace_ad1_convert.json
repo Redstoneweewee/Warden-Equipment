@@ -1,0 +1,28 @@
+{
+  "format_version": "1.19.70",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "yes:diamond_mace_ad1_convert"
+    },  
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      "X"
+    ],
+    "key": {
+      "X": {
+        "item": "yes:diamond_mace_ad1"
+      }
+    },
+		"unlock": [
+			{
+				"item": "yes:diamond_mace_ad1"
+			}
+		],
+    "result": [
+      {
+        "item": "yes:diamond_morningstar_ad1",
+        "count": 1
+      }
+    ]
+  }
+}

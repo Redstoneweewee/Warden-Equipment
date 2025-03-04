@@ -1,0 +1,63 @@
+{
+  "format_version": "1.8.0",
+  "render_controllers": {
+    "controller.render.warden_armor": {
+      "geometry": "Geometry.default",
+      "textures": [ "texture.default", "texture.enchanted" ],
+      "materials": [ { "*": "variable.is_enchanted ? material.enchanted : Material.default" } ]
+    },
+    "controller.render.warden_armor2": {
+      "geometry": "Geometry.default2",
+      "materials": [ { "*": "Material.default2" } ],
+      "textures": [ "texture.default2" ]
+    },
+    "controller.render.warden_armor_heartbeat": {
+      "arrays": {
+        "textures": {
+          "array.heartbeat": [
+				 "texture.heartbeat_1",
+				 "texture.heartbeat_2",
+				 "texture.heartbeat_3",
+				 "texture.heartbeat_4",
+				 "texture.heartbeat_5",
+				 "texture.heartbeat_6",
+				 "texture.heartbeat_7",
+				 "texture.heartbeat_8",
+				 "texture.heartbeat_9",
+				 "texture.heartbeat_10",
+				 "texture.heartbeat_11"
+				 
+          ]
+        }
+      },
+      "geometry": "Geometry.default",
+      "textures": [ "temp.life_time = query.life_time; return array.heartbeat[temp.life_time * 6.67];",
+			"texture.enchanted" 
+		],
+      "materials": [ { "*": "variable.is_enchanted ? material.enchanted : material.default" } ]
+    },
+    "controller.render.warden_armor_heartbeat2": {
+      "arrays": {
+        "textures": {
+          "array.heartbeat2": [
+				 "texture.heartbeat1",
+				 "texture.heartbeat2",
+				 "texture.heartbeat3",
+				 "texture.heartbeat4",
+				 "texture.heartbeat5",
+				 "texture.heartbeat6",
+				 "texture.heartbeat7",
+				 "texture.heartbeat8",
+				 "texture.heartbeat9",
+				 "texture.heartbeat10",
+				 "texture.heartbeat11"
+          ]
+        }
+      },
+      "geometry": "Geometry.default2",
+      "textures": [ "temp.life_time = query.life_time; return array.heartbeat2[temp.life_time * 6.67];"
+		],
+      "materials": [ { "*": "Material.default2" } ]
+    }
+  }
+}

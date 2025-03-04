@@ -1,0 +1,395 @@
+{
+   "format_version" : "1.14.0",
+   "sound_definitions" : {
+      "random.levelup" : {
+         "__use_legacy_max_distance" : "true",
+         "category" : "player",
+         "max_distance" : null,
+         "min_distance" : null,
+         "sounds" : [
+            {
+               "load_on_low_memory" : true,
+               "name" : "sounds/random/levelup",
+               "volume" : 0
+            }
+         ]
+      },
+      "mob.warden.agitated.weewee" : {
+         "max_distance" : 80.0,
+         "sounds" : [
+				{
+            "name": "sounds/warden/agitated6",
+            "volume" : 2.00
+				}
+         ]
+      },
+      "mob.warden.heartbeat.weewee" : {
+         "max_distance" : 80.0,
+         "sounds" : [
+				{
+            "name": "sounds/warden/heartbeat3",
+            "volume" : 5.00
+				}
+         ]
+      },
+      "mob.warden.boom_weewee" : {
+         "max_distance" : 80.0,
+         "sounds" : [
+				{
+            "name": "sounds/warden/staff1",
+            "volume" : 1.00
+				},
+				{
+            "name": "sounds/warden/staff2",
+            "volume" : 1.00
+				},
+				{
+            "name": "sounds/warden/staff3",
+            "volume" : 1.00
+				},
+				{
+            "name": "sounds/warden/staff4",
+            "volume" : 1.00
+				}
+         ]
+      },
+      "mob.warden.shriek_weewee" : {
+         "max_distance" : 80.0,
+         "sounds" : [
+				{
+            "name": "sounds/warden/shriek2",
+            "volume" : 1.00
+				}
+         ]
+      },
+      "weapon.hammer_weewee" : {
+         "max_distance" : 20.0,
+         "sounds" : [
+				{
+            "name": "sounds/copper/hammer1",
+            "volume" : 1.00
+				},
+				{
+            "name": "sounds/copper/hammer2",
+            "volume" : 1.00
+				},
+				{
+            "name": "sounds/copper/hammer3",
+            "volume" : 1.00
+				}
+         ]
+      },
+      "weapon.hammer_hit_weewee" : {
+         "max_distance" : 20.0,
+         "sounds" : [
+				{
+            "name": "sounds/copper/hammer_hit1",
+            "volume" : 5.00
+				},
+				{
+            "name": "sounds/copper/hammer_hit2",
+            "volume" : 5.00
+				},
+				{
+            "name": "sounds/copper/hammer_hit3",
+            "volume" : 5.00
+				}
+         ]
+      },
+      "weapon.spear_weewee" : {
+         "max_distance" : 20.0,
+         "sounds" : [
+				{
+            "name": "sounds/amethyst/spear1",
+            "volume" : 1.00
+				},
+				{
+            "name": "sounds/amethyst/spear2",
+            "volume" : 1.00
+				},
+				{
+            "name": "sounds/amethyst/spear3",
+            "volume" : 1.00
+				}
+         ]
+      },
+      "weapon.spear_hit_weewee" : {
+         "max_distance" : 20.0,
+         "sounds" : [
+				{
+            "name": "sounds/amethyst/spear_hit1",
+            "volume" : 1.00
+				}
+         ]
+      },
+      "weapon.dagger_hit_weewee" : {
+         "max_distance" : 20.0,
+         "sounds" : [
+				{
+            "name": "sounds/emerald/dagger_hit1",
+            "volume" : 1.00
+				},
+				{
+            "name": "sounds/emerald/dagger_hit2",
+            "volume" : 1.00
+				},
+				{
+            "name": "sounds/emerald/dagger_hit3",
+            "volume" : 1.00
+				}
+         ]
+      },
+      "weapon.battleaxe_weewee" : {
+         "max_distance" : 20.0,
+         "sounds" : [
+				{
+            "name": "sounds/glowing_obsidian/battleaxe1",
+            "volume" : 1.00
+				},
+				{
+            "name": "sounds/glowing_obsidian/battleaxe2",
+            "volume" : 1.00
+				}
+         ]
+      },
+      "weapon.battleaxe_hit_weewee" : {
+         "max_distance" : 20.0,
+         "sounds" : [
+				{
+            "name": "sounds/glowing_obsidian/battleaxe_hit1",
+            "volume" : 1.00
+				},
+				{
+            "name": "sounds/glowing_obsidian/battleaxe_hit2",
+            "volume" : 1.00
+				},
+				{
+            "name": "sounds/glowing_obsidian/battleaxe_hit3",
+            "volume" : 1.00
+				}
+         ]
+      },
+      "weapon.whip_weewee" : {
+         "max_distance" : 20.0,
+         "sounds" : [
+				{
+            "name": "sounds/phantom/whip1",
+            "volume" : 0.75
+				},
+				{
+            "name": "sounds/phantom/whip2",
+            "volume" : 0.75
+				},
+				{
+            "name": "sounds/phantom/whip3",
+            "volume" : 0.75
+				}
+         ]
+      },
+      "weapon.whip_hit_weewee" : {
+         "max_distance" : 20.0,
+         "sounds" : [
+				{
+            "name": "sounds/phantom/whip_hit1",
+            "volume" : 1.00
+				},
+				{
+            "name": "sounds/phantom/whip_hit2",
+            "volume" : 1.00
+				},
+				{
+            "name": "sounds/phantom/whip_hit3",
+            "volume" : 1.00
+				},
+				{
+            "name": "sounds/phantom/whip_hit4",
+            "volume" : 1.00
+				}
+         ]
+      },
+      "weapon.mace_weewee" : {
+         "max_distance" : 20.0,
+         "sounds" : [
+				{
+            "name": "sounds/gilded_netherite/mace1",
+            "volume" : 5.00
+				},
+				{
+            "name": "sounds/gilded_netherite/mace2",
+            "volume" : 5.00
+				}
+         ]
+      },
+      "weapon.mace_hit_weewee" : {
+         "max_distance" : 20.0,
+         "sounds" : [
+				{
+            "name": "sounds/gilded_netherite/mace_hit1",
+            "volume" : 1.00
+				},
+				{
+            "name": "sounds/gilded_netherite/mace_hit2",
+            "volume" : 1.00
+				},
+				{
+            "name": "sounds/gilded_netherite/mace_hit3",
+            "volume" : 1.00
+				}
+         ]
+      },
+      "weapon.mace_hit_ground_weewee" : {
+         "max_distance" : 20.0,
+         "sounds" : [
+				{
+            "name": "sounds/gilded_netherite/mace_hit_ground1",
+            "volume" : 1.00
+				},
+				{
+            "name": "sounds/gilded_netherite/mace_hit_ground2",
+            "volume" : 1.00
+				},
+				{
+            "name": "sounds/gilded_netherite/mace_hit_ground3",
+            "volume" : 1.00
+				}
+         ]
+      },
+      "weapon.mace_hit_armor_weewee" : {
+         "max_distance" : 20.0,
+         "sounds" : [
+				{
+            "name": "sounds/gilded_netherite/mace_hit_armor1",
+            "volume" : 1.00
+				},
+				{
+            "name": "sounds/gilded_netherite/mace_hit_armor2",
+            "volume" : 1.00
+				},
+				{
+            "name": "sounds/gilded_netherite/mace_hit_armor3",
+            "volume" : 1.00
+				}
+         ]
+      },
+      "weapon.greatsword_weewee" : {
+         "max_distance" : 20.0,
+         "sounds" : [
+				{
+            "name": "sounds/aetherite/greatsword_weapon1",
+            "volume" : 1.00
+				},
+				{
+            "name": "sounds/aetherite/greatsword_weapon2",
+            "volume" : 1.00
+				},
+				{
+            "name": "sounds/aetherite/greatsword_weapon3",
+            "volume" : 1.00
+				},
+				{
+            "name": "sounds/aetherite/greatsword_weapon4",
+            "volume" : 1.00
+				},
+				{
+            "name": "sounds/aetherite/greatsword_weapon5",
+            "volume" : 1.00
+				}
+         ]
+      },
+      "weapon.greatsword_hit_weewee" : {
+         "max_distance" : 20.0,
+         "sounds" : [
+				{
+            "name": "sounds/aetherite/greatsword_weapon_hit1",
+            "volume" : 0.75
+				},
+				{
+            "name": "sounds/aetherite/greatsword_weapon_hit2",
+            "volume" : 0.75
+				},
+				{
+            "name": "sounds/aetherite/greatsword_weapon_hit3",
+            "volume" : 0.75
+				},
+				{
+            "name": "sounds/aetherite/greatsword_weapon_hit4",
+            "volume" : 0.75
+				},
+				{
+            "name": "sounds/aetherite/greatsword_weapon_hit5",
+            "volume" : 0.75
+				}
+         ]
+      },
+      "armor.reaper_initial_weewee" : {
+         "max_distance" : 40.0,
+         "sounds" : [
+				{
+            "name": "sounds/reaper/armor_initiate",
+            "volume" : 1
+				}
+         ]
+      },
+      "armor.reaper_effect_weewee" : {
+         "max_distance" : 20.0,
+         "sounds" : [
+				{
+            "name": "sounds/reaper/armor_effect",
+            "volume" : 1
+				}
+         ]
+      },
+      "weapon.scythe_ability_weewee" : {
+         "max_distance" : 60.0,
+         "sounds" : [
+				{
+            "name": "sounds/reaper/scythe_ability1",
+            "volume" : 0.5
+				},
+				{
+            "name": "sounds/reaper/scythe_ability2",
+            "volume" : 0.5
+				},
+				{
+            "name": "sounds/reaper/scythe_ability3",
+            "volume" : 0.5
+				}
+         ]
+      },
+      "weapon.scythe_hit_weewee" : {
+         "max_distance" : 20.0,
+         "sounds" : [
+				{
+            "name": "sounds/reaper/scythe_hit1",
+            "volume" : 1
+				},
+				{
+            "name": "sounds/reaper/scythe_hit2",
+            "volume" : 1
+				},
+				{
+            "name": "sounds/reaper/scythe_hit3",
+            "volume" : 1
+				}
+         ]
+      },
+      "mob.reaper_skeleton_spawn_weewee" : {
+         "max_distance" : 50.0,
+         "sounds" : [
+				{
+            "name": "sounds/reaper/reaper_skeleton_spawn",
+            "volume" : 1
+				}
+         ]
+      },
+      "mob.reaper_skeleton_call_weewee" : {
+         "max_distance" : 50.0,
+         "sounds" : [
+				{
+            "name": "sounds/reaper/reaper_skeleton_call",
+            "volume" : 1
+				}
+         ]
+      }
+   }
+}

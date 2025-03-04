@@ -1,0 +1,98 @@
+{
+"entity_static":{
+    "vertexShader":"shaders/entity.vertex",
+    "vrGeometryShader":"shaders/entity.geometry",
+    "fragmentShader":"shaders/entity.fragment",
+    "vertexFields":[
+        {
+            "field":"Position"
+        },
+        {
+            "field":"Normal"
+        },
+        {
+            "field":"UV0"
+        }
+    ],
+    "variants":[
+        {
+            "skinning":{
+                "+defines":[
+                    "USE_SKINNING"
+                ],
+                "vertexFields":[
+                    {
+                        "field":"Position"
+                    },
+                    {
+                        "field":"BoneId0"
+                    },
+                    {
+                        "field":"Normal"
+                    },
+                    {
+                        "field":"UV0"
+                    }
+                ]
+            }
+        },
+        {
+            "skinning_color":{
+                "+defines":[
+                    "USE_SKINNING",
+                    "USE_OVERLAY"
+                ],
+                "+states":[
+                    "Blending"
+                ],
+                "vertexFields":[
+                    {
+                        "field":"Position"
+                    },
+                    {
+                        "field":"BoneId0"
+                    },
+                    {
+                        "field":"Color"
+                    },
+                    {
+                        "field":"Normal"
+                    },
+                    {
+                        "field":"UV0"
+                    }
+                ]
+            }
+        }
+    ],
+    "msaaSupport":"Both",
+    "+samplerStates":[
+        {
+            "samplerIndex":0,
+            "textureFilter":"Point"
+        }
+    ]
+	},
+
+  "warden_ping:slime_outer": {
+    "depthFunc": "Always",
+    "defines": [
+      "ALPHA_TEST",
+      "USE_EMISSIVE"
+    ]
+	},
+  "enchant_glint:item_in_hand_glint": {
+    "textures": [
+      {
+        "textureIndex": 0,
+        "textureLocation": "InUserPackage",
+        "textureName": "textures/items/amethyst/amethyst_spear"
+      },
+      {
+        "textureIndex": 1,
+        "textureLocation": "InUserPackage",
+        "textureName": "textures/misc/enchanted_item_glint2"
+      }
+    ]
+  }
+}

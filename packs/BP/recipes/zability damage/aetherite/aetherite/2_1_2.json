@@ -1,0 +1,24 @@
+{
+  "format_version": "1.20.0",
+	"minecraft:recipe_shapeless": {
+		"description": {
+			"identifier": "yes:aetherite21_2"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"ingredients": [
+			{
+				"item": "yes:aetherite_greatsword_ad1"
+			},
+			{
+				"item": "yes:aetherite_greatsword_ad2"
+			}
+		],
+		"result": [
+			{
+				"item": "yes:aetherite_greatsword_ad2"
+			}
+		]
+	}
+}

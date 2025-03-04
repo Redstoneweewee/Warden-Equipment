@@ -1,0 +1,28 @@
+{
+  "format_version": "1.19.70",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "yes:netherite_mace_convert"
+    },  
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      "X"
+    ],
+    "key": {
+      "X": {
+        "item": "yes:netherite_mace"
+      }
+    },
+		"unlock": [
+			{
+				"item": "yes:netherite_mace"
+			}
+		],
+    "result": [
+      {
+        "item": "yes:netherite_morningstar",
+        "count": 1
+      }
+    ]
+  }
+}

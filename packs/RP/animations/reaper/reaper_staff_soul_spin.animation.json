@@ -1,0 +1,46 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.soul_spin": {
+			"loop": true,
+			"animation_length": 6,
+			"bones": {
+				"soul1": {
+					"position": [0, "v.amplitude*Math.sin(v.degrees)", "v.amplitude*Math.cos(v.degrees)-v.amplitude"],
+					"scale": "v.amount_of_souls > 0 ? 1 : 0"
+				},
+				"souls": {
+					"rotation": {
+						"0.0": [0, 0, 45],
+						"2.0": {
+							"pre": [0, 0, 27.5],
+							"post": [0, 0, 27.5],
+							"lerp_mode": "catmullrom"
+						},
+						"4.0": {
+							"post": [0, 0, 62.5],
+							"lerp_mode": "catmullrom"
+						},
+						"6.0": [0, 0, 45]
+					}
+				},
+				"soul2": {
+					"position": [0, "v.amplitude*Math.sin(v.degrees+v.offset)", "v.amplitude*Math.cos(v.degrees+v.offset)-v.amplitude"],
+					"scale": "v.amount_of_souls > 1 ? 1 : 0"
+				},
+				"soul3": {
+					"position": [0, "v.amplitude*Math.sin(v.degrees+v.offset*2)", "v.amplitude*Math.cos(v.degrees+v.offset*2)-v.amplitude"],
+					"scale": "v.amount_of_souls > 2 ? 1 : 0"
+				},
+				"soul4": {
+					"position": [0, "v.amplitude*Math.sin(v.degrees+v.offset*3)", "v.amplitude*Math.cos(v.degrees+v.offset*3)-v.amplitude"],
+					"scale": "v.amount_of_souls > 3 ? 1 : 0"
+				},
+				"soul5": {
+					"position": [0, "v.amplitude*Math.sin(v.degrees+v.offset*4)", "v.amplitude*Math.cos(v.degrees+v.offset*4)-v.amplitude"],
+					"scale": "v.amount_of_souls > 4 ? 1 : 0"
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,13 @@
+{
+  "format_version": "1.8.0",
+  "render_controllers": {
+    "controller.render.phantom_armor": {
+      "geometry": "Geometry.default",
+      "textures": [ 
+        "q.is_invisible ? texture.invisible : texture.visible", 
+			  "texture.enchanted" 
+		],
+      "materials": [ { "*": "variable.is_enchanted ? material.enchanted : Material.default" } ]
+    }
+  }
+}

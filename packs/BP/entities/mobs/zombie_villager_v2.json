@@ -1,0 +1,1940 @@
+{
+  "format_version": "1.16.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "minecraft:zombie_villager_v2",
+      "is_spawnable": true,
+      "is_summonable": false,
+      "is_experimental": false
+    },
+    "component_groups": {
+      "yes:emerald_dagger_effect": {
+      "minecraft:attack": {
+        "damage": 3,
+        "effect_name": "fatal_poison",
+        "effect_duration": 10
+      		}
+		},
+	  "yes:weapon_remove": {
+      "minecraft:attack": {
+        "damage": 3
+      		}
+	  },
+      "yes:knockback_resistance": {
+      	"minecraft:knockback_resistance": {
+        		"value": 1.0
+      	}
+		},
+	      "yes:knockback_resistance_null": {
+      	"minecraft:knockback_resistance": {
+        		"value": 0.0
+      	}
+		},
+      "minecraft:can_have_equipment": {
+        "minecraft:equipment": {
+          "table": "loot_tables/entities/zombie_villager_equipment.json"
+        }
+      },
+      "baby": {
+        "minecraft:experience_reward": {
+          "on_death": "query.last_hit_by_player ? 12 + (query.equipment_count * Math.Random(1,3)) : 0"
+        },
+        "minecraft:is_baby": {},
+        "minecraft:scale": {
+          "value": 0.5
+        },
+        "minecraft:movement": {
+          "value": 0.35
+        }
+      },
+
+      "adult": {
+        "minecraft:experience_reward": {
+          "on_death": "query.last_hit_by_player ? 5 + (query.equipment_count * Math.Random(1,3)) : 0"
+        },
+        "minecraft:movement": {
+          "value": 0.23
+        },
+        "minecraft:rideable": {
+          "seat_count": 1,
+          "family_types": [
+            "zombie"
+          ],
+          "seats": {
+            "position": [ 0.0, 1.1, -0.35 ]
+          }
+        },
+        "minecraft:behavior.mount_pathing": {
+          "priority": 5,
+          "speed_multiplier": 1.25,
+          "target_dist": 0.0,
+          "track_target": true
+        }
+      },
+
+      "jockey": {
+        "minecraft:behavior.find_mount": {
+          "priority": 1,
+          "within_radius": 16
+        }
+      },
+
+      "from_abandoned_village": {
+        "minecraft:navigation.walk": {
+          "is_amphibious": true,
+          "can_pass_doors": true,
+          "can_open_doors": true,
+          "avoid_water": true,
+          "avoid_sun": true
+        },
+        "minecraft:behavior.flee_sun": {
+          "priority": 4,
+          "speed_multiplier": 1
+        }
+      },
+
+      "to_villager": {
+        "minecraft:transformation": {
+          "into": "minecraft:villager_v2",
+          "begin_transform_sound": "remedy",
+          "transformation_sound": "unfect",
+          "keep_level": true,
+          "delay": {
+            "value": 100,
+            "block_assist_chance": 0.01,
+            "block_radius": 4,
+            "block_chance": 0.3,
+            "block_types": [
+              "minecraft:bed",
+              "minecraft:iron_bars"
+            ]
+          }
+        },
+        "minecraft:spell_effects": {
+          "add_effects": [
+            {
+              "effect": "strength",
+              "duration": 100
+            },
+            {
+              "effect": "heal",
+              "duration": 100
+            }
+          ],
+          "remove_effects": "weakness"
+        },
+        "minecraft:is_shaking": {
+        }
+      },
+
+      "unskilled": {
+        "minecraft:type_family": {
+          "family": [ "unskilled", "zombie", "zombie_villager", "undead", "monster", "mob" ]
+        },
+        "minecraft:variant": {
+          "value": 0
+        }
+      },
+      "nitwit": {
+        "minecraft:type_family": {
+          "family": [ "nitwit", "zombie", "zombie_villager", "undead", "monster", "mob" ]
+        },
+        "minecraft:variant": {
+          "value": 0
+        }
+      },
+      "farmer": {
+        "minecraft:type_family": {
+          "family": [ "farmer", "zombie", "zombie_villager", "undead", "monster", "mob" ]
+        },
+        "minecraft:variant": {
+          "value": 0
+        }
+      },
+      "fisherman": {
+        "minecraft:type_family": {
+          "family": [ "fisherman", "zombie_villager", "zombie", "undead", "monster", "mob" ]
+        },
+        "minecraft:variant": {
+          "value": 0
+        }
+      },
+      "shepherd": {
+        "minecraft:type_family": {
+          "family": [ "shepherd", "zombie_villager", "zombie", "undead", "monster", "mob" ]
+        },
+        "minecraft:variant": {
+          "value": 0
+        }
+      },
+      "fletcher": {
+        "minecraft:type_family": {
+          "family": [ "fletcher", "zombie_villager", "zombie", "undead", "monster", "mob" ]
+        },
+        "minecraft:variant": {
+          "value": 0
+        }
+      },
+
+      "librarian": {
+        "minecraft:type_family": {
+          "family": [ "librarian", "zombie_villager", "zombie", "undead", "monster", "mob" ]
+        },
+        "minecraft:variant": {
+          "value": 0
+        }
+      },
+
+      "cartographer": {
+        "minecraft:type_family": {
+          "family": [ "cartographer", "zombie_villager", "zombie", "undead", "monster", "mob" ]
+        },
+        "minecraft:variant": {
+          "value": 0
+        }
+      },
+
+      "cleric": {
+        "minecraft:type_family": {
+          "family": [ "cleric", "zombie_villager", "zombie", "undead", "monster", "mob" ]
+        },
+        "minecraft:variant": {
+          "value": 0
+        }
+      },
+
+      "armorer": {
+        "minecraft:type_family": {
+          "family": [ "armorer", "zombie_villager", "zombie", "undead", "monster", "mob" ]
+        },
+        "minecraft:variant": {
+          "value": 0
+        }
+      },
+      "weaponsmith": {
+        "minecraft:type_family": {
+          "family": [ "weaponsmith", "zombie_villager", "zombie", "undead", "monster", "mob" ]
+        },
+        "minecraft:variant": {
+          "value": 0
+        }
+      },
+      "toolsmith": {
+        "minecraft:type_family": {
+          "family": [ "toolsmith", "zombie_villager", "zombie", "undead", "monster", "mob" ]
+        },
+        "minecraft:variant": {
+          "value": 0
+        }
+      },
+
+      "butcher": {
+        "minecraft:type_family": {
+          "family": [ "butcher", "zombie_villager", "zombie", "undead", "monster", "mob" ]
+        },
+        "minecraft:variant": {
+          "value": 0
+        }
+      },
+      "leatherworker": {
+        "minecraft:type_family": {
+          "family": [ "leatherworker", "zombie_villager", "zombie", "undead", "monster", "mob" ]
+        },
+        "minecraft:variant": {
+          "value": 0
+        }
+      },
+      "mason": {
+        "minecraft:type_family": {
+          "family": [ "stone_mason", "zombie_villager", "zombie", "undead", "monster", "mob" ]
+        },
+        "minecraft:variant": {
+          "value": 0
+        }
+      },
+
+      "desert_villager": {
+        "minecraft:mark_variant": {
+          "value": 1
+        }
+      },
+
+      "jungle_villager": {
+        "minecraft:mark_variant": {
+          "value": 2
+        }
+      },
+
+      "savanna_villager": {
+        "minecraft:mark_variant": {
+          "value": 3
+        }
+      },
+
+      "snow_villager": {
+        "minecraft:mark_variant": {
+          "value": 4
+        }
+      },
+
+      "swamp_villager": {
+        "minecraft:mark_variant": {
+          "value": 5
+        }
+      },
+
+      "taiga_villager": {
+        "minecraft:mark_variant": {
+          "value": 6
+        }
+      },
+
+      "villager_skin_0": {
+        "minecraft:skin_id": {
+          "value": 0
+        }
+      },
+
+      "villager_skin_1": {
+        "minecraft:skin_id": {
+          "value": 1
+        }
+      },
+
+      "villager_skin_2": {
+        "minecraft:skin_id": {
+          "value": 2
+        }
+      },
+
+      "villager_skin_3": {
+        "minecraft:skin_id": {
+          "value": 3
+        }
+      },
+
+      "villager_skin_4": {
+        "minecraft:skin_id": {
+          "value": 4
+        }
+      },
+
+      "villager_skin_5": {
+        "minecraft:skin_id": {
+          "value": 5
+        }
+      }
+    },
+
+    "components": {
+      "minecraft:is_hidden_when_invisible": {
+      },
+      // Zombie_villager Components
+      "minecraft:navigation.walk": {
+        "is_amphibious": true,
+        "can_pass_doors": true,
+        "can_break_doors": true,
+        "avoid_sun": false
+      },
+        "minecraft:environment_sensor": {
+          "triggers": [
+			  {
+            "filters": {
+              "all_of": [
+                {
+                  "test": "is_family",
+                  "subject": "self",
+                  "value": "zombie_villager"
+                }
+              ]
+            },
+            "event": "yes:weapon_remove"
+            },
+		    {
+            "filters": {
+                "test": "has_equipment", 
+			    "subject": "self", 
+				"domain": "hand",
+				"operator": "==",
+				"value": "yes:emerald_dagger"
+              },
+            "event": "yes:emerald_dagger_effect"
+			},
+		    {
+            "filters": {
+                "test": "has_equipment", 
+			    "subject": "self", 
+				"domain": "hand",
+				"operator": "==",
+				"value": "yes:amethyst_spear"
+              },
+            "event": "yes:amethyst_spear_effect"
+			},
+		    {
+            "filters": {
+              "any_of": [
+                {
+                "test": "has_equipment", 
+			   	 "subject": "self", 
+					 "domain": "hand",
+					 "operator": "==",
+					 "value": "yes:copper_hammer"
+              },
+                {
+                "test": "has_equipment", 
+			   	 "subject": "self", 
+					 "domain": "hand",
+					 "operator": "==",
+					 "value": "yes:exposed_copper_hammer"
+              },
+                {
+                "test": "has_equipment", 
+			   	 "subject": "self", 
+					 "domain": "hand",
+					 "operator": "==",
+					 "value": "yes:weathered_copper_hammer"
+              },
+                {
+                "test": "has_equipment", 
+			   	 "subject": "self", 
+					 "domain": "hand",
+					 "operator": "==",
+					 "value": "yes:oxidized_copper_hammer"
+                }
+				  ]
+				},
+            "event": "yes:copper_hammer_effect"
+		  	   },
+		    {
+            "filters": {
+                "test": "has_equipment", 
+			    "subject": "self", 
+				"domain": "hand",
+				"operator": "==",
+				"value": "yes:glowing_obsidian_battleaxe"
+              },
+            "event": "yes:glowing_obsidian_battleaxe_effect"
+		  	   },
+		    {
+            "filters": {
+                "test": "has_equipment", 
+			    "subject": "self", 
+				"domain": "hand",
+				"operator": "==",
+				"value": "yes:echo_staff"
+              },
+            "event": "yes:echo_staff_effect"
+		  	   },
+		    {
+            "filters": {
+              "all_of": [
+                {
+                  "test": "has_equipment",
+                  "subject": "self",
+                  "operator": "==",
+                  "domain": "head",
+                  "value": "yes:copper_helmet"
+                },
+                {
+                  "test": "has_tag",
+                  "subject": "self",
+                  "operator": "!=",
+                  "value": "spawn_tag"
+                }
+              ]
+            },
+            "event": "yes:copper_helmet_random"
+          },
+          {
+            "filters": {
+              "all_of": [
+                {
+                  "test": "has_equipment",
+                  "subject": "self",
+                  "operator": "==",
+                  "domain": "torso",
+                  "value": "yes:copper_chestplate"
+                },
+                {
+                  "test": "has_tag",
+                  "subject": "self",
+                  "operator": "!=",
+                  "value": "spawn_tag"
+                }
+              ]
+            },
+            "event": "yes:copper_chestplate_random"
+          },
+          {
+            "filters": {
+              "all_of": [
+                {
+                  "test": "has_equipment",
+                  "subject": "self",
+                  "operator": "==",
+                  "domain": "leg",
+                  "value": "yes:copper_leggings"
+                },
+                {
+                  "test": "has_tag",
+                  "subject": "self",
+                  "operator": "!=",
+                  "value": "spawn_tag"
+                }
+              ]
+            },
+            "event": "yes:copper_leggings_random"
+          },
+          {
+            "filters": {
+              "all_of": [
+                {
+                  "test": "has_equipment",
+                  "subject": "self",
+                  "operator": "==",
+                  "domain": "feet",
+                  "value": "yes:copper_boots"
+                },
+                {
+                  "test": "has_tag",
+                  "subject": "self",
+                  "operator": "!=",
+                  "value": "spawn_tag"
+                }
+              ]
+            },
+            "event": "yes:copper_boots_random"
+            },
+          {
+            "filters": {
+              "all_of": [
+                {
+                  "test": "is_underground",
+                  "subject": "self",
+                  "operator": "==",
+                  "value": true
+                },
+                {
+                  "test": "is_altitude",
+                  "subject": "self",
+                  "operator": "<=",
+                  "value": 0
+                },
+                {
+                  "test": "has_tag",
+                  "subject": "self",
+                  "operator": "!=",
+                  "value": "spawn_tag"
+                }
+              ]
+            },
+            "event": "yes:warden_equipment"
+            },
+          {
+            "filters": {
+                "test": "has_tag", 
+			    "subject": "self",
+				"operator": "!=",
+				"value": "spawn_tag"
+              },
+            "event": "yes:spawn_remove"
+			}
+		  ]
+		},
+      "minecraft:annotation.break_door": {
+      },
+      "minecraft:movement.basic": {
+      },
+      "minecraft:jump.static": {
+      },
+      "minecraft:can_climb": {
+      },
+      "minecraft:breathable": {
+        "total_supply": 15,
+        "suffocate_time": 0,
+        "breathes_water": true
+      },
+      "minecraft:loot": {
+        "table": "loot_tables/entities/zombie.json"
+      },
+      "minecraft:equip_item": {
+      },
+      "minecraft:conditional_bandwidth_optimization": {
+      },
+      "minecraft:collision_box": {
+        "width": 0.6,
+        "height": 1.9
+      },
+      "minecraft:burns_in_daylight": {},
+
+      "minecraft:health": {
+        "value": 20,
+        "max": 20
+      },
+      "minecraft:hurt_on_condition": {
+        "damage_conditions": [
+          {
+            "filters": { "test": "in_lava", "subject": "self", "operator": "==", "value": true },
+            "cause": "lava",
+            "damage_per_tick": 4
+          }
+        ]
+      },
+      "minecraft:attack": {
+        "damage": 3
+      },
+      "minecraft:nameable": {
+      },
+      "minecraft:shareables": {
+        "items": [
+         {
+            "item": "yes:gilded_netherite_mace",
+            "want_amount": 1,
+            "surplus_amount": 1,
+            "priority": 0
+          },
+		  {
+            "item": "yes:gilded_netherite_sword",
+            "want_amount": 1,
+            "surplus_amount": 1,
+            "priority": 1
+          },
+		  {
+            "item": "yes:netherite_mace",
+            "want_amount": 1,
+            "surplus_amount": 1,
+            "priority": 2
+          },
+          {
+            "item": "yes:phantom_sword",
+            "want_amount": 1,
+            "surplus_amount": 1,
+            "priority": 3
+          },
+          {
+            "item": "minecraft:netherite_sword",
+            "want_amount": 1,
+            "surplus_amount": 1,
+            "priority": 4
+          },
+          {
+            "item": "yes:glowing_obsidian_battleaxe",
+            "want_amount": 1,
+            "surplus_amount": 1,
+            "priority": 7
+          },
+          {
+            "item": "yes:glowing_obsidian_sword",
+            "want_amount": 1,
+            "surplus_amount": 1,
+            "priority": 8
+          },
+          {
+            "item": "yes:phantom_whip",
+            "want_amount": 1,
+            "surplus_amount": 1,
+            "priority": 9
+          },
+		  {
+            "item": "yes:diamond_mace",
+            "want_amount": 1,
+            "surplus_amount": 1,
+            "priority": 10
+          },
+          {
+            "item": "minecraft:diamond_sword",
+            "want_amount": 1,
+            "surplus_amount": 1,
+            "priority": 11
+          },
+          {
+            "item": "yes:emerald_dagger",
+            "want_amount": 1,
+            "surplus_amount": 1,
+            "priority": 12
+          },
+          {
+            "item": "yes:emerald_sword",
+            "want_amount": 1,
+            "surplus_amount": 1,
+            "priority": 13
+          },
+          {
+            "item": "yes:amethyst_spear",
+            "want_amount": 1,
+            "surplus_amount": 1,
+            "priority": 14
+          },
+          {
+            "item": "yes:oxidized_copper_hammer",
+            "want_amount": 1,
+            "surplus_amount": 1,
+            "priority": 15
+          },
+          {
+            "item": "yes:weathered_copper_hammer",
+            "want_amount": 1,
+            "surplus_amount": 1,
+            "priority": 16
+          },
+          {
+            "item": "yes:copper_hammer",
+            "want_amount": 1,
+            "surplus_amount": 1,
+            "priority": 17
+          },
+          {
+            "item": "yes:exposed_copper_hammer",
+            "want_amount": 1,
+            "surplus_amount": 1,
+            "priority": 18
+          },
+          {
+            "item": "yes:amethyst_sword",
+            "want_amount": 1,
+            "surplus_amount": 1,
+            "priority": 19
+          },
+			 {
+            "item": "yes:oxidized_copper_sword",
+            "want_amount": 1,
+            "surplus_amount": 1,
+            "priority": 20
+          },
+          {
+            "item": "minecraft:iron_sword",
+            "want_amount": 1,
+            "surplus_amount": 1,
+            "priority": 21
+          },
+          {
+            "item": "yes:copper_sword",
+            "want_amount": 1,
+            "surplus_amount": 1,
+            "priority": 24
+          },
+			 {
+            "item": "yes:exposed_copper_sword",
+            "want_amount": 1,
+            "surplus_amount": 1,
+            "priority": 25
+          },
+			 {
+            "item": "yes:weathered_copper_sword",
+            "want_amount": 1,
+            "surplus_amount": 1,
+            "priority": 26
+          },
+          {
+            "item": "minecraft:stone_sword",
+            "want_amount": 1,
+            "surplus_amount": 1,
+            "priority": 27
+          },
+          {
+            "item": "minecraft:golden_sword",
+            "want_amount": 1,
+            "surplus_amount": 1,
+            "priority": 28
+          },
+          {
+            "item": "minecraft:wooden_sword",
+            "want_amount": 1,
+            "surplus_amount": 1,
+            "priority": 29
+          },
+			 
+			 
+			 
+          {
+            "item": "yes:gilded_netherite_helmet",
+            "want_amount": 1,
+            "surplus_amount": 1,
+            "priority": 0
+          },
+          {
+            "item": "minecraft:netherite_helmet",
+            "want_amount": 1,
+            "surplus_amount": 1,
+            "priority": 1
+          },
+          {
+            "item": "yes:glowing_obsidian_helmet",
+            "want_amount": 1,
+            "surplus_amount": 1,
+            "priority": 3
+          },
+          {
+            "item": "minecraft:diamond_helmet",
+            "want_amount": 1,
+            "surplus_amount": 1,
+            "priority": 4
+          },
+          {
+            "item": "yes:emerald_helmet",
+            "want_amount": 1,
+            "surplus_amount": 1,
+            "priority": 5
+          },
+          {
+            "item": "yes:amethyst_helmet",
+            "want_amount": 1,
+            "surplus_amount": 1,
+            "priority": 6
+          },
+          {
+            "item": "minecraft:iron_helmet",
+            "want_amount": 1,
+            "surplus_amount": 1,
+            "priority": 7
+          },
+			 {
+            "item": "yes:weathered_copper_helmet",
+            "want_amount": 1,
+            "surplus_amount": 1,
+            "priority": 8
+          },
+			 {
+            "item": "yes:oxidized_copper_helmet",
+            "want_amount": 1,
+            "surplus_amount": 1,
+            "priority": 9
+          },
+          {
+            "item": "yes:phantom_helmet",
+            "want_amount": 1,
+            "surplus_amount": 1,
+            "priority": 10
+          },
+          {
+            "item": "yes:copper_helmet",
+            "want_amount": 1,
+            "surplus_amount": 1,
+            "priority": 12
+          },
+			 {
+            "item": "yes:exposed_copper_helmet",
+            "want_amount": 1,
+            "surplus_amount": 1,
+            "priority": 13
+          },
+          {
+            "item": "minecraft:chainmail_helmet",
+            "want_amount": 1,
+            "surplus_amount": 1,
+            "priority": 14
+          },
+          {
+            "item": "minecraft:golden_helmet",
+            "want_amount": 1,
+            "surplus_amount": 1,
+            "priority": 15
+          },
+          {
+            "item": "minecraft:leather_helmet",
+            "want_amount": 1,
+            "surplus_amount": 1,
+            "priority": 16
+          },
+          {
+            "item": "yes:turtle_helmet",
+            "want_amount": 1,
+            "surplus_amount": 1,
+            "priority": 17
+          },
+          {
+            "item": "minecraft:skull:0",
+            "want_amount": 1,
+            "surplus_amount": 1,
+            "priority": 18
+          },
+          {
+            "item": "minecraft:skull:1",
+            "want_amount": 1,
+            "surplus_amount": 1,
+            "priority": 19
+          },
+          {
+            "item": "minecraft:carved_pumpkin",
+            "want_amount": 1,
+            "surplus_amount": 1,
+            "priority": 20
+          },
+			 
+			 
+			 
+          {
+            "item": "yes:gilded_netherite_chestplate",
+            "want_amount": 1,
+            "surplus_amount": 1,
+            "priority": 0
+          },
+          {
+            "item": "minecraft:netherite_chestplate",
+            "want_amount": 1,
+            "surplus_amount": 1,
+            "priority": 1
+          },
+          {
+            "item": "yes:glowing_obsidian_chestplate",
+            "want_amount": 1,
+            "surplus_amount": 1,
+            "priority": 3
+          },
+          {
+            "item": "minecraft:diamond_chestplate",
+            "want_amount": 1,
+            "surplus_amount": 1,
+            "priority": 4
+          },
+          {
+            "item": "yes:emerald_chestplate",
+            "want_amount": 1,
+            "surplus_amount": 1,
+            "priority": 5
+          },
+          {
+            "item": "yes:amethyst_chestplate",
+            "want_amount": 1,
+            "surplus_amount": 1,
+            "priority": 6
+          },
+          {
+            "item": "minecraft:iron_chestplate",
+            "want_amount": 1,
+            "surplus_amount": 1,
+            "priority": 7
+          },
+			 {
+            "item": "yes:oxidized_copper_chestplate",
+            "want_amount": 1,
+            "surplus_amount": 1,
+            "priority": 8
+          },
+          {
+            "item": "yes:phantom_chestplate",
+            "want_amount": 1,
+            "surplus_amount": 1,
+            "priority": 9
+          },
+          {
+            "item": "yes:copper_chestplate",
+            "want_amount": 1,
+            "surplus_amount": 1,
+            "priority": 11
+          },
+			 {
+            "item": "yes:exposed_copper_chestplate",
+            "want_amount": 1,
+            "surplus_amount": 1,
+            "priority": 12
+          },
+			 {
+            "item": "yes:weathered_copper_chestplate",
+            "want_amount": 1,
+            "surplus_amount": 1,
+            "priority": 13
+          },
+          {
+            "item": "minecraft:chainmail_chestplate",
+            "want_amount": 1,
+            "surplus_amount": 1,
+            "priority": 14
+          },
+          {
+            "item": "minecraft:golden_chestplate",
+            "want_amount": 1,
+            "surplus_amount": 1,
+            "priority": 15
+          },
+          {
+            "item": "minecraft:leather_chestplate",
+            "want_amount": 1,
+            "surplus_amount": 1,
+            "priority": 16
+          },
+			 
+			 
+			 
+          {
+            "item": "yes:gilded_netherite_leggings",
+            "want_amount": 1,
+            "surplus_amount": 1,
+            "priority": 0
+          },
+          {
+            "item": "minecraft:netherite_leggings",
+            "want_amount": 1,
+            "surplus_amount": 1,
+            "priority": 1
+          },
+          {
+            "item": "yes:glowing_obsidian_leggings",
+            "want_amount": 1,
+            "surplus_amount": 1,
+            "priority": 3
+          },
+          {
+            "item": "minecraft:diamond_leggings",
+            "want_amount": 1,
+            "surplus_amount": 1,
+            "priority": 4
+          },
+          {
+            "item": "yes:emerald_leggings",
+            "want_amount": 1,
+            "surplus_amount": 1,
+            "priority": 5
+          },
+          {
+            "item": "yes:amethyst_leggings",
+            "want_amount": 1,
+            "surplus_amount": 1,
+            "priority": 6
+          },
+          {
+            "item": "minecraft:iron_leggings",
+            "want_amount": 1,
+            "surplus_amount": 1,
+            "priority": 7
+          },
+			 {
+            "item": "yes:oxidized_copper_leggings",
+            "want_amount": 1,
+            "surplus_amount": 1,
+            "priority": 8
+          },
+          {
+            "item": "yes:phantom_leggings",
+            "want_amount": 1,
+            "surplus_amount": 1,
+            "priority": 9
+          },
+          {
+            "item": "yes:copper_leggings",
+            "want_amount": 1,
+            "surplus_amount": 1,
+            "priority": 11
+          },
+			 {
+            "item": "yes:exposed_copper_leggings",
+            "want_amount": 1,
+            "surplus_amount": 1,
+            "priority": 12
+          },
+			 {
+            "item": "yes:weathered_copper_leggings",
+            "want_amount": 1,
+            "surplus_amount": 1,
+            "priority": 13
+          },
+          {
+            "item": "minecraft:chainmail_leggings",
+            "want_amount": 1,
+            "surplus_amount": 1,
+            "priority": 14
+          },
+          {
+            "item": "minecraft:golden_leggings",
+            "want_amount": 1,
+            "surplus_amount": 1,
+            "priority": 15
+          },
+          {
+            "item": "minecraft:leather_leggings",
+            "want_amount": 1,
+            "surplus_amount": 1,
+            "priority": 16
+          },
+			 
+			 
+			 
+          {
+            "item": "yes:gilded_netherite_boots",
+            "want_amount": 1,
+            "surplus_amount": 1,
+            "priority": 0
+          },
+          {
+            "item": "minecraft:netherite_boots",
+            "want_amount": 1,
+            "surplus_amount": 1,
+            "priority": 1
+          },
+          {
+            "item": "yes:glowing_obsidian_boots",
+            "want_amount": 1,
+            "surplus_amount": 1,
+            "priority": 3
+          },
+          {
+            "item": "minecraft:diamond_boots",
+            "want_amount": 1,
+            "surplus_amount": 1,
+            "priority": 4
+          },
+          {
+            "item": "yes:emerald_boots",
+            "want_amount": 1,
+            "surplus_amount": 1,
+            "priority": 5
+          },
+          {
+            "item": "yes:amethyst_boots",
+            "want_amount": 1,
+            "surplus_amount": 1,
+            "priority": 6
+          },
+          {
+            "item": "minecraft:iron_boots",
+            "want_amount": 1,
+            "surplus_amount": 1,
+            "priority": 7
+          },
+			 {
+            "item": "yes:weathered_copper_boots",
+            "want_amount": 1,
+            "surplus_amount": 1,
+            "priority": 8
+          },
+          {
+            "item": "yes:oxidized_copper_boots",
+            "want_amount": 1,
+            "surplus_amount": 1,
+            "priority": 9
+          },
+          {
+            "item": "yes:phantom_boots",
+            "want_amount": 1,
+            "surplus_amount": 1,
+            "priority": 10
+          },
+          {
+            "item": "yes:copper_boots",
+            "want_amount": 1,
+            "surplus_amount": 1,
+            "priority": 12
+          },
+			 {
+            "item": "yes:exposed_copper_boots",
+            "want_amount": 1,
+            "surplus_amount": 1,
+            "priority": 13
+          },
+          {
+            "item": "minecraft:chainmail_boots",
+            "want_amount": 1,
+            "surplus_amount": 1,
+            "priority": 14
+          },
+          {
+            "item": "minecraft:golden_boots",
+            "want_amount": 1,
+            "surplus_amount": 1,
+            "priority": 15
+          },
+          {
+            "item": "minecraft:leather_boots",
+            "want_amount": 1,
+            "surplus_amount": 1,
+            "priority": 16
+          }
+        ]
+      },
+      "minecraft:interact": {
+        "interactions": {
+          // Curing the villager
+          "on_interact": {
+            "filters": {
+              "all_of": [
+                { "test": "has_equipment", "domain": "hand", "subject": "other", "value": "golden_apple" },
+                { "test": "has_component", "subject": "self", "value": "minecraft:effect.weakness" }
+              ]
+            },
+            "event": "villager_converted",
+            "target": "self"
+          },
+          "use_item": true,
+          "interact_text": "action.interact.cure"
+        }
+      },
+      "minecraft:despawn": {
+        "despawn_from_distance": {}
+      },
+      // Zombie_villager Behaviors
+      "minecraft:behavior.melee_attack": {
+        "priority": 6
+      },
+      "minecraft:behavior.equip_item": {
+        "priority": 0
+      },
+      "minecraft:behavior.stomp_turtle_egg": {
+        "priority": 4,
+        "speed_multiplier": 1,
+        "search_range": 10,
+        "search_height": 2,
+        "goal_radius": 1.14,
+        "interval": 20
+      },
+      "minecraft:behavior.pickup_items": {
+        "priority": 3,
+        "max_dist": 5,
+        "goal_radius": 2,
+        "speed_multiplier": 1.0,
+        "pickup_based_on_chance": false,
+        "can_pickup_any_item": true
+      },
+      "minecraft:behavior.random_stroll": {
+        "priority": 9,
+        "speed_multiplier": 1
+      },
+      "minecraft:behavior.look_at_player": {
+        "priority": 10,
+        "look_distance": 6,
+        "probability": 0.02
+      },
+      "minecraft:behavior.random_look_around": {
+        "priority": 11
+      },
+      "minecraft:behavior.hurt_by_target": {
+        "priority": 1
+      },
+      "minecraft:behavior.nearest_attackable_target": {
+        "priority": 2,
+        "must_see": true,
+        "reselect_targets": true,
+		  "target_invisible_multiplier": 0.01,
+		  "target_sneak_visibility_multiplier": 0.5,
+        "entity_types": [
+          {
+            "filters": {
+              "any_of": [
+                { "test": "is_family", "subject": "other", "value": "player" },
+                { "test": "is_family", "subject": "other", "value": "snowgolem" },
+                { "test": "is_family", "subject": "other", "value": "irongolem" },
+                { "test": "is_family", "subject": "other", "value": "villager" },
+                { "test": "is_family", "subject": "other", "value": "wandering_trader" }
+              ]
+            },
+            "max_dist": 35
+          },
+          {
+            "filters": {
+              "all_of": [
+                { "test": "is_family", "subject": "other", "value": "baby_turtle" },
+                { "test": "in_water", "subject": "other", "operator": "!=", "value": true }
+              ]
+            },
+            "max_dist": 35
+          }
+        ]
+      },
+      "minecraft:physics": {
+      },
+      "minecraft:pushable": {
+        "is_pushable": true,
+        "is_pushable_by_piston": true
+      }
+    },
+
+    "events": {
+      "yes:emerald_dagger_effect": {
+        "remove": {
+        },
+        "add": {
+          "component_groups": [
+            "yes:emerald_dagger_effect"
+          ]
+        }
+      },
+      "yes:amethyst_spear_effect": {
+				  "queue_command": {
+   				 "command": [
+						 "scoreboard objectives add mobspear dummy",
+						 "scoreboard players add @s mobspear 1",
+						 "scoreboard players set @s[scores={mobspear=55..57}] mobspear 54",
+						 //"execute @s[scores={mobspear=54},tag=!mob_spear_attacking] ~~~ execute @a[r=5.5] ~~~ execute @e[type=husk,c=1,r=5.5,scores={mobspear=54},tag=!mob_spear_attacking] ~~~ summon yes:amethyst_spear_entityc",
+						 //"execute @s[scores={mobspear=54..57}] ~~~ execute @e[r=1,type=yes:amethyst_spear_entityc] ~~~ scoreboard players set @e[type=husk,c=1,r=5.5,scores={mobspear=54..57}] mobspear 58",
+						 "execute as @s[scores={mobspear=54},tag=!mob_spear_attacking] at @s if entity @a[r=5.5] run summon yes:amethyst_spear_entityc",
+						 "execute as @s[scores={mobspear=54..57}] at @s if entity @e[r=1,type=yes:amethyst_spear_entityc] run scoreboard players set @s mobspear 58",
+						 "playanimation @s[scores={mobspear=58}] animation.player.stab2c",
+						 "scoreboard players set @s[scores={mobspear=58}] mobspear 59"
+  						  ]
+ 					 }
+      },
+      "yes:copper_hammer_effect": {
+				  "queue_command": {
+   				 "command": [
+						 "scoreboard objectives add mobhammer dummy",
+						 "scoreboard players add @s mobhammer 1",
+						 "scoreboard players set @s[scores={mobhammer=24..26}] mobhammer 23",
+						 "execute as @s[scores={mobhammer=23},tag=!mob_hammer_attacking] at @s if entity @a[r=4.5] run summon yes:copper_hammer_attack_entityc",
+						 "execute as @s[scores={mobhammer=23..26}] at @s if entity @e[r=1,type=yes:copper_hammer_attack_entityc] run scoreboard players set @s mobhammer 27",
+						 "playanimation @s[scores={mobhammer=27}] animation.zombies.hammer1",
+						 "scoreboard players set @s[scores={mobhammer=27}] mobhammer 28"
+  						  ]
+ 					 }
+      },
+      "yes:glowing_obsidian_battleaxe_effect": {
+				  "queue_command": {
+   				 "command": [
+						 "tag @s add mob_battleaxe_hitting",
+						 "scoreboard objectives add mobbattleaxe dummy",
+						 "scoreboard players add @s mobbattleaxe 1",
+						 "scoreboard players set @s[scores={mobbattleaxe=47..49}] mobbattleaxe 46",
+						 "execute as @s[scores={mobbattleaxe=46}] at @s if entity @a[r=4.5] run summon yes:battleaxe_entity2c",
+						 "execute as @s[scores={mobbattleaxe=46..49}] at @s if entity @e[r=1,type=yes:battleaxe_entity2c] run scoreboard players set @s mobbattleaxe 50",
+						 "playanimation @s[scores={mobbattleaxe=50}] animation.battleaxe_attack1c",
+						 "scoreboard players set @s[scores={mobbattleaxe=50}] mobbattleaxe 51"
+  						  ]
+ 					 }
+      },
+      "yes:echo_staff_effect": {
+				  "queue_command": {
+   				 "command": [
+						 "scoreboard objectives add mobstaff dummy",
+						 "scoreboard players add @s mobstaff 1",
+						 "scoreboard players set @s[scores={mobstaff=127..129}] mobstaff 127",
+						 "execute as @s[scores={mobstaff=127}] at @s if entity @a[r=8] run summon yes:staff_hit_entityc",
+						 "execute as @s[scores={mobstaff=127}] at @s if entity @a[r=8] run summon yes:staff_random_entityc",
+						 "execute as @s[scores={mobstaff=127..129}] at @s if entity @e[r=4,type=yes:staff_hit_entityc] run scoreboard players set @s mobstaff 130",
+						 "playanimation @s[scores={mobstaff=130}] animation.staff_attack",
+						 "scoreboard players set @s[scores={mobstaff=130}] mobstaff 131"
+  						  ]
+ 					 }
+      },
+      "yes:weapon_remove": {
+        "remove": {
+          "component_groups": [
+            "yes:emerald_dagger_effect",
+			"yes:amethyst_spear_effect"
+          ]
+        },
+        "add": {
+          "component_groups": [
+            "yes:weapon_remove"
+          ]
+        }
+      },
+      "yes:copper_helmet_random": {
+        "randomize": [
+          {
+            "weight": 1,
+				  "queue_command": {
+   				 "command": [
+						 "replaceitem entity @s slot.armor.head 0 yes:copper_helmet"
+  						  ]
+ 					 }
+			 },
+          {
+            "weight": 2,
+				  "queue_command": {
+   				 "command": [
+						 "replaceitem entity @s slot.armor.head 0 yes:exposed_copper_helmet"
+  						  ]
+ 					 }
+			 },
+          {
+            "weight": 2,
+				  "queue_command": {
+   				 "command": [
+						 "replaceitem entity @s slot.armor.head 0 yes:weathered_copper_helmet"
+  						  ]
+ 					 }
+			 },
+	       {
+            "weight": 1,
+				  "queue_command": {
+   				 "command": [
+						 "replaceitem entity @s slot.armor.head 0 yes:oxidized_copper_helmet"
+  						  ]
+ 					 }
+			 }
+		  ]
+      },
+      "yes:copper_chestplate_random": {
+        "randomize": [
+          {
+            "weight": 1,
+				  "queue_command": {
+   				 "command": [
+						 "replaceitem entity @s slot.armor.chest 0 yes:copper_chestplate"
+  						  ]
+ 					 }
+			 },
+          {
+            "weight": 2,
+				  "queue_command": {
+   				 "command": [
+						 "replaceitem entity @s slot.armor.chest 0 yes:exposed_copper_chestplate"
+  						  ]
+ 					 }
+			 },
+          {
+            "weight": 2,
+				  "queue_command": {
+   				 "command": [
+						 "replaceitem entity @s slot.armor.chest 0 yes:weathered_copper_chestplate"
+  						  ]
+ 					 }
+			 },
+	       {
+            "weight": 1,
+				  "queue_command": {
+   				 "command": [
+						 "replaceitem entity @s slot.armor.chest 0 yes:oxidized_copper_chestplate"
+  						  ]
+ 					 }
+			 }
+		  ]
+      },
+      "yes:copper_leggings_random": {
+        "randomize": [
+          {
+            "weight": 1,
+				  "queue_command": {
+   				 "command": [
+						 "replaceitem entity @s slot.armor.legs 0 yes:copper_leggings"
+  						  ]
+ 					 }
+			 },
+          {
+            "weight": 2,
+				  "queue_command": {
+   				 "command": [
+						 "replaceitem entity @s slot.armor.legs 0 yes:exposed_copper_leggings"
+  						  ]
+ 					 }
+			 },
+          {
+            "weight": 2,
+				  "queue_command": {
+   				 "command": [
+						 "replaceitem entity @s slot.armor.legs 0 yes:weathered_copper_leggings"
+  						  ]
+ 					 }
+			 },
+	       {
+            "weight": 1,
+				  "queue_command": {
+   				 "command": [
+						 "replaceitem entity @s slot.armor.legs 0 yes:oxidized_copper_leggings"
+  						  ]
+ 					 }
+			 }
+		  ]
+      },
+      "yes:copper_boots_random": {
+        "randomize": [
+          {
+            "weight": 1,
+				  "queue_command": {
+   				 "command": [
+						 "replaceitem entity @s slot.armor.feet 0 yes:copper_boots"
+  						  ]
+ 					 }
+			 },
+          {
+            "weight": 2,
+				  "queue_command": {
+   				 "command": [
+						 "replaceitem entity @s slot.armor.feet 0 yes:exposed_copper_boots"
+  						  ]
+ 					 }
+			 },
+          {
+            "weight": 2,
+				  "queue_command": {
+   				 "command": [
+						 "replaceitem entity @s slot.armor.feet 0 yes:weathered_copper_boots"
+  						  ]
+ 					 }
+			 },
+	       {
+            "weight": 1,
+				  "queue_command": {
+   				 "command": [
+						 "replaceitem entity @s slot.armor.feet 0 yes:oxidized_copper_boots"
+  						  ]
+ 					 }
+			 }
+		  ]
+      },
+      "yes:warden_equipment": {
+		  "queue_command": {
+			 "command": [
+				 "scoreboard objectives add warden_equipment dummy",
+				 "scoreboard players random @s warden_equipment 1 20",
+				 "execute @s[scores={warden_equipment=1}] ~~~ replaceitem entity @s slot.weapon.mainhand 0 yes:echo_sword",
+				 
+				 "scoreboard players random @s warden_equipment 1 30",
+				 "execute @s[scores={warden_equipment=1}] ~~~ replaceitem entity @s slot.armor.feet 0 yes:warden_boots",
+				 "scoreboard players random @s warden_equipment 1 100",
+				 "execute @s[scores={warden_equipment=43..},hasitem={item=yes:warden_boots}] ~~~ replaceitem entity @s slot.armor.legs 0 yes:warden_leggings",
+				 "scoreboard players random @s warden_equipment 1 100",
+				 "execute @s[scores={warden_equipment=43..},hasitem={item=yes:warden_leggings}] ~~~ replaceitem entity @s slot.armor.chest 0 yes:warden_chestplate",
+				 "scoreboard players random @s warden_equipment 1 100",
+				 "execute @s[scores={warden_equipment=43..},hasitem={item=yes:warden_chestplate}] ~~~ replaceitem entity @s slot.armor.head 0 yes:warden_helmet",
+				 "scoreboard players random @s warden_equipment 1 100",
+				 "execute @s[scores={warden_equipment=31..},hasitem={item=yes:warden_helmet}] ~~~ replaceitem entity @s slot.weapon.mainhand 0 yes:echo_staff",
+				 "scoreboard players reset @s warden_equipment"
+				  ]
+			 }
+      },
+      "yes:spawn_remove": {
+				  "queue_command": {
+   				 "command": [
+						 "tag @s add spawn_tag"
+  						  ]
+ 					 }
+      },
+      "villager_converted": {
+        "remove": {
+        },
+        "add": {
+          "component_groups": [
+            "to_villager"
+          ]
+        }
+      },
+      "minecraft:entity_spawned": {
+        "sequence": [
+          {
+            "filters": { "test": "has_component", "operator": "!=", "value": "minecraft:variant" },
+            "randomize": [
+              {
+                "weight": 9500,
+                "remove": {
+                },
+                "add": {
+                  "component_groups": [
+                    "adult",
+					"minecraft:can_have_equipment"
+                  ]
+                }
+              },
+              {
+                "weight": 425,
+                "remove": {
+                },
+                "add": {
+                  "component_groups": [
+                    "baby",
+					"minecraft:can_have_equipment"
+                  ]
+
+                }
+              },
+              {
+                "weight": 75,
+                "remove": {
+                },
+                "add": {
+                  "component_groups": [
+                    "baby",
+                    "jockey",
+					"minecraft:can_have_equipment"
+                  ]
+
+                }
+              }
+            ]
+          },
+          {
+            "filters": { "test": "has_component", "operator": "!=", "value": "minecraft:variant" },
+            "randomize": [
+              {
+                "weight": 1,
+                "add": { "component_groups": [ "unskilled", "minecraft:can_have_equipment" ] }
+              },
+              {
+                "weight": 1,
+                "add": { "component_groups": [ "nitwit", "minecraft:can_have_equipment" ] }
+              },
+              {
+                "weight": 1,
+                "add": { "component_groups": [ "farmer", "minecraft:can_have_equipment" ] }
+              },
+              {
+                "weight": 1,
+                "add": { "component_groups": [ "fisherman", "minecraft:can_have_equipment" ] }
+              },
+              {
+                "weight": 1,
+                "add": { "component_groups": [ "shepherd", "minecraft:can_have_equipment" ] }
+              },
+              {
+                "weight": 1,
+                "add": { "component_groups": [ "fletcher", "minecraft:can_have_equipment" ] }
+              },
+              {
+                "weight": 1,
+                "add": { "component_groups": [ "librarian", "minecraft:can_have_equipment" ] }
+              },
+              {
+                "weight": 1,
+                "add": { "component_groups": [ "cartographer", "minecraft:can_have_equipment" ] }
+              },
+              {
+                "weight": 1,
+                "add": { "component_groups": [ "cleric", "minecraft:can_have_equipment" ] }
+              },
+              {
+                "weight": 1,
+                "add": { "component_groups": [ "armorer", "minecraft:can_have_equipment" ] }
+              },
+              {
+                "weight": 1,
+                "add": { "component_groups": [ "weaponsmith", "minecraft:can_have_equipment" ] }
+              },
+              {
+                "weight": 1,
+                "add": { "component_groups": [ "toolsmith", "minecraft:can_have_equipment" ] }
+              },
+              {
+                "weight": 1,
+                "add": { "component_groups": [ "butcher", "minecraft:can_have_equipment" ] }
+              },
+              {
+                "weight": 1,
+                "add": { "component_groups": [ "leatherworker", "minecraft:can_have_equipment" ] }
+              },
+              {
+                "weight": 1,
+                "add": { "component_groups": [ "mason", "minecraft:can_have_equipment" ] }
+              }
+            ]
+          },
+          {
+            "trigger": "minecraft:add_biome_and_skin"
+          }
+        ]
+      },
+
+      "minecraft:spawn_skilled_adult": {
+        "sequence": [
+          {
+            "filters": { "test": "has_component", "operator": "!=", "value": "minecraft:variant" },
+            "add": { "component_groups": [ "adult", "minecraft:can_have_equipment" ] }
+          },
+          {
+            "filters": { "test": "has_component", "operator": "!=", "value": "minecraft:variant" },
+            "randomize": [
+              {
+                "weight": 1,
+                "add": { "component_groups": [ "farmer", "minecraft:can_have_equipment" ] }
+              },
+              {
+                "weight": 1,
+                "add": { "component_groups": [ "fisherman", "minecraft:can_have_equipment" ] }
+              },
+              {
+                "weight": 1,
+                "add": { "component_groups": [ "shepherd", "minecraft:can_have_equipment" ] }
+              },
+              {
+                "weight": 1,
+                "add": { "component_groups": [ "fletcher", "minecraft:can_have_equipment" ] }
+              },
+              {
+                "weight": 1,
+                "add": { "component_groups": [ "librarian", "minecraft:can_have_equipment" ] }
+              },
+              {
+                "weight": 1,
+                "add": { "component_groups": [ "cartographer", "minecraft:can_have_equipment" ] }
+              },
+              {
+                "weight": 1,
+                "add": { "component_groups": [ "cleric", "minecraft:can_have_equipment" ] }
+              },
+              {
+                "weight": 1,
+                "add": { "component_groups": [ "armorer", "minecraft:can_have_equipment" ] }
+              },
+              {
+                "weight": 1,
+                "add": { "component_groups": [ "weaponsmith", "minecraft:can_have_equipment" ] }
+              },
+              {
+                "weight": 1,
+                "add": { "component_groups": [ "toolsmith", "minecraft:can_have_equipment" ] }
+              },
+              {
+                "weight": 1,
+                "add": { "component_groups": [ "butcher", "minecraft:can_have_equipment" ] }
+              },
+              {
+                "weight": 1,
+                "add": { "component_groups": [ "leatherworker", "minecraft:can_have_equipment" ] }
+              },
+              {
+                "weight": 1,
+                "add": { "component_groups": [ "mason", "minecraft:can_have_equipment" ] }
+              }
+            ]
+          },
+          {
+            "trigger": "minecraft:add_biome_and_skin"
+          }
+        ]
+      },
+
+      "minecraft:entity_transformed": {
+        "sequence": [
+          {
+            "filters": { "test": "has_component", "operator": "!=", "value": "minecraft:variant" },
+            "sequence": [
+              // Transform baby villager to baby zombie
+              {
+                "filters": { "test": "has_component", "subject": "other", "value": "minecraft:is_baby" },
+                "add": { "component_groups": [ "baby", "minecraft:can_have_equipment" ] }
+              },
+              // Transform adult villager to adult zombie
+              {
+                "filters": {  "test": "has_component",  "subject": "other", "operator": "!=", "value": "minecraft:is_baby" },
+                "add": { "component_groups": [ "adult", "minecraft:can_have_equipment" ] }
+              },
+              // Transform unskilled zombie to unskilled villager
+              {
+                "filters": { "test": "is_family", "subject": "other", "value": "unskilled" },
+                "add": { "component_groups": [ "unskilled" ] }
+              },
+              // Transform nitwit zombie to nitwit villager
+              {
+                "filters": { "test": "is_family", "subject": "other", "value": "nitwit" },
+                "add": { "component_groups": [ "nitwit" ] }
+              },
+              // Transform farmer zombie to farmer villager
+              {
+                "filters": { "test": "is_family", "subject": "other", "value": "farmer" },
+                "add": { "component_groups": [ "farmer" ] }
+              },
+              // Transform fisherman zombie to fisherman villager
+              {
+                "filters": { "test": "is_family", "subject": "other", "value": "fisherman" },
+                "add": { "component_groups": [ "fisherman" ] }
+              },
+              // Transform shepherd zombie to shepherd villager
+              {
+                "filters": { "test": "is_family", "subject": "other", "value": "shepherd" },
+                "add": { "component_groups": [ "shepherd" ] }
+              },
+              // Transform fletcher zombie to fletcher villager
+              {
+                "filters": { "test": "is_family", "subject": "other", "value": "fletcher" },
+                "add": { "component_groups": [ "fletcher" ] }
+              },
+              // Transform librarian zombie to librarian villager
+              {
+                "filters": { "test": "is_family", "subject": "other", "value": "librarian" },
+                "add": { "component_groups": [ "librarian" ] }
+              },
+              // Transform cartographer zombie to cartographer villager
+              {
+                "filters": { "test": "is_family", "subject": "other", "value": "cartographer" },
+                "add": { "component_groups": [ "cartographer" ] }
+              },
+              // Transform cleric zombie to cleric villager
+              {
+                "filters": { "test": "is_family", "subject": "other", "value": "cleric" },
+                "add": { "component_groups": [ "cleric" ] }
+              },
+              // Transform armorer zombie to armorer villager
+              {
+                "filters": { "test": "is_family", "subject": "other", "value": "armorer" },
+                "add": { "component_groups": [ "armorer" ] }
+              },
+              // Transform weaponsmith zombie to weaponsmith villager
+              {
+                "filters": { "test": "is_family", "subject": "other", "value": "weaponsmith" },
+                "add": { "component_groups": [ "weaponsmith" ] }
+              },
+              // Transform toolsmith zombie to toolsmith villager
+              {
+                "filters": { "test": "is_family", "subject": "other", "value": "toolsmith" },
+                "add": { "component_groups": [ "toolsmith" ] }
+              },
+              // Transform butcher zombie to butcher villager
+              {
+                "filters": { "test": "is_family", "subject": "other", "value": "butcher" },
+                "add": { "component_groups": [ "butcher" ] }
+              },
+              // Transform leatherworker zombie to leatherworker villager
+              {
+                "filters": { "test": "is_family", "subject": "other", "value": "leatherworker" },
+                "add": { "component_groups": [ "leatherworker" ] }
+              },
+              // Transform mason zombie to mason villager
+              {
+                "filters": { "test": "is_family", "subject": "other", "value": "stone_mason" },
+                "add": { "component_groups": [ "mason" ] }
+              }
+            ]
+          },
+          {
+            "filters": { "test": "has_component", "operator": "!=", "value": "minecraft:mark_variant" },
+            "sequence": [
+              // Transform desert zombie to desert villager
+              {
+                "filters": { "test": "is_mark_variant", "subject": "other", "value": 1 },
+                "add": { "component_groups": [ "desert_villager", "minecraft:can_have_equipment" ] }
+              },
+              // Transform jungle zombie to jungle villager
+              {
+                "filters": { "test": "is_mark_variant", "subject": "other", "value": 2 },
+                "add": { "component_groups": [ "jungle_villager", "minecraft:can_have_equipment" ] }
+              },
+              // Transform jungle zombie to jungle villager
+              {
+                "filters": { "test": "is_mark_variant", "subject": "other", "value": 3 },
+                "add": { "component_groups": [ "savanna_villager", "minecraft:can_have_equipment" ] }
+              },
+              // Transform jungle zombie to jungle villager
+              {
+                "filters": { "test": "is_mark_variant", "subject": "other", "value": 4 },
+                "add": { "component_groups": [ "snow_villager", "minecraft:can_have_equipment" ] }
+              },
+              // Transform jungle zombie to jungle villager
+              {
+                "filters": { "test": "is_mark_variant", "subject": "other", "value": 5 },
+                "add": { "component_groups": [ "swamp_villager", "minecraft:can_have_equipment" ] }
+              },
+              // Transform taiga zombie to taiga villager
+              {
+                "filters": { "test": "is_mark_variant", "subject": "other", "value": 6 },
+                "add": { "component_groups": [ "taiga_villager", "minecraft:can_have_equipment" ] }
+              }
+            ]
+          },
+          {
+            "filters": { "test": "has_component", "operator": "!=", "value": "minecraft:skin_id" },
+            "sequence": [
+              {
+                "filters": { "test": "is_skin_id", "subject": "other", "value": 0 },
+                "add": { "component_groups": [ "villager_skin_0", "minecraft:can_have_equipment" ] }
+              },
+              {
+                "filters": { "test": "is_skin_id", "subject": "other", "value": 1 },
+                "add": { "component_groups": [ "villager_skin_1", "minecraft:can_have_equipment" ] }
+              },
+              {
+                "filters": { "test": "is_skin_id", "subject": "other", "value": 2 },
+                "add": { "component_groups": [ "villager_skin_2", "minecraft:can_have_equipment" ] }
+              },
+              {
+                "filters": { "test": "is_skin_id", "subject": "other", "value": 3 },
+                "add": { "component_groups": [ "villager_skin_3", "minecraft:can_have_equipment" ] }
+              },
+              {
+                "filters": { "test": "is_skin_id", "subject": "other", "value": 4 },
+                "add": { "component_groups": [ "villager_skin_4", "minecraft:can_have_equipment" ] }
+              },
+              {
+                "filters": { "test": "is_skin_id", "subject": "other", "value": 5 },
+                "add": { "component_groups": [ "villager_skin_5", "minecraft:can_have_equipment" ] }
+              }
+            ]
+          }
+        ]
+      },
+
+      "minecraft:become_cleric": {
+        "add": { "component_groups": [ "cleric", "minecraft:can_have_equipment" ] }
+      },
+
+      "from_village": {
+        "sequence": [
+          {
+            "trigger": "minecraft:entity_spawned"
+          },
+          {
+            "add": { "component_groups": [ "from_abandoned_village", "minecraft:can_have_equipment" ] }
+          }
+        ]
+      },
+
+      "minecraft:add_biome_and_skin": {
+        "sequence": [
+          {
+            "randomize": [
+              {
+                "weight": 1,
+                "add": { "component_groups": [ "villager_skin_0", "minecraft:can_have_equipment" ] }
+              },
+              {
+                "weight": 1,
+                "add": { "component_groups": [ "villager_skin_1", "minecraft:can_have_equipment" ] }
+              },
+              {
+                "weight": 1,
+                "add": { "component_groups": [ "villager_skin_2", "minecraft:can_have_equipment" ] }
+              },
+              {
+                "weight": 1,
+                "add": { "component_groups": [ "villager_skin_3", "minecraft:can_have_equipment" ] }
+              },
+              {
+                "weight": 1,
+                "add": { "component_groups": [ "villager_skin_4", "minecraft:can_have_equipment" ] }
+              },
+              {
+                "weight": 1,
+                "add": { "component_groups": [ "villager_skin_5", "minecraft:can_have_equipment" ] }
+              }
+            ]
+          },
+          {
+            "filters": { 
+              "any_of": [
+                { "test": "has_biome_tag", "value": "desert" },
+                { "test": "has_biome_tag", "value": "mesa" }
+              ]
+            },
+            "add": { "component_groups": [ "desert_villager", "minecraft:can_have_equipment" ] }
+          },
+          {
+            "filters": { "test": "has_biome_tag", "value": "jungle" },
+            "add": { "component_groups": [ "jungle_villager", "minecraft:can_have_equipment" ] }
+          },
+          {
+            "filters": { "test": "has_biome_tag", "value": "savanna" },
+            "add": { "component_groups": [ "savanna_villager", "minecraft:can_have_equipment" ] }
+          },
+          {
+            "filters": {
+              "any_of": [
+                { 
+                  "all_of": [
+                    { "test": "has_biome_tag", "value": "cold" },
+                    { "test": "has_biome_tag", "operator": "!=", "value": "ocean" }
+                  ]
+                },
+                { "test": "has_biome_tag", "value": "frozen" }
+              ]
+            },
+            "add": { "component_groups": [ "snow_villager", "minecraft:can_have_equipment" ] }
+          },
+          {
+            "filters": { "test": "has_biome_tag", "value": "swamp" },
+            "add": { "component_groups": [ "swamp_villager", "minecraft:can_have_equipment" ] }
+          },
+          {
+            "filters": {
+              "all_of": [
+                {
+                  "any_of": [
+                    { "test": "has_biome_tag", "value": "taiga" },
+                    { "test": "has_biome_tag", "value": "extreme_hills" }
+                  ]
+                },
+                { "test": "has_biome_tag", "operator": "!=", "value": "cold" }
+              ]
+            },
+            "add": { "component_groups": [ "taiga_villager", "minecraft:can_have_equipment" ] }
+          }
+        ]
+      }
+    }
+  }
+}

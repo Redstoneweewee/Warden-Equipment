@@ -1,0 +1,24 @@
+{
+	"format_version": "1.10.0",
+	"animations": {
+		"animation.battleaxe_hold_first_person": {
+			"loop": true,
+			"bones": {
+				"battleaxe": {
+					"rotation": [-12.20961, -68.02357, -194.67489],
+					"position": [-4.07743, 7.30475, 5.83059]
+				}
+			}
+		},
+		"animation.battleaxe_hold_third_person": {
+			"loop": true,
+			"bones": {
+				"battleaxe": {
+					"rotation": [-20, -32.5, 0],
+					"position": [-6, 10, -3],
+					"scale": 0.65
+				}
+			}
+		}
+	}
+}

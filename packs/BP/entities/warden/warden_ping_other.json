@@ -1,0 +1,62 @@
+{
+	"format_version": "1.16.100",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "yes:warden_ping_other",
+			"is_summonable": true,
+			"is_spawnable": false,
+			"is_experimental": false
+		},
+		"components": {
+			"minecraft:conditional_bandwidth_optimization": {},
+			"minecraft:physics": {},
+			"minecraft:timer": {
+			  "looping": false,
+			  "time": 5.2,
+			  "time_down_event": {
+				"event": "yes:despawn"
+			  }
+			},
+			"minecraft:type_family": {
+				"family": [
+					"inanimate",
+					"weeweejuice",
+					"warden_ping_other"
+				]
+			},
+			"minecraft:custom_hit_test": {
+				"hitboxes": [
+					{
+						"pivot": [
+							0,
+							100,
+							0
+						],
+						"width": 0,
+						"height": 0
+					}
+				]
+			},
+			"minecraft:damage_sensor": {
+				"triggers": {
+					"deals_damage": false
+				}
+			},
+			"minecraft:knockback_resistance": {
+				"value": 1.0
+			},
+			"minecraft:pushable": {
+				"is_pushable": false,
+				"is_pushable_by_piston": false
+			},
+			"minecraft:collision_box": {
+				"width": 0.0001,
+				"height": 0.0001
+			}
+		},
+		"events": {
+			"yes:despawn": {
+			}
+		}
+	}
+}

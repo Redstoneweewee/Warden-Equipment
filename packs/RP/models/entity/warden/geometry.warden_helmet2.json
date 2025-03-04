@@ -1,0 +1,81 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.warden_helmet2",
+				"texture_width": 64,
+				"texture_height": 32,
+				"visible_bounds_width": 3,
+				"visible_bounds_height": 2.5,
+				"visible_bounds_offset": [0, 0.75, 0]
+			},
+			"bones": [
+				{
+					"name": "body",
+					"pivot": [0, 0, 0]
+				},
+				{
+					"name": "head",
+					"parent": "body",
+					"pivot": [0, 0, 0],
+					"cubes": [
+						{
+							"origin": [-4.91801, -1.94055, -4.91801],
+							"size": [9.83602, 10.81744, 9.83602],
+							"uv": {
+								"north": {"uv": [8, 8], "uv_size": [8, 9]},
+								"east": {"uv": [0, 8], "uv_size": [8, 9]},
+								"south": {"uv": [24, 8], "uv_size": [8, 9]},
+								"west": {"uv": [16, 8], "uv_size": [8, 9]},
+								"up": {"uv": [16, 0], "uv_size": [-8, 8]},
+								"down": {"uv": [8, 0], "uv_size": [-8, 8]}
+							}
+						},
+						{
+							"origin": [-4.91801, -0.96055, -4.65831],
+							"size": [9.83602, 9.83744, 9.05692],
+							"uv": {
+								"north": {"uv": [32, 1], "uv_size": [8, 8]},
+								"east": {"uv": [0, 0], "uv_size": [8, 8]},
+								"south": {"uv": [0, 0], "uv_size": [8, 8]},
+								"west": {"uv": [0, 0], "uv_size": [8, 8]},
+								"up": {"uv": [8, 8], "uv_size": [-8, -8]},
+								"down": {"uv": [8, 0], "uv_size": [-8, 8]}
+							}
+						},
+						{
+							"origin": [2.94, 4.41, 0],
+							"size": [7.84, 7.84, 0],
+							"uv": {
+								"north": {"uv": [40, 2], "uv_size": [10, 10]},
+								"east": {"uv": [0, 0], "uv_size": [0, 8]},
+								"south": {"uv": [42, 12], "uv_size": [8, 8]},
+								"west": {"uv": [0, 0], "uv_size": [0, 8]},
+								"up": {"uv": [8, 0], "uv_size": [-8, 0]},
+								"down": {"uv": [8, 0], "uv_size": [-8, 0]}
+							}
+						},
+						{
+							"origin": [-10.78, 4.41, 0],
+							"size": [7.84, 7.84, 0],
+							"uv": {
+								"north": {"uv": [50, 2], "uv_size": [-10, 10]},
+								"east": {"uv": [0, 0], "uv_size": [0, 8]},
+								"south": {"uv": [42, 12], "uv_size": [8, 8]},
+								"west": {"uv": [0, 0], "uv_size": [0, 8]},
+								"up": {"uv": [8, 0], "uv_size": [-8, 0]},
+								"down": {"uv": [8, 0], "uv_size": [-8, 0]}
+							}
+						}
+					]
+				},
+				{
+					"name": "bone",
+					"parent": "head",
+					"pivot": [-2.89977, 5.21959, -4.52364]
+				}
+			]
+		}
+	]
+}

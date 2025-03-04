@@ -1,0 +1,33 @@
+{
+    "format_version": 2,
+    "header": {
+    "description": "Warden Armor & Echo Tools Reworked v1! (Developer Pack) \nYT: §b§lWeeweeJuice (Developer Pack)",
+    "name": "!!Warden Equipment Reworked v1! [BP] (Developer Pack)",
+        "uuid": "6365f9f1-f7d5-4dde-b02c-b1bebaefab19",
+        "version": [ 1, 0, 0 ],
+        "min_engine_version": [ 1, 19, 70 ]
+    },
+	"modules": [
+		{
+			"type": "script",
+			"language": "javascript",
+			"uuid": "c12001dd-d4f4-467a-abf6-a4e3c9a1fdc2",
+			"entry": "scripts/Main.js",
+			"version": [
+				1,
+				0,
+				0
+			]
+		}
+	],
+	"dependencies": [
+		{
+			"uuid": "309fb9ad-dbbd-4d0d-9a01-e79e11145d1d",
+            "version": [ 1, 0, 0 ]
+		},
+		{
+			"module_name": "@minecraft/server",
+			"version": "1.12.0"
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+  "format_version": "1.20.0",
+	"minecraft:recipe_shapeless": {
+		"description": {
+			"identifier": "yes:waxed_copper1_1"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"ingredients": [
+			{
+				"item": "yes:waxed_oxidized_copper_hammer_ad1"
+			},
+			{
+				"item": "yes:waxed_oxidized_copper_hammer_ad1"
+			}
+		],
+		"result": [
+			{
+				"item": "yes:waxed_oxidized_copper_hammer_ad2"
+			}
+		]
+	}
+}

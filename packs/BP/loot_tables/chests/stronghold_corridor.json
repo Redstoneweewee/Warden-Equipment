@@ -1,0 +1,361 @@
+{
+  "pools": [
+    {
+      "rolls": {
+        "min": 2,
+        "max": 5
+      },
+      "entries": [
+        {
+          "type": "item",
+          "name": "minecraft:ender_pearl",
+          "weight": 730
+        },
+        {
+          "type": "item",
+          "name": "minecraft:emerald",
+          "functions": [
+            {
+              "function": "set_count",
+              "count": {
+                "min": 1,
+                "max": 3
+              }
+            }
+          ],
+          "weight": 220
+        },
+        {
+          "type": "item",
+          "name": "minecraft:diamond",
+          "functions": [
+            {
+              "function": "set_count",
+              "count": {
+                "min": 1,
+                "max": 3
+              }
+            }
+          ],
+          "weight": 220
+        },
+        {
+          "type": "item",
+          "name": "minecraft:iron_ingot",
+          "functions": [
+            {
+              "function": "set_count",
+              "count": {
+                "min": 1,
+                "max": 5
+              }
+            }
+          ],
+          "weight": 730
+        },
+        {
+          "type": "item",
+          "name": "minecraft:gold_ingot",
+          "functions": [
+            {
+              "function": "set_count",
+              "count": {
+                "min": 1,
+                "max": 3
+              }
+            }
+          ],
+          "weight": 360
+        },
+        {
+          "type": "item",
+          "name": "minecraft:redstone",
+          "functions": [
+            {
+              "function": "set_count",
+              "count": {
+                "min": 4,
+                "max": 9
+              }
+            }
+          ],
+          "weight": 360
+        },
+        {
+          "type": "item",
+          "name": "minecraft:bread",
+          "functions": [
+            {
+              "function": "set_count",
+              "count": {
+                "min": 1,
+                "max": 3
+              }
+            }
+          ],
+          "weight": 1090
+        },
+        {
+          "type": "item",
+          "name": "minecraft:apple",
+          "functions": [
+            {
+              "function": "set_count",
+              "count": {
+                "min": 1,
+                "max": 3
+              }
+            }
+          ],
+          "weight": 1090
+        },
+        {
+          "type": "item",
+          "name": "minecraft:iron_pickaxe",
+          "weight": 250
+        },
+        {
+          "type": "item",
+          "name": "minecraft:iron_sword",
+          "weight": 250
+        },
+        {
+          "type": "item",
+          "name": "minecraft:iron_chestplate",
+          "weight": 250
+        },
+        {
+          "type": "item",
+          "name": "minecraft:iron_helmet",
+          "weight": 250
+        },
+        {
+          "type": "item",
+          "name": "minecraft:iron_leggings",
+          "weight": 250
+        },
+        {
+          "type": "item",
+          "name": "minecraft:iron_boots",
+          "weight": 250
+        },
+        {
+          "type": "item",
+          "name": "yes:copper_pickaxe",
+          "weight": 300
+        },
+        {
+          "type": "item",
+          "name": "yes:copper_sword",
+          "weight": 300
+        },
+        {
+          "type": "item",
+          "name": "yes:copper_helmet",
+          "weight": 300
+        },
+        {
+          "type": "item",
+          "name": "yes:copper_chestplate",
+          "weight": 300
+        },
+        {
+          "type": "item",
+          "name": "yes:copper_leggings",
+          "weight": 300
+        },
+        {
+          "type": "item",
+          "name": "yes:copper_boots",
+          "weight": 300
+        },
+        {
+          "type": "item",
+          "name": "minecraft:copper_ingot",
+          "functions": [
+            {
+              "function": "set_count",
+              "count": {
+                "min": 1,
+                "max": 6
+              }
+            }
+          ],
+          "weight": 600
+        },
+        {
+          "type": "item",
+          "name": "yes:amethyst_pickaxe",
+          "weight": 50
+        },
+        {
+          "type": "item",
+          "name": "yes:amethyst_sword",
+          "weight": 50
+        },
+        {
+          "type": "item",
+          "name": "yes:amethyst_helmet",
+          "weight": 50
+        },
+        {
+          "type": "item",
+          "name": "yes:amethyst_chestplate",
+          "weight": 50
+        },
+        {
+          "type": "item",
+          "name": "yes:amethyst_leggings",
+          "weight": 50
+        },
+        {
+          "type": "item",
+          "name": "yes:amethyst_boots",
+          "weight": 50
+        },
+        {
+          "type": "item",
+          "name": "minecraft:amethyst_shard",
+          "functions": [
+            {
+              "function": "set_count",
+              "count": {
+                "min": 1,
+                "max": 3
+              }
+            }
+          ],
+          "weight": 100
+        },
+        {
+          "type": "item",
+          "name": "yes:emerald_pickaxe",
+          "weight": 40
+        },
+        {
+          "type": "item",
+          "name": "yes:emerald_sword",
+          "weight": 40
+        },
+        {
+          "type": "item",
+          "name": "yes:emerald_helmet",
+          "weight": 40
+        },
+        {
+          "type": "item",
+          "name": "yes:emerald_chestplate",
+          "weight": 40
+        },
+        {
+          "type": "item",
+          "name": "yes:emerald_leggings",
+          "weight": 40
+        },
+        {
+          "type": "item",
+          "name": "yes:emerald_boots",
+          "weight": 40
+        },
+        {
+          "type": "item",
+          "name": "minecraft:emerald",
+          "functions": [
+            {
+              "function": "set_count",
+              "count": {
+                "min": 1,
+                "max": 3
+              }
+            }
+          ],
+          "weight": 80
+        },
+        {
+          "type": "item",
+          "name": "minecraft:golden_apple",
+          "weight": 80
+        },
+        {
+          "type": "item",
+          "name": "minecraft:saddle",
+          "weight": 80
+        },
+        {
+          "type": "item",
+          "name": "minecraft:horsearmoriron",
+          "weight": 80
+        },
+        {
+          "type": "item",
+          "name": "minecraft:horsearmorgold",
+          "weight": 80
+        },
+        {
+          "type": "item",
+          "name": "minecraft:horsearmordiamond",
+          "weight": 80
+        },
+        {
+          "type": "item",
+          "name": "minecraft:book",
+          "weight": 110,
+          "functions": [
+            {
+              "function": "enchant_with_levels",
+              "levels": 30,
+              "treasure": true
+            }
+          ]
+        },
+        {
+          "type": "item",
+          "name": "yes:ability_damage_book1",
+          "weight": 24,
+          "functions": [
+            {
+              "function": "enchant_random_gear",
+              "chance": 0.75
+            }
+          ]
+        },
+        {
+          "type": "item",
+          "name": "yes:ability_damage_book2",
+          "weight": 16,
+          "functions": [
+            {
+              "function": "enchant_random_gear",
+              "chance": 0.75
+            }
+          ]
+        },
+        {
+          "type": "item",
+          "name": "yes:ability_damage_book3",
+          "weight": 8,
+          "functions": [
+            {
+              "function": "enchant_random_gear",
+              "chance": 0.75
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "empty",
+          "weight": 9
+        },
+        {
+          "type": "item",
+          "name": "minecraft:eye_armor_trim_smithing_template",
+          "weight": 1
+        }
+      ]
+    }
+  ]
+}

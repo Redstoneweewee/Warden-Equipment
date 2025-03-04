@@ -1,0 +1,19 @@
+{
+  "format_version": "1.19.70",
+  "minecraft:recipe_furnace": {
+    "description": {
+      "identifier": "minecraft:melted_gilded_blackstone"
+    },
+    "tags": ["furnace", "blast_furnace"],
+    "input": {
+      "item": "minecraft:gilded_blackstone",
+      "data": 0
+    },
+		"unlock": [
+			{
+				"item": "minecraft:gilded_blackstone"
+			}
+		],
+    "output": "yes:melted_gilded_blackstone"
+  }
+}

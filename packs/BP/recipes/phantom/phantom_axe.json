@@ -1,0 +1,36 @@
+{
+  "format_version": "1.20.0",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "yes:phantom_axe"
+    },  
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      "ZY",
+      "ZX",
+      " X"
+    ],
+    "key": {
+      "Y": {
+        "item": "yes:phantom_cloth"
+      },
+      "X": {
+        "item": "minecraft:stick"
+      },
+      "Z": {
+        "item": "minecraft:bone"
+      }
+    },
+		"unlock": [
+			{
+				"item": "yes:phantom_cloth"
+			},
+			{
+				"item": "minecraft:bone"
+			}
+		],
+    "result": {
+      "item": "yes:phantom_axe"
+    }
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "format_version": "1.20.0",
+	"minecraft:recipe_shapeless": {
+		"description": {
+			"identifier": "yes:warden1_2"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"ingredients": [
+			{
+				"item": "yes:echo_staff_ad1"
+			},
+			{
+				"item": "yes:echo_staff_ad2"
+			}
+		],
+		"result": [
+			{
+				"item": "yes:echo_staff_ad2"
+			}
+		]
+	}
+}

@@ -1,0 +1,39 @@
+{
+    "format_version": "1.19.70",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "yes:aetherite_leggings2"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"pattern": [
+			"XYZ"
+		],
+		"key": {
+			"X": {
+				"item": "yes:aetherite_upgrade_smithing_template"
+			},
+			"Y": {
+				"item": "yes:emerald_leggings"
+			},
+			"Z": {
+				"item": "yes:aetherite_ingot"
+			}
+		},
+		"unlock": [
+			{
+				"item": "yes:aetherite_upgrade_smithing_template"
+			},
+			{
+				"item": "yes:emerald_leggings"
+			},
+			{
+				"item": "yes:aetherite_ingot"
+			}
+		],
+		"result": {
+			"item": "yes:aetherite_leggings"
+		}
+	}
+}

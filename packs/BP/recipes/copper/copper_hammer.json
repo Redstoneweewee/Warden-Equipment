@@ -1,0 +1,36 @@
+{
+  "format_version": "1.20.0",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "yes:copper_hammer"
+    },  
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      " ZY",
+      " XZ",
+      "X"
+    ],
+    "key": {
+      "X": {
+        "item": "minecraft:stick"
+      },
+      "Y": {
+        "item": "minecraft:copper_ingot"
+      },
+      "Z": {
+        "item": "minecraft:copper_block"
+      }
+    },
+		"unlock": [
+			{
+				"item": "minecraft:copper_ingot"
+			},
+			{
+				"item": "minecraft:copper_block"
+			}
+		],
+    "result": {
+      "item": "yes:copper_hammer"
+    }
+  }
+}

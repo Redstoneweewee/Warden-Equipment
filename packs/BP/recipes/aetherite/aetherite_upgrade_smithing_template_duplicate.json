@@ -1,0 +1,37 @@
+{
+  "format_version": "1.19.70",
+  "minecraft:recipe_shaped": {
+    "description": {
+      "identifier": "yes:aetherite_upgrade_smithing_template_duplicate"
+    },
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      "#X#",
+      "#Y#",
+      "#Z#"
+    ],
+    "key": {
+      "X": {
+        "item": "yes:aetherite_upgrade_smithing_template"
+      },
+      "Y": {
+        "item": "minecraft:cobbled_deepslate"
+      },
+      "Z": {
+        "item": "minecraft:emerald_block"
+      },
+      "#": {
+        "item": "minecraft:emerald"
+      }
+    },
+		"unlock": [
+			{
+				"item": "yes:aetherite_upgrade_smithing_template"
+			}
+		],
+    "result": {
+      "item": "yes:aetherite_upgrade_smithing_template",
+      "count": 2
+    }
+  }
+}

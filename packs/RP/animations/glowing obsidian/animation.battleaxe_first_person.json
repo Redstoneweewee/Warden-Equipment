@@ -1,0 +1,41 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.battleaxe_first_person": {
+			"loop": true,
+			"animation_length": 0.25,
+			"bones": {
+				"rightItem": {
+					"rotation": [10.69234, 69.48315, -38.85115],
+					"position": [-4.23069, 2.45552, 0.25963]
+				}
+			}
+		},
+		"animation.battleaxe_first_person_test": {
+			"loop": true,
+			"animation_length": 0.25,
+			"bones": {
+				"rightItem": {
+					"rotation": [0, 0, 0],
+					"position": [0, 0, 0]
+				}
+			}
+		},
+		"animation.battleaxe_first_person2": {
+			"loop": true,
+			"animation_length": 1,
+			"bones": {
+				"rightItem": {
+					"rotation": [10.69234, 69.48315, -38.85115],
+					"position": [-4.23069, 2.45552, 0.25963]
+				},
+				"rightArm": {
+					"rotation": {
+						"0.0": [0, 0, 0],
+						"1.0": [0, 0, 360]
+					}
+				}
+			}
+		}
+	}
+}

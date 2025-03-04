@@ -1,0 +1,29 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "yes:scythe_hit_particle_entity",
+      "materials": { "default": "husk" },
+      "textures": { "default": "textures/entity/zombie/husk" },
+      "geometry": { "default": "geometry.scythe_particle_entity" },
+      "scripts": {
+			"should_update_bones_and_effects_offscreen": true,
+        "pre_animation": [
+          "variable.tcos0 = (Math.cos(query.modified_distance_moved * 38.17) * query.modified_move_speed / variable.gliding_speed_value) * 57.3;"
+        ],
+        "animate": [
+        "particle"
+        ]
+      },
+      "particle_effects": {
+          "scythe_particle1": "yes:scythe_hit_particle1",
+          "scythe_particle2": "yes:scythe_hit_particle2"
+      },
+      "animations": {
+        "particle": "animation.scythe_hit_particle"
+	 	},
+      "render_controllers": [ "controller.render.default" ],
+      "enable_attachables": true
+    }
+  }
+}

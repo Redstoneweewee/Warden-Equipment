@@ -1,0 +1,120 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.greatsword_left_swing_connected": {
+			"animation_length": 1.56,
+			"override_previous_animation": true,
+			"bones": {
+				"body": {
+					"rotation": {
+						"0.0": [-2.06497, 27.6858, 3.08903],
+						"0.16": [0, 5, 0],
+						"0.24": [0.94707, -37.48058, -2.96075],
+						"1.32": [0.94707, -37.48058, -2.96075],
+						"1.56": [0, 0, 0]
+					},
+					"position": {
+						"0.0": [1.25, "query.is_sneaking ? -2 : 0", 0.5],
+						"0.16": [0, "query.is_sneaking ? -2 : 0", 0],
+						"0.24": [0, "query.is_sneaking ? -2 : 0", 0],
+						"1.32": [0, "query.is_sneaking ? -2 : 0", 0],
+						"1.56": [0, "query.is_sneaking ? -2 : 0", 0]
+					}
+				},
+				"leftArm": {
+					"rotation": {
+						"0.0": [-70.48457, 47.73561, 34.64325],
+						"0.16": [-46.32796, 13.39605, 27.31509],
+						"0.24": [-87.00541, -3.02184, 10.12246],
+						"1.32": [-87.00541, -3.02184, 10.12246],
+						"1.56": [
+							"((math.cos(query.modified_distance_moved * 38.17) * query.modified_move_speed / variable.gliding_speed_value) * 57.3) + (variable.is_holding_left ? (-this * 0.5 - 18.0) : 0.0) + ((query.get_equipped_item_name('off_hand') == 'shield' && query.is_sneaking) ? -20 : 0)",
+							"(query.get_equipped_item_name('off_hand') == 'shield' && query.is_sneaking) ? 20 : 0",
+							"-((math.cos(query.life_time * 103.2) * 2.865) + 2.865) + ((query.get_equipped_item_name('off_hand') == 'shield' && query.is_sneaking) ? 20 : 0)"
+						]
+					},
+					"position": {
+						"0.0": [0, -1.75, -1.25],
+						"0.16": [0, 0, 0.5],
+						"0.24": [0, 0, 0.75],
+						"1.32": [0, 0, 0.75],
+						"1.56": [0, 0, 0]
+					}
+				},
+				"rightArm": {
+					"rotation": {
+						"0.0": ["query.is_sneaking ? -73.677 : -73.1979", "query.is_sneaking ? -9.5338 : 1.3159", "query.is_sneaking ? -82.7014 : -66.5124"],
+						"0.04": [-63.3109, -2.06323, -65.17715],
+						"0.08": [-53.19447, -5.45536, -60.97008],
+						"0.16": [-35.41, -25.59, -34.28],
+						"0.24": ["query.is_sneaking ? -88.9062 : -49.8669", "query.is_sneaking ? -53.6683 : -39.2157", "query.is_sneaking ? -0.8093 : -52.5843"],
+						"1.32": ["query.is_sneaking ? -88.9062 : -49.8669", "query.is_sneaking ? -53.6683 : -39.2157", "query.is_sneaking ? -0.8093 : -52.5843"],
+						"1.56": [
+							"-((math.cos(query.modified_distance_moved * 38.17) * query.modified_move_speed / variable.gliding_speed_value) * 57.3) + (variable.is_holding_right ? (-this * 0.5 - 18.0) : 0.0)",
+							0,
+							"(math.cos(query.life_time * 103.2) * 2.865) + 2.865"
+						]
+					},
+					"position": {
+						"0.0": [1, 1, 1.25],
+						"0.04": [1.08, 0.63, 0.48],
+						"0.08": [1.16, 0.25, -0.29],
+						"0.16": [1.33, -0.5, -1.83],
+						"0.24": [2, -0.75, -2.75],
+						"1.32": [2, -0.75, -2.75],
+						"1.56": [0, 0, 0]
+					}
+				},
+				"rightItem": {
+					"rotation": {
+						"0.0": [-22.25414, -5.21782, 188.16702],
+						"0.16": [-40, 30, -52.5],
+						"0.2": [-32.67777, 62.06119, -58.35699],
+						"0.24": [75.01577, 70.22317, -17.60823],
+						"1.32": [75.01577, 70.22317, -17.60823],
+						"1.56": [0, 0, 0]
+					},
+					"position": {
+						"0.0": [1, -4, 0],
+						"0.16": [0, 0, 0],
+						"0.24": [-1, -1, -2],
+						"1.32": [-1, -1, -2],
+						"1.56": [0, 0, 0]
+					}
+				},
+				"leftItem": {
+					"rotation": {
+						"0.0": [
+							"(query.get_equipped_item_name('off_hand') == 'shield' && query.is_sneaking) ? 13.5288 : 2.9543",
+							"(query.get_equipped_item_name('off_hand') == 'shield' && query.is_sneaking) ? -7.8814 : -1.428",
+							"(query.get_equipped_item_name('off_hand') == 'shield' && query.is_sneaking) ? 13.3014 : -68.4195"
+						],
+						"0.16": [
+							"(query.get_equipped_item_name('off_hand') == 'shield' && query.is_sneaking) ? 13.5288 : 2.9543",
+							"(query.get_equipped_item_name('off_hand') == 'shield' && query.is_sneaking) ? -7.8814 : -1.428",
+							"(query.get_equipped_item_name('off_hand') == 'shield' && query.is_sneaking) ? 13.3014 : -68.4195"
+						],
+						"0.24": [12.31594, 2.15393, -9.76758],
+						"1.32": [12.31594, 2.15393, -9.76758],
+						"1.56": [0, 0, 0]
+					},
+					"position": {
+						"0.0": [
+							"(query.get_equipped_item_name('off_hand') == 'shield' && query.is_sneaking) ? 0.6674 : 0.3326",
+							"(query.get_equipped_item_name('off_hand') == 'shield' && query.is_sneaking) ? -1.5 : 5.5",
+							"(query.get_equipped_item_name('off_hand') == 'shield' && query.is_sneaking) ? 1 : 0"
+						],
+						"0.16": [
+							"(query.get_equipped_item_name('off_hand') == 'shield' && query.is_sneaking) ? 0.6674 : 0.3326",
+							"(query.get_equipped_item_name('off_hand') == 'shield' && query.is_sneaking) ? -1.5 : 5.5",
+							"(query.get_equipped_item_name('off_hand') == 'shield' && query.is_sneaking) ? 1 : 0"
+						],
+						"0.24": [0, 1, 0],
+						"1.32": [0, 1, 0],
+						"1.56": [0, 0, 0]
+					}
+				}
+			}
+		}
+	}
+}
