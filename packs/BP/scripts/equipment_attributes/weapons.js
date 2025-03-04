@@ -392,11 +392,11 @@ export const weaponAttributes = [
             },
             range: 10,
             duration: 60,
-            attackInterval: 3, //3 ticks per attack
+            attackInterval: 2, //3 ticks per attack
             windupTime: 13,
             durabilityDamage: 1,
-            horizontalKnockback: 1.3,
-            verticalKnockback: 0.3
+            horizontalKnockback: 2.5,
+            verticalKnockback: 0.5
         },
         abilityDamageEnchant: [
             {

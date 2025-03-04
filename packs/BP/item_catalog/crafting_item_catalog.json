@@ -1,0 +1,61 @@
+{
+    "format_version": "1.21.60",
+    "minecraft:crafting_items_catalog": {
+       "categories": [
+          {
+             "category_name": "equipment",
+             "groups": [
+                {
+                   "group_identifier": {
+                      "icon": "yes:warden_helmet",
+                      "name": "yes:itemGroup.name.warden_armor"
+                   },
+                   "items": [
+                      "yes:warden_helmet",
+                      "yes:warden_chestplate",
+                      "yes:warden_leggings",
+                      "yes:warden_boots"
+                   ]
+                }
+             ]
+          },
+          {
+             "category_name": "equipment",
+             "groups": [
+                {
+                   "group_identifier": {
+                      "icon": "yes:echo_staff",
+                      "name": "yes:itemGroup.name.echo_tools"
+                   },
+                   "items": [
+                      "yes:echo_sword",
+                      "yes:echo_axe",
+                      "yes:echo_pickaxe",
+                      "yes:echo_shovel",
+                      "yes:echo_hoe",
+                      "yes:echo_staff",
+                      "yes:echo_staff_ad1",
+                      "yes:echo_staff_ad2",
+                      "yes:echo_staff_ad3"
+                   ]
+                }
+             ]
+          },
+          {
+             "category_name": "items",
+             "groups": [
+                {
+                   "group_identifier": {
+                      "icon": "yes:warden_heart",
+                      "name": "yes:itemGroup.name.warden_crafting_material"
+                   },
+                   "items": [
+                      "yes:warden_heart",
+                      "yes:warden_tendril"
+                   ]
+                }
+             ]
+          }
+       ]
+    }
+ }

@@ -1,5 +1,5 @@
 {
-    "format_version": "1.20.80",
+    "format_version": "1.21.50",
     "minecraft:item": {
         "description": {
             "identifier": "yes:warden_helmet",
@@ -29,7 +29,7 @@
                 }
             },
             "minecraft:display_name": {
-                "value": "Warden Helmet\n\ue116\u00a7l\ue05b\u00a7r\ue115\n\ue05c"
+                "value": "Warden Helmet\n\ue116\u00a7l\ue05b\u00a7r\ue115\n\ue05c \n\n§gFull Set Ability:\n§o§3Spots hostile mobs\nthrough walls!"
             },
             "minecraft:icon": "warden_helmet",
             "minecraft:enchantable": {

@@ -1,4 +1,4 @@
-import { world, ItemStack, system } from '@minecraft/server';
+import { world, ItemStack, system, Entity } from '@minecraft/server';
 
 /**
  * Functions the same as Math.clamp because Math.clamp doesn't exist for some reason.
@@ -524,7 +524,7 @@ function durDmgCont(entity, itemStack, slot, damage) {
 /**
  * Applies damage to a target based on the base damage, ability damage enchant, cause of damage, and source of attack.
  * @param {Entity} target - The entity receiving damage.
- * @param {ItemStack} itemStack - The weapon that is being used to deal damage.
+ * @param {ItemStack} itemstack - The weapon that is being used to deal damage.
  * @param {number} damage - The amount of damage being dealt.
  * @param {String} cause - The cause of the damage. For example, `entityAttack` or `void`.
  * @param {Entity} [attacker] - The entity who is attacking the target.
